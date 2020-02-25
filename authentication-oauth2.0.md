@@ -18,7 +18,6 @@ Client Credentials Flow is available for limited contexts like scripts or testin
 The flow contains of the following steps:
 1. Generate access token
 2. Call SolveXia public API with access token
-3. Refresh access token
 
 #### 1. Generate access token
 
@@ -46,11 +45,21 @@ Here is the description for each parameter
 
 ##### Response
 
-Be default response comes in JSON.
+Schema
+
+```dtd
+{
+	access_token  string
+	token_type    string
+	expires_in    float32
+}
+```
+
+Example
 
 ```json
 {
-    "access_token": "syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg",
+    "access_token": "syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg",
     "token_type"  : "Bearer",
     "expires_in"  : 9.8270549
 }
@@ -69,3 +78,128 @@ Example
 ```bash
 curl -H "Authorization: Bearer ACCESS-TOKEN" https://app.solvexia.com/api/v1/processes
 ```
+
+## Authorise Code Flow
+
+Authorise Code Flow must be used in wll third-party applications that intended to go public.
+
+The authorization session contains of the following steps:
+1. Authorise request with user redirection to prove their SolveXia identity
+2. Users are redirected back to your app web page with a code
+3. Call SolveXia public API with access token
+
+
+### 1. Authorise request with user redirection to prove their SolveXia identity
+
+Call this url and it will redirect to the page which will request user to login and approve access to your application.
+
+```apacheconfig
+GET http://app.solvexia.com/oauth/authorize
+```
+
+##### Parameters
+
+```bash
+client_id=DDF-AAFBD447-55432-475B-83DB-B5AD78878821&response_type=code&redirect_uri=https://myapp.com/
+```
+
+Explained
+
+| Name | Type |Description |
+| ------------- |------------- | -------------|
+|client_id|`string`|Client id that you received when you created an application in SolveXia.|
+|response_type|`string`|For this step response type should always equal to "code".|
+|redirect_uri|`string`|The URL of your application where users will be sent after authorization.|
+
+### 2. Users are redirected back to your app web page with a code
+
+If the authorization was successful user is redirected back to your application page specified in `redirect_uri` with a temporary 
+authorization code in a query string that you can exchange for the access token.
+
+```apacheconfig
+https://myapp.com/?code=158dgfa4678vsdfgshdflgsdfgsd9fgsd7fg-dfg7632
+```
+
+Retrieve the code and make a call to get an access token.
+
+```apacheconfig
+POST https://app.solvexia.com/oauth/token 
+```
+
+##### Parameters
+
+Schema
+
+```dtd
+{
+	client_id     string
+	client_secret string
+	redirect_uri  string
+	grant_type    string
+	code          string
+}
+```
+
+Note that `redirect_uri` must stay the same through all the steps of the authorization session.
+
+```json
+{
+    "client_id"    : "DDF-AAFBD447-55432-475B-83DB-B5AD78878821",
+    "client_secret": "B5AD78878821",
+    "redirect_uri" : "https://myapp.com/",
+    "grant_type"   : "authorization_code",
+    "code"         : "158dgfa4678vsdfgshdflgsdfgsd9fgsd7fg-dfg7632"
+}
+```
+
+Explained
+
+| Name | Type |Description |
+| ------------- |------------- | -------------|
+|client_id|`string`|Client id that you received when you created an application in SolveXia.|
+|response_type|`string`|For this step response type should always equal to "code".|
+|redirect_uri|`string`|The URL of your application where users will be sent after authorization.|
+|grant_type|`string`|For this flow grant type should always equal to "authorization_code".|
+|code|`string`|The authorization code that was provided to your app after successful user redirect.|
+
+##### Response
+
+Schema
+
+```dtd
+{
+	refresh_token string
+	access_token  string
+	token_type    string
+	expires_in    float32
+}
+```
+
+Example
+
+```json
+{
+    "access_token" : "syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg",
+    "refresh_token": "sdfgd453SDFJHS8-kdRtfpoXTgYFF7LHgVOhIjOQSD68VZvc2_uAew.P07tE_54654w45654",
+    "token_type"   : "Bearer",
+    "expires_in"   : 9.8270549
+}
+```
+
+### 3. Call SolveXia public API with access token
+
+```apacheconfig
+GET https://app.solvexia.com/api/v1/processes
+
+Authorization: Bearer ACCESS-TOKEN
+```
+
+Example
+
+```bash
+curl -H "Authorization: Bearer ACCESS-TOKEN" https://app.solvexia.com/api/v1/processes
+```
+
+## Refresh access tokens
+
+SolveXia access tokens live span is short so we require you to refresh tokens in order to access SolveXia public API. Here is how.
