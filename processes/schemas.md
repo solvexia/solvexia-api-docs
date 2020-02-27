@@ -1,7 +1,7 @@
 # Processes schemas
 
-1. [Process List Item](## Process List Item)
-2. [Process](## Process)
+1. [Process List Item](##Process List Item)
+2. [Process](##Process)
 
 ## Process List Item
 

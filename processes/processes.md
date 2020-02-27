@@ -1,7 +1,7 @@
 # Processes
 
-1. [List users processes](## List users processes)
-2. [Get a process](## Get a process)
+1. [List users processes](##List users processes)
+2. [Get a process](##Get a process)
 
 ## List users processes
 
@@ -26,7 +26,7 @@ Request body must be empty.
 
 #### Response
 
-Successful response contains a list of [Process List Item](./schemas.md)s.
+Successful response contains a list of [Process List Item](./schemas.md/##Process List Item)s.
 
 ```json
 [
@@ -43,7 +43,7 @@ Successful response contains a list of [Process List Item](./schemas.md)s.
 
 ## Get a process
 
-Returns an instance of a [Process](./schemas.md/).
+Returns an instance of a [Process](./schemas.md/##Process).
 
 ```apacheconfig
 GET /v1/processes/{processId}
@@ -63,7 +63,7 @@ Query parameters are not expected.
 Request body must be empty.
 
 #### Response body
-Successful response contains an instance of a [Process](./schemas.md/).
+Successful response contains an instance of a [Process](./schemas.md/##Process).
 
 ```json
 {
