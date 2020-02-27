@@ -1,6 +1,6 @@
 # Processes
 
-1. [List users processes](##List-users-processes)
+1. [List users processes](##list-users-processes)
 2. [Get a process](##Get a process)
 
 ## List users processes
