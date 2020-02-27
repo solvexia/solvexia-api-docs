@@ -186,6 +186,8 @@ Example
 }
 ```
 
+Save the refresh token and expiry date. If the access token is expired, you need to refresh it using a refresh token.
+
 ### 3. Call SolveXia public API with access token
 
 ```apacheconfig
@@ -203,3 +205,64 @@ curl -H "Authorization: Bearer ACCESS-TOKEN" https://app.solvexia.com/api/v1/pro
 ## Refresh access tokens
 
 SolveXia access tokens live span is short so we require you to refresh tokens in order to access SolveXia public API. Here is how.
+
+```apacheconfig
+GET https://au.qa.solvexia.com/oauth/token
+```
+
+##### Parameters
+
+Schema
+
+```dtd
+{
+	client_id     string
+	client_secret string
+	refresh_token string
+	grant_type    string
+}
+```
+
+Note that `redirect_uri` must stay the same through all the steps of the authorization session.
+
+```json
+{
+    "client_id"    : "DDF-AAFBD447-55432-475B-83DB-B5AD78878821",
+    "client_secret": "B5AD78878821",
+    "refresh_token": "sdfgd453SDFJHS8-kdRtfpoXTgYFF7LHgVOhIjOQSD68VZvc2_uAew.P07tE_54654w45654",
+    "grant_type"   : "refresh_token"
+}
+```
+
+Explained
+
+| Name | Type |Description |
+| ------------- |------------- | -------------|
+|client_id|`string`|Client id that you received when you created an application in SolveXia.|
+|response_type|`string`|For this step response type should always equal to "code".|
+|refresh_token|`string`|The refresh token you received along with the access token.|
+|grant_type|`string`|For this flow grant type should always equal to "refresh_token".|
+
+##### Response
+
+Schema
+
+```dtd
+{
+	refresh_token string
+	access_token  string
+	token_type    string
+	expires_in    float32
+}
+```
+
+Example
+
+```json
+{
+    "access_token" : "syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg",
+    "refresh_token": "sdfgd453SDFJHS8-kdRtfpoXTgYFF7LHgVOhIjOQSD68VZvc2_uAew.P07tE_54654w45654",
+    "token_type"   : "Bearer",
+    "expires_in"   : 9.8270549
+}
+```
