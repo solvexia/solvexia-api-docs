@@ -79,3 +79,69 @@ Successful response contains an instance of a [Process](./schemas.md/#process).
     "dateCreated": "11/10/2019 2:09:32 AM"
 }
 ```
+
+## Create a process run
+
+Returns an id of a newly created process run. The run itself is created, but not started.
+
+```apacheconfig
+POST /v1/processes/{processId}/processRuns
+```
+
+#### Path parameters
+
+| Name | Type | Description |
+| ------------- |------------- | -------------|
+| processId | `string` | The process id to create a process run from. |
+
+#### Query parameters
+Query parameters are not expected.
+
+#### Request body
+Request body must be empty.
+
+#### Response body
+Successful response contains an id of a newly created process run.
+
+```json
+{
+  "id": "pr-12484"
+}
+```
+
+## Get a list of process runs
+
+Returns a list of all created runs of a specified process.
+
+```apacheconfig
+GET /v1/processes/{processId}/processRuns
+```
+
+#### Path parameters
+
+| Name | Type | Description |
+| ------------- |------------- | -------------|
+| processId | `string` | The process id to get a list of runs for. |
+
+#### Query parameters
+Query parameters are not expected.
+
+#### Request body
+Request body must be empty.
+
+#### Response body
+Successful response contains a list of all runs created from a process.
+
+```json
+
+[
+  {
+      "id": "pr-1234"
+    , "name": "Weekly CFO Summary v2: Run #32"
+  }
+  , {
+      "id": "pr-526"
+    , "name": "Weekly CFO Summary v2: Run #32"
+  }
+]
+```
