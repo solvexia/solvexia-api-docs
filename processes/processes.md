@@ -2,6 +2,8 @@
 
 1. [List users processes](#list-users-processes)
 2. [Get a process](#get-a-process)
+3. [Create a process run](#create-a-process-run)
+4. [Get a list of process runs](#get-a-list-of-process-runs)
 
 ## List users processes
 
