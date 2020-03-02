@@ -132,7 +132,7 @@ Query parameters are not expected.
 Request body must be empty.
 
 #### Response body
-Successful response contains a list of all runs created from a process.
+Successful response contains a list of all runs created from a process. Schema [Process List Item](./schemas.md/#process-list-item).
 
 ```json
 
@@ -142,8 +142,8 @@ Successful response contains a list of all runs created from a process.
     , "name": "Weekly CFO Summary v2: Run #32"
   }
   , {
-      "id": "pr-526"
-    , "name": "Weekly CFO Summary v2: Run #32"
+      "id": "pr-1235"
+    , "name": "Weekly CFO Summary v2: Run #33"
   }
 ]
 ```
