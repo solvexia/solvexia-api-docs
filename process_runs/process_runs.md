@@ -26,7 +26,6 @@ GET /v1/processRuns/{processRunId}
 | ------------- |------------- | -------------|
 | processRunId | `string` | The process run id to request. |
 
-
 #### Query parameters
 Query parameters are not expected.
 
@@ -48,5 +47,111 @@ Successful response contains an instance of a [Process Run](./process_runs_schem
     "lastModifiedBy": "abc.user.uservich",
     "dateModified": "11/10/2019 2:09:32 AM",
     "dateCreated": "11/10/2019 2:09:32 AM"
+}
+```
+
+## Start a process run
+
+Request a start of a process run.
+
+```apacheconfig
+POST /v1/processRuns/{processRunId}/requests
+```
+
+#### Path parameters
+
+| Name | Type | Description |
+| ------------- |------------- | -------------|
+| processRunId | `string` | The process run id to request the start for. |
+
+#### Query parameters
+Query parameters are not expected.
+
+#### Request body
+
+| Name | Type | Description |
+| ------------- |------------- | -------------|
+| requestType | enum([ProcessRunRequestType](./process_runs_schemas.md)) | The request type `startRun` which identifies the start. |
+
+#### Response body
+Successful response contains a [Process Run Status](./process_runs_schemas.md) Object.
+
+```json
+{
+  "id": "pr-263",
+  "dateFinished": null,
+  "dateStarted": "",
+  "runDurationInSec": 8,
+  "status": "Running"
+}
+```
+
+## Cancel a process run
+
+Request to cancel running for a process run.
+
+```apacheconfig
+POST /v1/processRuns/{processRunId}/requests
+```
+
+#### Path parameters
+
+| Name | Type | Description |
+| ------------- |------------- | -------------|
+| processRunId | `string` | The process run id to request to cancel running. |
+
+#### Query parameters
+Query parameters are not expected.
+
+#### Request body
+
+| Name | Type | Description |
+| ------------- |------------- | -------------|
+| requestType | enum([ProcessRunRequestType](./process_runs_schemas.md)) | The request type `cancelRun` which identifies cancel. |
+
+#### Response body
+Successful response contains a [Process Run Status](./process_runs_schemas.md) Object.
+
+```json
+{
+  "id": "pr-263",
+  "dateFinished": null,
+  "dateStarted": "",
+  "runDurationInSec": 48,
+  "status": "Cancelled"
+}
+```
+
+## Get process run status
+
+Request a run status for a process run.
+
+```apacheconfig
+GET /v1/processRuns/{processRunId}/runStatus
+```
+
+#### Path parameters
+
+| Name | Type | Description |
+| ------------- |------------- | -------------|
+| processRunId | `string` | The process run id to request a run status for. |
+
+#### Query parameters
+Query parameters are not expected.
+
+#### Request body
+
+Request body must be empty.
+
+#### Response body
+Successful response contains a [Process Run Status](./process_runs_schemas.md) Object.
+
+```json
+{
+  "id": "pr-263",
+  "dateFinished": null,
+  "dateStarted": "",
+  "runDurationInSec": 48,
+  "status": "Cancelled"
 }
 ```
