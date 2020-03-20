@@ -41,7 +41,7 @@ Here is the description for each parameter
 | ------------- |------------- | -------------|
 |client_id|`string`|Client id that you received when you created an application in SolveXia.|
 |client_secret|`string`|Client secret that you received when you created an application in SolveXia.|
-|grant_type|`string`|For this flow grant type should always equal to "client_credentials".|
+|grant_type|`string`|For this flow grant type should always be equal to "client_credentials".|
 
 ##### Response
 
@@ -81,7 +81,7 @@ curl -H "Authorization: Bearer ACCESS-TOKEN" https://app.solvexia.com/api/v1/pro
 
 ## Authorise Code Flow
 
-Authorise Code Flow must be used in wll third-party applications that intended to go public.
+Authorise Code Flow must be used in all third-party applications that intended to go public.
 
 The authorization session contains of the following steps:
 1. Authorise request with user redirection to prove their SolveXia identity
@@ -108,7 +108,7 @@ Explained
 | Name | Type |Description |
 | ------------- |------------- | -------------|
 |client_id|`string`|Client id that you received when you created an application in SolveXia.|
-|response_type|`string`|For this step response type should always equal to "code".|
+|response_type|`string`|For this step response type should always be equal to "code".|
 |redirect_uri|`string`|The URL of your application where users will be sent after authorization.|
 
 ### 2. Users are redirected back to your app web page with a code
@@ -157,9 +157,9 @@ Explained
 | Name | Type |Description |
 | ------------- |------------- | -------------|
 |client_id|`string`|Client id that you received when you created an application in SolveXia.|
-|response_type|`string`|For this step response type should always equal to "code".|
+|response_type|`string`|For this step response type should always be equal to "code".|
 |redirect_uri|`string`|The URL of your application where users will be sent after authorization.|
-|grant_type|`string`|For this flow grant type should always equal to "authorization_code".|
+|grant_type|`string`|For this flow grant type should always be equal to "authorization_code".|
 |code|`string`|The authorization code that was provided to your app after successful user redirect.|
 
 ##### Response
@@ -204,7 +204,7 @@ curl -H "Authorization: Bearer ACCESS-TOKEN" https://app.solvexia.com/api/v1/pro
 
 ## Refresh access tokens
 
-SolveXia access tokens live span is short so we require you to refresh tokens in order to access SolveXia public API. Here is how.
+SolveXia access token live span is short, so we require you to refresh tokens in order to access SolveXia public API. Here is how.
 
 ```apacheconfig
 GET https://au.qa.solvexia.com/oauth/token
@@ -239,9 +239,9 @@ Explained
 | Name | Type |Description |
 | ------------- |------------- | -------------|
 |client_id|`string`|Client id that you received when you created an application in SolveXia.|
-|response_type|`string`|For this step response type should always equal to "code".|
+|response_type|`string`|For this step response type should always be equal to "code".|
 |refresh_token|`string`|The refresh token you received along with the access token.|
-|grant_type|`string`|For this flow grant type should always equal to "refresh_token".|
+|grant_type|`string`|For this flow grant type should always be equal to "refresh_token".|
 
 ##### Response
 
