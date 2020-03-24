@@ -155,3 +155,33 @@ Successful response contains a [Process Run Status](./process_runs_schemas.md) O
   "status": "Cancelled"
 }
 ```
+
+## Get list of steps in a process run
+
+Request a list of steps in a process run.
+
+```apacheconfig
+GET /v1/processRuns/{processRunId}/steps
+```
+
+#### Path parameters
+
+| Name | Type | Description |
+| ------------- |------------- | -------------|
+| processRunId | `string` | The process run id to request a run status for. |
+
+#### Query parameters
+Query parameters are not expected.
+
+#### Request body
+
+Request body must be empty.
+
+#### Response body
+Successful response contains a list of steps.
+
+```json
+{
+
+}
+```
