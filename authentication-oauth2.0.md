@@ -113,7 +113,7 @@ Explained
 
 ### 2. Users are redirected back to your app web page with a code
 
-If the authorization was successful user is redirected back to your application page specified in `redirect_uri` with a temporary 
+If the authorization was successful, user is redirected back to your application page specified in `redirect_uri` with a temporary 
 authorization code in a query string that you can exchange for the access token.
 
 ```apacheconfig

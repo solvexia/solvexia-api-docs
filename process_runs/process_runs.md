@@ -168,7 +168,43 @@ GET /v1/processRuns/{processRunId}/steps
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| processRunId | `string` | The process run id to request a run status for. |
+| processRunId | `string` | The process run id to request a list of steps in a process run. |
+
+#### Query parameters
+Query parameters are not expected.
+
+#### Request body
+
+Request body must be empty.
+
+#### Response body
+Successful response contains a list of steps.
+
+```json
+[
+  {
+    "id": "ds-524",
+    "name": "Input parameters",
+    "isEnabled": true,
+    "orderedName": "2.3 Input parameters"
+  }
+]
+```
+
+## Get a step in a process run
+
+Request a list of steps in a process run.
+
+```apacheconfig
+GET /v1/processRuns/{processRunId}/steps/{stepId}
+```
+
+#### Path parameters
+
+| Name | Type | Description |
+| ------------- |------------- | -------------|
+| processRunId | `string` | The process run id to request a step in a process run. |
+| stepId | `string` | The data step id to request a step in a process run. |
 
 #### Query parameters
 Query parameters are not expected.
@@ -182,6 +218,9 @@ Successful response contains a list of steps.
 
 ```json
 {
-
+  "id": "ds-524",
+  "name": "Input parameters",
+  "isEnabled": true,
+  "orderedName": "2.3 Input parameters"
 }
 ```

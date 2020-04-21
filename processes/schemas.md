@@ -2,6 +2,8 @@
 
 1. [Process List Item](#process-list-item)
 2. [Process](#process)
+3. [Created Process Run](#created-process-run)
+4. [Process Run List Item](#process-run-list-item)
 
 ## Process List Item
 
@@ -28,3 +30,19 @@ type Process = {
   runsAvailableToSubscriber: boolean
 }
 ```
+
+## Created Process Run
+
+```typescript
+type ProcessRun = {
+    id: string
+}
+```
+
+## Process Run List Item
+
+```typescript
+type ProcessRunListItem = {
+    id: string
+    name: string
+}
