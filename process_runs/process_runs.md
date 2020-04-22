@@ -193,7 +193,7 @@ Successful response contains a list of steps.
 
 ## Get a step in a process run
 
-Request a list of steps in a process run.
+Request an instance of a step in a process run.
 
 ```apacheconfig
 GET /v1/processRuns/{processRunId}/steps/{stepId}
@@ -222,5 +222,43 @@ Successful response contains a list of steps.
   "name": "Input parameters",
   "isEnabled": true,
   "orderedName": "2.3 Input parameters"
+}
+```
+
+## Get data step properties
+
+Request a list of data step properties in a step.
+
+```apacheconfig
+GET /v1/processRuns/{processRunId}/steps/{stepId}/properties
+```
+
+#### Path parameters
+
+| Name | Type | Description |
+| ------------- |------------- | -------------|
+| processRunId | `string` | The process run id to request a step in a process run. |
+| stepId | `string` | The data step id to request a step in a process run. |
+
+#### Query parameters
+Query parameters are not expected.
+
+#### Request body
+
+Request body must be empty.
+
+#### Response body
+Successful response contains a list of steps.
+
+```json
+{
+  "id": "dsprop-524",
+  "name": "Start date",
+  "dataType": Datepicker,
+  "required": false,
+  "visible": true,
+  "informationFlowType": "NONE",
+  "mouseOverText": "1.2 Start date",
+  "value": "22-Jul-2019
 }
 ```
