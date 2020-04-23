@@ -118,6 +118,8 @@ Successful response is as follow.
 }
 ```
 
+| Name | Type | Description |
+| ------------- |------------- | -------------|
 | fileId | `string` | The file id to upload. |
 | uploadId | `string` | The id of a current upload session. |
 | sequenceId | `integer` | Represents the chunk number: <br/> * It starts from one(1) <br/> * This will be used to detect the order when about to merge all chunks into one file. |
