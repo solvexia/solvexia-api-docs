@@ -278,9 +278,9 @@ GET /v1/processRuns/{processRunId}/steps/{stepId}/properties/{propertyId}
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| processRunId | `string` | The process run id to request a step from. |
-| stepId | `string` | The data step id to request a property from. |
-| propertyId | `string` | The property id to request. |
+| processRunId | `string` | The process run id to request data steps from. |
+| stepId | `string` | The data step id to request properties from. |
+| propertyId | `string` | The data step property id to request. |
 
 #### Query parameters
 Query parameters are not expected.
@@ -302,5 +302,37 @@ Successful response contains an instance of a data step property.
   "informationFlowType": "INPUT",
   "mouseOverText": "1.2 Start date",
   "value": "22-Jul-2019"
+}
+```
+
+## Update data step property
+
+Returns an id of an updated data step property.
+
+```apacheconfig
+GET /v1/processRuns/{processRunId}/steps/{stepId}/properties/{propertyId}
+```
+
+#### Path parameters
+
+| Name | Type | Description |
+| ------------- |------------- | -------------|
+| processRunId | `string` | The process run id to request data steps from. |
+| stepId | `string` | The data step id to request properties from. |
+| propertyId | `string` | The data step property id to request. |
+
+#### Query parameters
+Query parameters are not expected.
+
+#### Request body
+
+Request body must contain a valid [Data Step Property](./process_runs_schemas.md) Object.
+
+#### Response body
+Successful response contains an id of an updated [Data Step Property](./process_runs_schemas.md) Object.
+
+```json
+{
+  "id": "dsprop-456"
 }
 ```

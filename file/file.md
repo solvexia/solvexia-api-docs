@@ -69,23 +69,21 @@ Successful response contains an id of a current upload session for the file.
 
 ```json
 {
-    
     "uploadId": "45687456"
 }
 ```
 
-| uploadId | `string` | The upload session id. |
-
 #### Error codes
 
 | Error code | Description |
+| ------------- |------------- |
 | 200 | Upload session initiation was successful |
 
 #### Technically on server side:
 A unique folder named same as {uploadId} created in the temp folder.
 
 ### Step-2
-Upload chinks in a session.
+Upload chunks in a session.
 
 ```apacheconfig
 POST /v1/files/{fileId}/uploadByChunks/{uploadId}
@@ -103,9 +101,7 @@ MIME Type: multipart/form-data
 #### Query parameters
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| sequenceId | `integer` | Represents the chunk number: 
-- It starts from one(1)
-- This will be used to detect the order when about to merge all chunks into one file. |
+| sequenceId | `integer` | Represents the chunk number: <br/> <ul><li>It starts from one(1)</li><li>This will be used to detect the order when about to merge all chunks into one file.</li></ul> |
 
 #### Request body
 Request body must contain a file chunk (byte array).
@@ -115,7 +111,6 @@ Successful response is as follow.
 
 ```json
 {
-    
     "fileId": "",
     "uploadId": "",
     "sequenceId": 1234,
@@ -125,15 +120,13 @@ Successful response is as follow.
 
 | fileId | `string` | The file id to upload. |
 | uploadId | `string` | The id of a current upload session. |
-| sequenceId | `integer` | Represents the chunk number: 
-- It starts from one(1)
-- This will be used to detect the order when about to merge all chunks into one file. |
-| sequenceHash | `string` | Represents the SHA-256 hash of the current chunk
-- This will be used by API consumer to check the integrity of the chunk (valided for corruption), if he/she chooses to do so |
+| sequenceId | `integer` | Represents the chunk number: <br/> * It starts from one(1) <br/> * This will be used to detect the order when about to merge all chunks into one file. |
+| sequenceHash | `string` | Represents the SHA-256 hash of the current chunk <br/> - This will be used by API consumer to check the integrity of the chunk (valided for corruption), if he/she chooses to do so |
 
 #### Error codes
 
 | Error code | Description |
+| ----------- | ----------- |
 | 200 | A chunk was accepted. |
 | 415, 500, 501 | A file type is not supporeted, abort the entire upload session. |
 | Any other code | Try to upload a chunk again. |
@@ -180,6 +173,7 @@ Successful response contains an instance of a [File](./file_schemas.md) Object.
 #### Error codes
 
 | Error code | Description |
+| ------------- |------------- |
 | 200 | A chunk was accepted. |
 
 #### Technically on server side:
@@ -256,11 +250,11 @@ Successful response contains an instance of a [File](./file_schemas.md) Object.
 
 ```json
 {
-    "id": "f-732",
+    "id": "f-734",
     "name": "Sales Q1 v2.xlsx",
     "sizeInBytes": 74382,
     "fileExtension": "xlsx",
-    "url": "https://api.au.solvexia.com/v1/files/732/download",
+    "url": "https://api.au.solvexia.com/v1/files/734/download",
     "fileState": 1
 }
 ```
