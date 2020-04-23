@@ -75,7 +75,7 @@ Query parameters are not expected.
 | requestType | enum([ProcessRunRequestType](./process_runs_schemas.md)) | The request type `startRun` which identifies the start. |
 
 #### Response body
-Successful response contains a [Process Run Status](./process_runs_schemas.md) Object.
+Successful response contains a [Process Run Status](./process_runs_schemas.md).
 
 ```json
 {
@@ -111,7 +111,7 @@ Query parameters are not expected.
 | requestType | enum([ProcessRunRequestType](./process_runs_schemas.md)) | The request type `cancelRun` which identifies cancel. |
 
 #### Response body
-Successful response contains a [Process Run Status](./process_runs_schemas.md) Object.
+Successful response contains a [Process Run Status](./process_runs_schemas.md).
 
 ```json
 {
@@ -145,7 +145,7 @@ Query parameters are not expected.
 Request body must be empty.
 
 #### Response body
-Successful response contains a [Process Run Status](./process_runs_schemas.md) Object.
+Successful response contains a [Process Run Status](./process_runs_schemas.md).
 
 ```json
 {
@@ -249,7 +249,7 @@ Query parameters are not expected.
 Request body must be empty.
 
 #### Response body
-Successful response contains a list of data step properties.
+Successful response contains a list of [Data Step Properties](./process_runs_schemas.md).
 
 ```json
 [
@@ -290,7 +290,7 @@ Query parameters are not expected.
 Request body must be empty.
 
 #### Response body
-Successful response contains an instance of a data step property.
+Successful response contains an instance of a [Data Step Property](./process_runs_schemas.md).
 
 ```json
 {
@@ -326,7 +326,7 @@ Query parameters are not expected.
 
 #### Request body
 
-Request body must contain a valid [Data Step Property](./process_runs_schemas.md) Object.
+Request body must contain a valid [Data Step Property](./process_runs_schemas.md).
 
 #### Response body
 Successful response contains an id of an updated [Data Step Property](./process_runs_schemas.md) Object.
