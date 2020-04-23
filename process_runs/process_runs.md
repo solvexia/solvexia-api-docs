@@ -37,16 +37,17 @@ Successful response contains an instance of a [Process Run](./process_runs_schem
 
 ```json
 {
+    
     "id": "pr-12484",
     "name": "Weekly CFO Summary v2: Run #32",
     "process": "p-1321",
-    "alertEmailAddress": "",
-    "alertSMS": "",
-    "runButtonName": "Run the process",
     "description": "Description here",
     "lastModifiedBy": "abc.user.uservich",
     "dateModified": "11/10/2019 2:09:32 AM",
-    "dateCreated": "11/10/2019 2:09:32 AM"
+    "dateCreated": "11/10/2019 2:09:32 AM",
+    "alertEmailAddress": "",
+    "alertSMS": "",
+    "runButtonName": "Run the process"
 }
 ```
 
@@ -214,7 +215,7 @@ Query parameters are not expected.
 Request body must be empty.
 
 #### Response body
-Successful response contains a list of steps.
+Successful response contains an instance of a data step.
 
 ```json
 {
@@ -237,8 +238,8 @@ GET /v1/processRuns/{processRunId}/steps/{stepId}/properties
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| processRunId | `string` | The process run id to request a step in a process run. |
-| stepId | `string` | The data step id to request a step in a process run. |
+| processRunId | `string` | The process run id to request a step from. |
+| stepId | `string` | The data step id to request properties fromn. |
 
 #### Query parameters
 Query parameters are not expected.
@@ -248,17 +249,58 @@ Query parameters are not expected.
 Request body must be empty.
 
 #### Response body
-Successful response contains a list of steps.
+Successful response contains a list of data step properties.
+
+```json
+[
+  {
+    "id": "dsprop-524",
+    "name": "Start date",
+    "dataType": "Datepicker",
+    "required": false,
+    "visible": true,
+    "informationFlowType": "INPUT",
+    "mouseOverText": "1.2 Start date",
+    "value": "22-Jul-2019"
+  }
+]
+```
+
+## Get data step property
+
+Request an instance of a data step property.
+
+```apacheconfig
+GET /v1/processRuns/{processRunId}/steps/{stepId}/properties/{propertyId}
+```
+
+#### Path parameters
+
+| Name | Type | Description |
+| ------------- |------------- | -------------|
+| processRunId | `string` | The process run id to request a step from. |
+| stepId | `string` | The data step id to request a property from. |
+| propertyId | `string` | The property id to request. |
+
+#### Query parameters
+Query parameters are not expected.
+
+#### Request body
+
+Request body must be empty.
+
+#### Response body
+Successful response contains an instance of a data step property.
 
 ```json
 {
   "id": "dsprop-524",
   "name": "Start date",
-  "dataType": Datepicker,
+  "dataType": "Datepicker",
   "required": false,
   "visible": true,
-  "informationFlowType": "NONE",
+  "informationFlowType": "INPUT",
   "mouseOverText": "1.2 Start date",
-  "value": "22-Jul-2019
+  "value": "22-Jul-2019"
 }
 ```
