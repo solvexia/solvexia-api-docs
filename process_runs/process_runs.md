@@ -184,10 +184,14 @@ Successful response contains a list of steps.
 ```json
 [
   {
-    "id": "ds-524",
-    "name": "Input parameters",
     "isEnabled": true,
-    "orderedName": "2.3 Input parameters"
+    "id": "ds-524",
+    "name": "1.1 Input parameters"
+  },
+  {
+    "isEnabled": true,
+    "id": "ds-582",
+    "name": "2.1 Input parameters"
   }
 ]
 ```
@@ -219,10 +223,9 @@ Successful response contains an instance of a data step.
 
 ```json
 {
-  "id": "ds-524",
-  "name": "Input parameters",
   "isEnabled": true,
-  "orderedName": "2.3 Input parameters"
+  "id": "ds-524",
+  "name": "1.1 Input parameters"
 }
 ```
 
@@ -260,8 +263,7 @@ Successful response contains a list of [Data Step Properties](./process_runs_sch
     "required": false,
     "visible": true,
     "informationFlowType": "INPUT",
-    "mouseOverText": "1.2 Start date",
-    "value": "22-Jul-2019"
+    "mouseOverText": "1.2 Start date"
   }
 ]
 ```
@@ -333,6 +335,7 @@ Successful response contains an id of an updated [Data Step Property](./process_
 
 ```json
 {
-  "id": "dsprop-456"
+  "id": "dsprop-456",
+  "name": "Name of data step property"
 }
 ```

@@ -123,7 +123,7 @@ Successful response is as follow.
 | fileId | `string` | The file id to upload. |
 | uploadId | `string` | The id of a current upload session. |
 | sequenceId | `integer` | Represents the chunk number: <br/> <ul><li>It starts from one(1)</li><li> This will be used to detect the order when about to merge all chunks into one file.</li></ul> |
-| sequenceHash | `string` | Represents the SHA-256 hash of the current chunk <br/> <ul><li>This will be used by API consumer to check the integrity of the chunk (valided for corruption), if he/she chooses to do so</li></ul>  |
+| sequenceHash | `string` | Represents the SHA-256 hash of the current chunk <br/> <ul><li>This will be used by API consumer to check the integrity of the chunk (valided for corruption), if he/she chooses to do so.</li></ul>  |
 
 #### Error codes
 

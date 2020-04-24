@@ -79,7 +79,7 @@ interface DataStepProperty {
   name : string
   dataType: DataStepPropertyDataType
   required: boolean
-  informationFlowType: [DataStepPropertyInformationFlowType](#data-step-property-information-flow-type)
+  informationFlowType: DataStepPropertyInformationFlowType
   mouseoverText: string
   visible: boolean
 }
@@ -133,8 +133,7 @@ interface DecimalDataStepProperty extends DataStepProperty {
 ### System Variable Data Step Property
 ```typescript
 interface SystemVariableDataStepProperty extends DataStepProperty {
-  value: string
-  variableType: [SystemVariableType](#system-variable-type)
+  value: SystemVariableType
 }
 ```
 
