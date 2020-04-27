@@ -69,7 +69,7 @@ Successful response contains an id of a current upload session for the file.
 
 ```json
 {
-    "uploadId": "45687456"
+    "uploadId": "dc05dffe-fb22-424b-8f8c-9f765964434e"
 }
 ```
 
@@ -111,9 +111,9 @@ Successful response is as follow.
 
 ```json
 {
-    "fileId": "",
-    "uploadId": "",
-    "sequenceId": 1234,
+    "fileId": "f-2434",
+    "uploadId": "dc05dffe-fb22-424b-8f8c-9f765964434e",
+    "sequenceId": 1324,
     "sequenceHash": ""
 }
 ```
@@ -212,7 +212,6 @@ Successful response contains file byte array.
 
 ```json
 {
-    
 }
 ```
 
