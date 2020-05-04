@@ -46,8 +46,7 @@ Successful response contains an instance of a [Process Run](./process_runs_schem
     "dateModified": "11/10/2019 2:09:32 AM",
     "dateCreated": "11/10/2019 2:09:32 AM",
     "alertEmailAddress": "",
-    "alertSMS": "",
-    "runButtonName": "Run the process"
+    "alertSMS": ""
 }
 ```
 
@@ -63,7 +62,7 @@ POST /v1/processRuns/{processRunId}/requests
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| processRunId | `string` | The process run id to request the start for. |
+| processRunId | `string` | The process run id to request start run for. |
 
 #### Query parameters
 Query parameters are not expected.
@@ -89,7 +88,7 @@ Successful response contains a [Process Run Status](./process_runs_schemas.md).
 
 ## Cancel a process run
 
-Request to cancel running for a process run.
+Request to cancel a currently running process run.
 
 ```apacheconfig
 POST /v1/processRuns/{processRunId}/requests
@@ -125,7 +124,7 @@ Successful response contains a [Process Run Status](./process_runs_schemas.md).
 
 ## Get process run status
 
-Request a run status for a process run.
+Request run status for a process run.
 
 ```apacheconfig
 GET /v1/processRuns/{processRunId}/runStatus
@@ -157,7 +156,7 @@ Successful response contains a [Process Run Status](./process_runs_schemas.md).
 }
 ```
 
-## Get list of steps in a process run
+## Get a list of steps in a process run
 
 Request a list of steps in a process run.
 
@@ -242,7 +241,7 @@ GET /v1/processRuns/{processRunId}/steps/{stepId}/properties
 | Name | Type | Description |
 | ------------- |------------- | -------------|
 | processRunId | `string` | The process run id to request a step from. |
-| stepId | `string` | The data step id to request properties fromn. |
+| stepId | `string` | The data step id to request properties from. |
 
 #### Query parameters
 Query parameters are not expected.
@@ -280,8 +279,8 @@ GET /v1/processRuns/{processRunId}/steps/{stepId}/properties/{propertyId}
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| processRunId | `string` | The process run id to request data steps from. |
-| stepId | `string` | The data step id to request properties from. |
+| processRunId | `string` | The process run id to request a data step property from. |
+| stepId | `string` | The data step id to request a property from. |
 | propertyId | `string` | The data step property id to request. |
 
 #### Query parameters
@@ -309,7 +308,7 @@ Successful response contains an instance of a [Data Step Property](./process_run
 
 ## Update data step property
 
-Returns an id of an updated data step property.
+Returns an instance of an updated data step property.
 
 ```apacheconfig
 GET /v1/processRuns/{processRunId}/steps/{stepId}/properties/{propertyId}
@@ -319,8 +318,8 @@ GET /v1/processRuns/{processRunId}/steps/{stepId}/properties/{propertyId}
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| processRunId | `string` | The process run id to request data steps from. |
-| stepId | `string` | The data step id to request properties from. |
+| processRunId | `string` | The process run id to request an update of a data step property from. |
+| stepId | `string` | The data step id to request an update of a data step property from. |
 | propertyId | `string` | The data step property id to request. |
 
 #### Query parameters
@@ -336,6 +335,12 @@ Successful response contains an id of an updated [Data Step Property](./process_
 ```json
 {
   "id": "dsprop-456",
-  "name": "Name of data step property"
+  "name": "Add a number",
+  "dataType": "Number",
+  "required": true,
+  "visible": true,
+  "informationFlowType": "INPUT",
+  "mouseOverText": "1.2 Add a number",
+  "value": "235"
 }
 ```

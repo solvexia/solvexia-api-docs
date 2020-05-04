@@ -3,7 +3,7 @@
 | API Endpoints                           |
 | --------------------------------------- |
 | 1. [Get file metadata](#get-file-metadata) |
-| 2. [Upload a file (by chunks)](#upload-a-file-(by-chunks)) |
+| 2. [Upload a file (by chunks)](#upload-a-file) |
 | 3. [Download a file](#Download-a-file) |
 | 4. [Update file metadata](#Update-file-metadata) |
 
@@ -36,17 +36,17 @@ Successful response contains an instance of a [File](./file_schemas.md).
     "name": "Sales Q1.xlsx",
     "sizeInBytes": 55741,
     "fileExtension": "xlsx",
-    "url": "https://api.au.solvexia.com/v1/files/732/download",
+    "url": "https://app.solvexia.com/api/v1/files/732/download",
     "fileState": 1
 }
 ```
 
-## Upload a file (by chunks)
+## <a href="#upload-a-file">Upload a file (by chunks)</a>
 
 Returns metadata information for a file.
 
 ### Step-1
-Initiate an upload session for the file.
+Initiate an upload session for a file.
 
 ```apacheconfig
 POST /v1/files/{fileId}/uploadByChunks
@@ -73,9 +73,9 @@ Successful response contains an id of a current upload session for the file.
 }
 ```
 
-#### Error codes
+#### Response codes
 
-| Error code | Description |
+| Response code | Description |
 | ------------- |------------- |
 | 200 | Upload session initiation was successful |
 
@@ -123,20 +123,15 @@ Successful response is as follow.
 | fileId | `string` | The file id to upload. |
 | uploadId | `string` | The id of a current upload session. |
 | sequenceId | `integer` | Represents the chunk number: <br/> <ul><li>It starts from one(1)</li><li> This will be used to detect the order when about to merge all chunks into one file.</li></ul> |
-| sequenceHash | `string` | Represents the SHA-256 hash of the current chunk <br/> <ul><li>This will be used by API consumer to check the integrity of the chunk (valided for corruption), if he/she chooses to do so.</li></ul>  |
+| sequenceHash | `string` | Represents the SHA-256 hash of the current chunk <br/> <ul><li>You can use it to check the integrity of the chunk (validated for corruption).</li></ul>  |
 
-#### Error codes
+#### Response codes
 
-| Error code | Description |
+| Response code | Description |
 | ----------- | ----------- |
 | 200 | A chunk was accepted. |
 | 415, 500, 501 | A file type is not supporeted, abort the entire upload session. |
 | Any other code | Try to upload a chunk again. |
-
-#### Technically on server side:
-- A chunk is saved to folder named {uploadId} in the temp folder
-- Calculate the HASH of the saved chunk and compare against the supplied HASH; If they don’t match delete the chunk and return error code
-- A chunk is retained there until `/v1/files/``{fileId}``/uploadByChunks/``{uploadId}``/commit` is called
 
 ### Step-3
 Complete the upload.
@@ -167,25 +162,16 @@ Successful response contains an instance of a [File](./file_schemas.md) Object.
     "name": "Sales Q1.xlsx",
     "sizeInBytes": 55741,
     "fileExtension": "xlsx",
-    "url": "https://api.au.solvexia.com/v1/files/732/download",
+    "url": "https://app.solvexia.com/api/v1/files/732/download",
     "fileState": 1
 }
 ```
 
-#### Error codes
+#### Response codes
 
-| Error code | Description |
+| Response code | Description |
 | ------------- |------------- |
 | 200 | A chunk was accepted. |
-
-#### Technically on server side:
-- All the chunks in the folder {uploadId} are merged and created one big file
-- Push that one file into database
-- Upon successful push to databse, delete the folder {uploadId} including chunks and one big file and return success to user;
-- Upon failure push to databse, delete the folder {uploadId} including chunks and one big file and return failure to user (with error code indicating the complete retry with new session)
-
-#### Cleanup rules:
-We would delete folders inside temp folder whose create date is older than 24 hour
 
 ## Download a file
 
@@ -199,7 +185,7 @@ GET /v1/files/{fileId}/download
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| fileId | `string` | The file id to request. |
+| fileId | `string` | The id of the file requested to download. |
 
 #### Query parameters
 Query parameters are not expected.
@@ -220,7 +206,7 @@ Successful response contains file byte array.
 Updates metadata information for a file.
 
 ```apacheconfig
-POST /v1/files/{fileId}/
+POST /v1/files/{fileId}
 ```
 
 #### Path parameters
@@ -238,11 +224,7 @@ Request body must contain an instance of a [File](./file_schemas.md) Object.
 ```json
 {
     "id": "f-732",
-    "name": "Sales Q1 v2.xlsx",
-    "sizeInBytes": 55741,
-    "fileExtension": "xlsx",
-    "url": "https://api.au.solvexia.com/v1/files/732/download",
-    "fileState": 1
+    "name": "Sales Q1 v2.xlsx"
 }
 ```
 
@@ -255,7 +237,7 @@ Successful response contains an instance of a [File](./file_schemas.md) Object.
     "name": "Sales Q1 v2.xlsx",
     "sizeInBytes": 74382,
     "fileExtension": "xlsx",
-    "url": "https://api.au.solvexia.com/v1/files/734/download",
+    "url": "https://app.solvexia.com/api/v1/files/734/download",
     "fileState": 1
 }
 ```

@@ -204,7 +204,7 @@ curl -H "Authorization: Bearer ACCESS-TOKEN" https://app.solvexia.com/api/v1/pro
 
 ## Refresh access tokens
 
-SolveXia access token live span is short, so we require you to refresh tokens in order to access SolveXia public API. Here is how.
+SolveXia access token life span is short, so we require you to refresh tokens in order to access SolveXia public API. Here is how.
 
 ```apacheconfig
 GET https://au.qa.solvexia.com/oauth/token

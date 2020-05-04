@@ -9,8 +9,8 @@
 
 ```typescript
 type ProcessListItem = {
-    id: string
-    name: string
+  id: string
+  name: string
 }
 ```
 
@@ -35,7 +35,7 @@ type Process = {
 
 ```typescript
 type ProcessRun = {
-    id: string
+  id: string
 }
 ```
 
@@ -43,6 +43,6 @@ type ProcessRun = {
 
 ```typescript
 type ProcessRunListItem = {
-    id: string
-    name: string
+  id: string
+  name: string
 }

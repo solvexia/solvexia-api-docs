@@ -5,9 +5,9 @@
 3. [Create a process run](#create-a-process-run)
 4. [Get a list of process runs](#get-a-list-of-process-runs)
 
-## List users processes
+## List users' processes
 
-List all processes available to the user.
+List all processes available to the user. Returns all the processes that user has access to if any of the filters provided in query parameters are not provided.
 
 ```apacheconfig
 GET /api/v1/processes
@@ -21,7 +21,9 @@ This request does not have any path parameters.
 
 | Name | Type |Description |
 | ------------- |------------- | -------------|
-|name|`string`|Filters the results by the process name. When it is not present, returns all the processes that user has access to. |
+|name|`string`|Filters the results by the process name.|
+|dateCreatedStart|`string`|Filters the results by the date created start.  |
+|dateCreatedEnd|`string`|Filters the results by the process name. |
 
 #### Request body
 Request body must be empty.
@@ -84,7 +86,7 @@ Successful response contains an instance of a [Process](./schemas.md/#process).
 
 ## Create a process run
 
-Returns an id of a newly created process run. The run itself is created, but not started.
+Request to create a process run. The run itself is created, but not started.
 
 ```apacheconfig
 POST /v1/processes/{processId}/processRuns
@@ -103,7 +105,7 @@ Query parameters are not expected.
 Request body must be empty.
 
 #### Response body
-Successful response contains an id of a newly created process run.
+Successful response contains an instance of a newly created process run.
 
 ```json
 {
@@ -113,7 +115,7 @@ Successful response contains an id of a newly created process run.
 
 ## Get a list of process runs
 
-Returns a list of all created runs of a specified process.
+Returns a list of all process runs from a specified process.
 
 ```apacheconfig
 GET /v1/processes/{processId}/processRuns
@@ -132,7 +134,7 @@ Query parameters are not expected.
 Request body must be empty.
 
 #### Response body
-Successful response contains a list of all runs created from a process. Schema [Process List Item](./schemas.md/#process-list-item).
+Successful response contains a list of all runs of a process. Schema [Process List Item](./schemas.md/#process-list-item).
 
 ```json
 
