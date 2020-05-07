@@ -3,7 +3,7 @@
 | API Endpoints                           |
 | --------------------------------------- |
 | 1. [Get file metadata](#get-file-metadata) |
-| 2. [Upload a file (by chunks)](#upload-a-file) |
+| 2. [Upload a file by chunks](#upload-a-file-by-chunks) |
 | 3. [Download a file](#Download-a-file) |
 | 4. [Update file metadata](#Update-file-metadata) |
 
@@ -41,9 +41,9 @@ Successful response contains an instance of a [File](./file_schemas.md).
 }
 ```
 
-## <a href="#upload-a-file">Upload a file (by chunks)</a>
+## Upload a file by chunks
 
-Returns metadata information for a file.
+Upload metadata information for a file.
 
 ### Step-1
 Initiate an upload session for a file.
