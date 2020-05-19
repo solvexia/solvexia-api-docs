@@ -79,9 +79,9 @@ interface DataStepProperty {
   name : string
   dataType: DataStepPropertyDataType
   required: boolean
+  visible: boolean
   informationFlowType: DataStepPropertyInformationFlowType
   mouseoverText: string
-  visible: boolean
 }
 ```
 

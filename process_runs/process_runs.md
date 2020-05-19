@@ -330,7 +330,7 @@ Query parameters are not expected.
 Request body must contain a valid [Data Step Property](./process_runs_schemas.md).
 
 #### Response body
-Successful response contains an id of an updated [Data Step Property](./process_runs_schemas.md) Object.
+Successful response contains an updated [Data Step Property](./process_runs_schemas.md) Object.
 
 ```json
 {

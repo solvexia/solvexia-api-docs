@@ -196,10 +196,6 @@ Request body must be empty.
 #### Response body
 Successful response contains file byte array.
 
-```json
-{
-}
-```
 
 ## Update file metadata
 
