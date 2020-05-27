@@ -11,6 +11,5 @@ type File = {
   sizeInBytes: number
   fileExtension: string
   url: string
-  fileState: number
 }
 ```
