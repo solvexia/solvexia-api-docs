@@ -1,13 +1,16 @@
-# Processes
+# Process APIs
 
-1. [List users processes](#list-users-processes)
-2. [Get a process](#get-a-process)
-3. [Create a process run](#create-a-process-run)
-4. [Get a list of process runs](#get-a-list-of-process-runs)
+[Process List](#process-list)  
+[Get a process](#get-a-process)  
+[Create a process run](#create-a-process-run)  
+[Process Run List of a process](#get-a-list-of-process-runs)  
+[Data Steps of a process](#get-process-data-steps)  
 
-## List users' processes
+---
 
-List all processes available to the user. Returns all the processes that user has access to if any of the filters provided in query parameters are not provided.
+## Process List
+
+List all processes the user has access too. Filters can be supplied to filter the results.
 
 ```apacheconfig
 GET /api/v1/processes
@@ -30,7 +33,17 @@ Request body must be empty.
 
 #### Response
 
-Successful response contains a list of [Process List Item](./schemas.md/#process-list-item)s.
+Successful response contains an array of [Process List Item](./schemas.md/#process-list-item).
+
+### Example
+
+Request
+
+```shell
+curl https://app.solvexia.com/api/v1/processes -X GET -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg"
+```
+
+Response
 
 ```json
 [
@@ -39,15 +52,16 @@ Successful response contains a list of [Process List Item](./schemas.md/#process
     "name": "Weekly CFO Summary v2"
   },
   {
-    "id": "p-2347",
+    "id": "p-234987",
     "name": "Sales reconciliation"
   }
 ]
 ```
+---
 
 ## Get a process
 
-Returns an instance of a [Process](./schemas.md/#process).
+Gets the process for the user.
 
 ```apacheconfig
 GET /v1/processes/{processId}
@@ -67,29 +81,40 @@ Query parameters are not expected.
 Request body must be empty.
 
 #### Response body
-Successful response contains an instance of a [Process](./schemas.md/#process).
+Successful response contains a [Process](./schemas.md/#process).
+
+### Example
+
+Request
+
+```shell
+curl https://app.solvexia.com/api/v1/processes/p-114273 -X GET -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg"
+```
+
+Response
 
 ```json
 {
-    "id": "p-12484",
-    "name": "testp04",
+    "id": "p-114273",
+    "name": "processapitest",
     "alertEmailAddress": "",
     "alertSMS": "",
     "availableToSubscriber": false,
     "runsAvailableToSubscriber": false,
     "description": "Description here",
-    "lastModifiedBy": "abc.user.uservich",
-    "dateModified": "11/10/2019 2:09:32 AM",
-    "dateCreated": "11/10/2019 2:09:32 AM"
+    "lastModifiedBy": "qaseed.john.adams",
+    "dateModified": "2020-06-15T02:21:35.1500000",
+    "dateCreated": "2020-06-15T02:21:32.2300000"
 }
 ```
+---
 
 ## Create a process run
 
-Request to create a process run. The run itself is created, but not started.
+Creates a process run for a process. The process run itself is created, but not started.
 
 ```apacheconfig
-POST /v1/processes/{processId}/processRuns
+POST /v1/processes/{processId}/processruns
 ```
 
 #### Path parameters
@@ -105,27 +130,46 @@ Query parameters are not expected.
 Request body must be empty.
 
 #### Response body
-Successful response contains an instance of a newly created process run.
+Successful response contains a [Process run](../process_runs/process_runs_schemas.md/#process-run)
+
+### Example
+
+Request
+
+```shell
+curl "https:///app.solvexia.com/api/v1/processes/p-114273/processruns" -X POST -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg"
+```
+
+Response
 
 ```json
 {
-  "id": "pr-12484"
+  "id": "pr-114283",
+  "name": "processapitest : run #2",
+  "process": "p-114273",
+  "alertEmailAddress": "",
+  "alertSMS": "",
+  "description": "Description here",
+  "lastModifiedBy": "qaseed.brendan.lui",
+  "dateModified": "2020-06-17T04:55:54.5430000",
+  "dateCreated": "2020-06-17T04:55:54.5430000"
 }
 ```
+---
 
 ## Get a list of process runs
 
-Returns a list of all process runs from a specified process.
+Returns a list of all process runs for a specific process.
 
 ```apacheconfig
-GET /v1/processes/{processId}/processRuns
+GET /v1/processes/{processId}/processruns
 ```
 
 #### Path parameters
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| processId | `string` | The process id to get a list of runs for. |
+| processId | `string` | The process id to get a list of process runs for. |
 
 #### Query parameters
 Query parameters are not expected.
@@ -134,10 +178,19 @@ Query parameters are not expected.
 Request body must be empty.
 
 #### Response body
-Successful response contains a list of all runs of a process. Schema [Process List Item](./schemas.md/#process-list-item).
+Successful response contains an array of [Process Run List Item](./schemas.md/#process-list-item) for a process.
+
+### Example
+
+Request
+
+```shell
+curl "https:///app.solvexia.com/api/v1/processes/p-114273/processruns" -X GET -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg"
+```
+
+Response
 
 ```json
-
 [
   {
       "id": "pr-1234"
@@ -149,3 +202,54 @@ Successful response contains a list of all runs of a process. Schema [Process Li
   }
 ]
 ```
+---
+## Get Process Data Steps
+
+Returns a list of all Data Steps for a specific process.
+
+```apacheconfig
+GET /v1/processes/{processId}/steps
+```
+
+#### Path parameters
+
+| Name | Type | Description |
+| ------------- |------------- | -------------|
+| processId | `string` | The process id to get a list of process runs for. |
+
+#### Query parameters
+Query parameters are not expected.
+
+#### Request body
+Request body must be empty.
+
+#### Response body
+Successful response contains an array of [dataSteps](../steps/datastep_schemas.md/#data-step) for a process.
+
+### Example
+
+Request
+
+```shell
+curl "https:///app.solvexia.com/api/v1/processes/p-114273/steps" -X GET -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg"
+```
+
+Response
+
+```json
+[
+    {
+        "isEnabled": true,
+        "stepOrder": "1.1",
+        "id": "ds-114274",
+        "name": "New data step"
+    },
+    {
+        "isEnabled": true,
+        "stepOrder": "1.2",
+        "id": "ds-114275",
+        "name": "New data step 2"
+    }
+]
+```
+---

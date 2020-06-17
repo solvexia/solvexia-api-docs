@@ -1,6 +1,9 @@
-# File
+# File Schemas
 
-1. [File Object](#file-object)
+[File Object](#file-object)  
+[Upload Session object](#upload-session-object)  
+[Chunk object](#chunk-object)  
+---
 
 ## File Object
 
@@ -11,5 +14,22 @@ type File = {
   sizeInBytes: number
   fileExtension: string
   url: string
+}
+```
+
+## Upload Session object
+```typescript
+type UploadSession = {
+  uploadsessionid: string
+}
+```
+
+## Chunk object
+```typescript
+type UploadSession = {
+  fileId: string
+  uploadsessionid: string
+  chunkId: number
+  chunkHash: string
 }
 ```

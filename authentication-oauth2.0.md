@@ -12,8 +12,12 @@ The Client Credentials Flow is intended to be used by internal scripts or for te
 Public third party applications that rely on GitHub for authentication should not ask for or collect SolveXia user credentials.
 Instead, they must use the Authorise Code Flow web flow.
 
----
+### Table of Contents
+[Client Credentials Flow](#client-Credentials-flow)  
+[Authorization Code Flow](#authorize-code-flow)  
+[API Request with Token](#call-solveXia-public-api-with-access-token)
 
+---
 ## Client Credentials Flow
 
 Client Credentials Flow is available for limited contexts like internal scripts or testing.
@@ -60,7 +64,6 @@ POST https://app.solvexia.com/oauth/token
 |expires_in|`string`|Seconds in which the access token will expire, for the user application to handle.|
 
 ---
-
 ## Authorize Code Flow
 
 Authorize Code Flow is for client public applications
