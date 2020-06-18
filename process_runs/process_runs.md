@@ -228,7 +228,7 @@ Successful response contains an array of [dataSteps](../steps/datastep_schemas.m
 Request
 
 ```shell
-curl "https:///app.solvexia.com/api/v1/processruns/pr-114278/steps" -X GET -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg"
+curl "https:/app.solvexia.com/api/v1/processruns/pr-114278/steps" -X GET -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg"
 ```
 
 Response

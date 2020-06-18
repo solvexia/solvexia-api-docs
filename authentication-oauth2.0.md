@@ -61,7 +61,7 @@ POST https://app.solvexia.com/oauth/token
 | ------------- |------------- | -------------|
 |access_token|`string`|Access token to use for subequent API's.|
 |token_type|`string`|Will always be "Bearer".|
-|expires_in|`string`|Seconds in which the access token will expire, for the user application to handle.|
+|expires_in|`number`|Seconds in which the access token will expire, for the user application to handle.|
 
 ---
 ## Authorize Code Flow
@@ -147,7 +147,7 @@ By default response comes in JSON.
 |access_token|`string`|Access token to use for subequent API's.|
 |refresh_token|`string`|Refresh token to use for Refresh request to generate new Access Token. Has a default expiration of 6 months.|
 |token_type|`string`|Will always be "Bearer".|
-|expires_in|`string`|Seconds in which the access token will expire, for the user application to handle.|
+|expires_in|`number`|Seconds in which the access token will expire, for the user application to handle.|
 
 #### Refresh Token
 You can refresh the access token at any point prior to the refresh token expiring, if you refresh the access token it also renews the refresh token expiry as well
@@ -193,7 +193,7 @@ By default response comes in JSON.
 |access_token|`string`|Access token to use for subequent API's.|
 |refresh_token|`string`|Refresh token to use for Refresh request to generate new Access Token. Has a default expiration of 6 months.|
 |token_type|`string`|Will always be "Bearer".|
-|expires_in|`string`|Seconds in which the access token will expire, for the user application to handle.|
+|expires_in|`number`|Seconds in which the access token will expire, for the user application to handle.|
 
 
 ---

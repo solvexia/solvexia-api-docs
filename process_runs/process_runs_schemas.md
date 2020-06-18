@@ -23,7 +23,6 @@ type ProcessRun = {
   dateCreated: string
   alertEmailAddress: string
   alertSMS: string
-  runButtonName: string
 }
 ```
 ## Process Run Request

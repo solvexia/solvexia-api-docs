@@ -20,7 +20,7 @@ type File = {
 ## Upload Session object
 ```typescript
 type UploadSession = {
-  uploadsessionid: string
+  uploadSessionId: string
 }
 ```
 
@@ -28,7 +28,7 @@ type UploadSession = {
 ```typescript
 type UploadSession = {
   fileId: string
-  uploadsessionid: string
+  uploadSessionId: string
   chunkId: number
   chunkHash: string
 }

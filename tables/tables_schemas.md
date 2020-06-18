@@ -1,0 +1,47 @@
+# Table schemas
+
+[Table object](#table-object)  
+[Column object](#column-object)  
+
+# Table Types
+[Table Column Type](#table-column-type)  
+
+---
+## Table object
+
+```typescript
+interface Table {
+    id: string
+  ; name : string
+  ; description: string
+  ; sizeInBytes: decimal
+  ; dateCreated: string
+  ; dateModified: string
+  ; version: int
+}
+```
+
+## Column object
+
+```typescript
+interface TableColumn {
+  ; name: string
+  ; dataType: TableColumnDataType
+  ; nullable: boolean
+  ; fieldLength: number
+  ; defaultValue: string
+}
+```
+---
+
+## Table Column Type
+```typescript
+enum TableColumnDataType {
+  Number = "Number",
+  FixedLengthText = "Fixed length text",
+  TrueFalse = "True/False",
+  Datetime = "Datetime",
+  Decimal = "Decimal",
+  Money = "Money"
+}
+```

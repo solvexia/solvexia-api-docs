@@ -37,7 +37,7 @@ Successful response contains an instance of a [File](./file_schemas.md/#file-obj
 Request
 
 ```shell
-curl "https:///app.solvexia.com/api/v1/files/f-45678/metadata" -X GET -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg"
+curl "https://app.solvexia.com/api/v1/files/f-45678/metadata" -X GET -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg"
 ```
 
 Response
@@ -48,7 +48,7 @@ Response
     "name": "Sales Q1.xlsx",
     "sizeInBytes": 55741,
     "fileExtension": "xlsx",
-    "url": "https://app.solvexia.com/api/v1/files/732"
+    "url": "https://app.solvexia.com/api/v1/files/f-732"
 }
 ```
 ---
@@ -88,7 +88,7 @@ Successful response contains a [File](./file_schemas.md/#file-object) json.
 Request
 
 ```shell
-curl "https:///app.solvexia.com/api/v1/files/f-45678/metadata" -X POST -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg" -H "Content-Type: application/json" -d '{"name":"Sales Q1 v2 changed.xlsx"}'
+curl "https://app.solvexia.com/api/v1/files/f-45678/metadata" -X POST -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg" -H "Content-Type: application/json" -d '{"name":"Sales Q1 v2 changed.xlsx"}'
 ```
 
 Response
@@ -133,7 +133,7 @@ Successful response contains [File](./file_schemas.md/#file-object) json.
 Request
 
 ```shell
-curl --location --request POST 'https:///app.solvexia.com/api/v1/files/f-2238' \
+curl --location --request POST 'https://app.solvexia.com/api/v1/files/f-2238' \
 --header 'Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg' \
 --form 'file=@/C:/uploadfile.xlsx'
 ```
@@ -179,7 +179,7 @@ Successful response contains file byte array.
 Request
 
 ```shell
-curl 'https:/app.solvexia.com/api/v1/files/f-2238' -x GET --header 'Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg'
+curl 'https://app.solvexia.com/api/v1/files/f-2238' -x GET --header 'Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg'
 ```
 
 Response
@@ -216,7 +216,7 @@ Successful response contains a [Upload Session](./file_schemas.md/#upload-sessio
 Request
 
 ```shell
-curl 'https:///app.solvexia.com/api/v1/files/f-2238/uploadsessions' -x POST --header 'Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg' --form 'file=@/C:/uploadfile.xlsx'
+curl 'https://app.solvexia.com/api/v1/files/f-2238/uploadsessions' -x POST --header 'Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg'
 ```
 
 Response
@@ -233,7 +233,7 @@ Response
 Upload chunk of a file to the upload session for a file
 
 ```apacheconfig
-POST /v1/files/{fileId}/uploadsessions/uploadSessionId/chunks/chunkid
+POST /v1/files/{fileId}/uploadsessions/{uploadSessionId}/chunks/{chunkid}
 ```
 
 #### Path parameters
@@ -259,7 +259,7 @@ Successful response contains a [Chunk](./file_schemas.md/#chunk-object) Json.
 Request
 
 ```shell
-curl 'https:///app.solvexia.com/api/v1/files/f-2238/uploadsessions/2a27a605-d05f-4199-bae0-8da44cd24f70/chunks/1' -x POST --header 'Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg' --form 'file=@/C:/1'
+curl 'https://app.solvexia.com/api/v1/files/f-2238/uploadsessions/2a27a605-d05f-4199-bae0-8da44cd24f70/chunks/1' -x POST --header 'Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg' --form 'file=@/C:/1'
 ```
 
 Response
@@ -279,7 +279,7 @@ Response
 Finish the upload of file chunks
 
 ```apacheconfig
-POST /v1/files/{fileId}/uploadsessions/uploadSessionId/commit
+POST /v1/files/{fileId}/uploadsessions/{uploadSessionId}/commit
 ```
 
 #### Path parameters
@@ -304,7 +304,7 @@ Successful response contains [File](./file_schemas.md/#file-object) json.
 Request
 
 ```shell
-curl 'https:///app.solvexia.com/api/v1/files/f-2238/uploadsessions/2a27a605-d05f-4199-bae0-8da44cd24f70/commit' -x POST --header 'Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg'
+curl 'https://app.solvexia.com/api/v1/files/f-2238/uploadsessions/2a27a605-d05f-4199-bae0-8da44cd24f70/commit' -x POST --header 'Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg'
 ```
 
 Response
