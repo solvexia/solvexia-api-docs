@@ -32,6 +32,8 @@ Request body must be empty.
 #### Response body
 Successful response contains an instance of a [File](./file_schemas.md/#file-object).
 
+Error response will return an [Error Response](../response_codes.md)  
+
 ### Example
 
 Request
@@ -83,6 +85,8 @@ Only the 'name' field may be changed.
 #### Response body
 Successful response contains a [File](./file_schemas.md/#file-object) json.
 
+Error response will return an [Error Response](../response_codes.md)  
+
 ### Example
 
 Request
@@ -127,6 +131,8 @@ Request body must contain form data.
 
 #### Response body
 Successful response contains [File](./file_schemas.md/#file-object) json.
+
+Error response will return an [Error Response](../response_codes.md)  
 
 ### Example
 
@@ -174,6 +180,8 @@ Request body must be empty.
 #### Response body
 Successful response contains file byte array.
 
+Error response will return an [Error Response](../response_codes.md)  
+
 ### Example
 
 Request
@@ -210,6 +218,8 @@ Request body must must be empty
 
 #### Response body
 Successful response contains a [Upload Session](./file_schemas.md/#upload-session-object) Json.
+
+Error response will return an [Error Response](../response_codes.md)  
 
 ### Example
 
@@ -253,6 +263,8 @@ Request body must contain form data
 
 #### Response body
 Successful response contains a [Chunk](./file_schemas.md/#chunk-object) Json.
+
+Error response will return an [Error Response](../response_codes.md)  
 
 ### Example
 
@@ -298,6 +310,8 @@ Request body must be empty
 
 #### Response body
 Successful response contains [File](./file_schemas.md/#file-object) json.
+
+Error response will return an [Error Response](../response_codes.md)  
 
 ### Example
 

@@ -34,6 +34,8 @@ Request body must be empty.
 #### Response body
 Successful response contains a [table](./tables_schemas.md/#table-object) json.
 
+Error response will return an [Error Response](../response_codes.md)  
+
 ### Example
 
 Request
@@ -89,6 +91,8 @@ with the following fields
 
 #### Response body
 Successful response contains a [Table object](./tables_schemas/#table-object) json.
+
+Error response will return an [Error Response](../response_codes.md)  
 
 ### Example
 
@@ -148,6 +152,8 @@ with one or more of the following fields
 #### Response body
 Successful response contains a [Table object](./tables_schemas/#table-object) json.
 
+Error response will return an [Error Response](../response_codes.md)  
+
 ### Example
 
 Request
@@ -194,6 +200,8 @@ Request body must be empty.
 
 #### Response body
 Successful response contains an array of [column](./tables_schemas.md/#column-object) json.
+
+Error response will return an [Error Response](../response_codes.md)  
 
 ### Example
 
@@ -274,6 +282,8 @@ Request body must contain a valid [column](./tables_schemas.md/#column-object) j
 #### Response body
 Successful response contains a [column](./tables_schemas.md/#column-object) json.
 
+Error response will return an [Error Response](../response_codes.md)  
+
 ### Example
 
 Request
@@ -338,6 +348,8 @@ one or more of the following is required.
 #### Response body
 Successful response contains a [column](./tables_schemas.md/#column-object) json.
 
+Error response will return an [Error Response](../response_codes.md)  
+
 ### Example
 
 Request
@@ -383,6 +395,8 @@ Request body must be empty.
 
 #### Response body
 There is no Response Body
+
+Error response will return an [Error Response](../response_codes.md)  
 
 ### Example
 

@@ -31,6 +31,8 @@ Request body must be empty.
 #### Response body
 Successful response contains a [dataStep](../steps/datastep_schemas.md/#data-step).
 
+Error response will return an [Error Response](../response_codes.md)  
+
 ### Example
 
 Request
@@ -74,6 +76,8 @@ Request body must be empty.
 
 #### Response body
 Successful response contains an array of the derived [Data Step Properties](./datastep_schemas.md/#data-step-property) types.
+
+Error response will return an [Error Response](../response_codes.md)  
 
 ### Example
 
@@ -136,6 +140,8 @@ Request body must be empty.
 #### Response body
 Successful response contains a derived [Data Step Property](#./datastep_schemas.md/#data-step-property) type.
 
+Error response will return an [Error Response](../response_codes.md)  
+
 ### Example
 
 Request
@@ -184,6 +190,8 @@ Every field must be supplied except for 'id' which is unecessary (as it is in th
 
 #### Response body
 Successful response contains a derived [Data Step Property](#./datastep_schemas.md/#data-step-property) type.
+
+Error response will return an [Error Response](../response_codes.md)  
 
 ### Example
 

@@ -35,6 +35,8 @@ Request body must be empty.
 
 Successful response contains an array of [Process List Item](./schemas.md/#process-list-item).
 
+Error response will return an [Error Response](../response_codes.md)  
+
 ### Example
 
 Request
@@ -82,6 +84,8 @@ Request body must be empty.
 
 #### Response body
 Successful response contains a [Process](./schemas.md/#process).
+
+Error response will return an [Error Response](../response_codes.md)  
 
 ### Example
 
@@ -132,6 +136,8 @@ Request body must be empty.
 #### Response body
 Successful response contains a [Process run](../process_runs/process_runs_schemas.md/#process-run)
 
+Error response will return an [Error Response](../response_codes.md)  
+
 ### Example
 
 Request
@@ -180,6 +186,8 @@ Request body must be empty.
 #### Response body
 Successful response contains an array of [Process Run List Item](./schemas.md/#process-list-item) for a process.
 
+Error response will return an [Error Response](../response_codes.md)  
+
 ### Example
 
 Request
@@ -225,6 +233,8 @@ Request body must be empty.
 
 #### Response body
 Successful response contains an array of [dataSteps](../steps/datastep_schemas.md/#data-step) for a process.
+
+Error response will return an [Error Response](../response_codes.md)  
 
 ### Example
 
