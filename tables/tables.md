@@ -372,7 +372,7 @@ Response
 
 ## Delete a column
 
-Delete a table column.
+Deletes a table column.
 
 ```apacheconfig
 DELETE /v1/tables/{tableId}/columns/{columnName}

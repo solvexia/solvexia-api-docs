@@ -11,17 +11,16 @@ The following Response codes can be returned from the Solvexia APIs.
 | 500 | Internal Server Error | An exception has occurred during processing the request |
 
 ## Error Response Body
-All non-200 responses will return a general error json object
+All non-200 responses will return a general error json object.
 
 ```javascript
 {
     "message": "Supplied step id is not of type Data Step",
     "supportId": "cb4712e5-4eb9-40eb-acbb-091aaf740dca"
 }
-
 ```
 
 | Name | Type |Description |
 | ------------- |------------- | -------------|
-|message|`string`| User friendly error information.|
-|supportId|`string`| Error support id that can be given to Solvexia support for investigation.  |
+|message|`string`| The user friendly error information. |
+|supportId|`string`| The error support id that can be used for support enquiries. |

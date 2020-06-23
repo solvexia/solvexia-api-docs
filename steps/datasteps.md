@@ -9,7 +9,7 @@
 
 ## Get a data step
 
-Get a data step
+Returns a data step of a process.
 
 ```apacheconfig
 GET /v1/steps/{stepId}
@@ -19,19 +19,19 @@ GET /v1/steps/{stepId}
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| stepId | `string` | The data step id to request a step in a process run. |
+| stepId | `string` | The data step id to request. |
 
 #### Query parameters
-Query parameters are not expected.
+The query parameters are not expected.
 
 #### Request body
 
-Request body must be empty.
+The request body must be empty.
 
 #### Response body
-Successful response contains a [dataStep](../steps/datastep_schemas.md/#data-step).
+Successful response contains an instance of [Data Step](../steps/datastep_schemas.md/#data-step).
 
-Error response will return an [Error Response](../response_codes.md)  
+The error response contains an [Error](../response_codes.md).
 
 ### Example
 
@@ -55,7 +55,7 @@ Response
 
 ## Get data step properties
 
-Request a list of data step properties in a step.
+Returns a list of properties in a data step.
 
 ```apacheconfig
 GET /v1/steps/{stepId}/properties
@@ -68,16 +68,16 @@ GET /v1/steps/{stepId}/properties
 | stepId | `string` | The data step id to request properties from. |
 
 #### Query parameters
-Query parameters are not expected.
+The query parameters are not expected.
 
 #### Request body
 
-Request body must be empty.
+The request body must be empty.
 
 #### Response body
-Successful response contains an array of the derived [Data Step Properties](./datastep_schemas.md/#data-step-property) types.
+The successful response contains an array of instances of [Data Step Property](./datastep_schemas.md/#data-step-property).
 
-Error response will return an [Error Response](../response_codes.md)  
+The error response contains an [Error](../response_codes.md).
 
 ### Example
 
@@ -117,7 +117,7 @@ Response
 
 ## Get data step property
 
-Get a data step property for a data step.
+Returns a data step property for a data step.
 
 ```apacheconfig
 GET /v1/steps/{stepId}/properties/{propertyId}
@@ -131,16 +131,16 @@ GET /v1/steps/{stepId}/properties/{propertyId}
 | propertyId | `string` | The data step property id to request. |
 
 #### Query parameters
-Query parameters are not expected.
+The query parameters are not expected.
 
 #### Request body
 
-Request body must be empty.
+The request body must be empty.
 
 #### Response body
-Successful response contains a derived [Data Step Property](#./datastep_schemas.md/#data-step-property) type.
+The successful response contains an instance of [Data Step Property](#./datastep_schemas.md/#data-step-property).
 
-Error response will return an [Error Response](../response_codes.md)  
+The error response contains an [Error](../response_codes.md).
 
 ### Example
 
@@ -168,7 +168,7 @@ Response
 
 ## Update data step property
 
-Updates a data step property
+Updates a data step property in a data step.
 
 ```apacheconfig
 POST /v1/steps/{stepId}/properties/{propertyId}
@@ -182,16 +182,15 @@ POST /v1/steps/{stepId}/properties/{propertyId}
 | propertyId | `string` | The data step property id to request. |
 
 #### Query parameters
-Query parameters are not expected.
+The query parameters are not expected.
 
 #### Request body
-Request body must contain a valid [Data Step Property](#./datastep_schemas.md/#data-step-property) type.
-Every field must be supplied except for 'id' which is unecessary (as it is in the url)
+The request body must contain an instance of [Data Step Property](#./datastep_schemas.md/#data-step-property).
 
 #### Response body
-Successful response contains a derived [Data Step Property](#./datastep_schemas.md/#data-step-property) type.
+The successful response contains an instance of [Data Step Property](#./datastep_schemas.md/#data-step-property).
 
-Error response will return an [Error Response](../response_codes.md)  
+The error response contains an [Error](../response_codes.md).
 
 ### Example
 
@@ -206,6 +205,7 @@ Response
 ```json
  {
     "value": 10,
+    "id": "dsprop-524",
     "name": "Start date changed",
     "dataType": "Number",
     "required": false,

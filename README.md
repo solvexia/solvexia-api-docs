@@ -1,19 +1,19 @@
 # SolveXia API Docs
 
-This is an official repository for files that are used to generate https://api.solvexia.com. Please follow this repository to see the changes over time.
+This is an official repository for SolveXia API documentation https://app.solvexia.com/api/. Please follow this repository to see the changes over time.
 
-For bug reports or change proposals for API please use issues, or create pull requests.
+For bug reports or change proposals for APIs please use issues, or create pull requests.
 
-## OAUth
-The following pages detail the OAuth API's that govern OAuth authorization flows, in order to be able to generate tokens to use Solvexia APIs  
+## OAuth
+The following pages detail the OAuth API's that govern OAuth authorization flows, in order to be able to generate tokens to use SolveXia APIs.
 
-[OAUth APIs](./authentication-oauth2.0.md)  
+[OAuth APIs](./authentication-oauth2.0.md)  
 
 ## Solvexia APIs
-The following pages detail the Solvexia API's to manage client resources in Solvexia automation system
+The following pages detail the Solvexia API's to manage client resources in SolveXia automation system.
 
 [Process APIs](./processes/processes.md)  
-[Process Runs APIs](./process_runs/process_runs.md)  
-[Step APIs](./steps/datasteps.md)  
+[Process Run APIs](./process_runs/process_runs.md)  
+[Data Step APIs](./steps/datasteps.md)  
 [Table APIs](./tables/tables.md)   
 [File APIs](./file/file.md)   

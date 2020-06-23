@@ -31,7 +31,7 @@ Request body must be empty.
 #### Response body
 Successful response contains a [Process Run](./process_runs_schemas.md/#process-run).
 
-Error response will return an [Error Response](../response_codes.md)  
+The error response contains an [Error](../response_codes.md).
 
 ### Example
 
@@ -86,7 +86,7 @@ and 'request' property must be 'ProcessRun_CancelRq'
 #### Response body
 Successful response contains [Process Run Status](./process_runs_schemas.md/#process-run-status).
 
-Error response will return an [Error Response](../response_codes.md)  
+The error response contains an [Error](../response_codes.md).
 
 ### Example
 
@@ -137,7 +137,7 @@ and 'request' property must be 'ProcessRun_CancelRq'
 #### Response body
 Successful response contains a [Process Run Status](./process_runs_schemas.md/#process-run-status).
 
-Error response will return an [Error Response](../response_codes.md)  
+The error response contains an [Error](../response_codes.md).
 
 ### Example
 
@@ -184,7 +184,7 @@ Request body must be empty.
 #### Response body
 Successful response contains a [Process Run Status](./process_runs_schemas.md/#process-run-status).
 
-Error response will return an [Error Response](../response_codes.md)  
+The error response contains an [Error](../response_codes.md).
 
 ### Example
 
@@ -231,7 +231,7 @@ Request body must be empty.
 #### Response body
 Successful response contains an array of [dataSteps](../steps/datastep_schemas.md/#data-step) for a process.
 
-Error response will return an [Error Response](../response_codes.md)  
+The error response contains an [Error](../response_codes.md).
 
 ### Example
 

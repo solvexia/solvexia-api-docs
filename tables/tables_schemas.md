@@ -1,13 +1,13 @@
-# Table schemas
+# Table Schemas
 
-[Table object](#table-object)  
-[Column object](#column-object)  
+[Table](#table)  
+[Column](#column)  
 
 # Table Types
 [Table Column Type](#table-column-type)  
 
 ---
-## Table object
+## Table
 
 ```typescript
 interface Table {
@@ -21,7 +21,7 @@ interface Table {
 }
 ```
 
-## Column object
+## Column
 
 ```typescript
 interface TableColumn {

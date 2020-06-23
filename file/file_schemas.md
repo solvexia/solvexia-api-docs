@@ -1,11 +1,11 @@
 # File Schemas
 
-[File Object](#file-object)  
-[Upload Session object](#upload-session-object)  
-[Chunk object](#chunk-object)  
----
+[File](#file)  
+[Upload Session](#upload-session)  
 
-## File Object
+[File Chunk](#file-chunk)  
+
+## File
 
 ```typescript
 type File = {
@@ -17,16 +17,16 @@ type File = {
 }
 ```
 
-## Upload Session object
+## Upload Session
 ```typescript
 type UploadSession = {
   uploadSessionId: string
 }
 ```
 
-## Chunk object
+## File Chunk
 ```typescript
-type UploadSession = {
+type FileChunk = {
   fileId: string
   uploadSessionId: string
   chunkId: number

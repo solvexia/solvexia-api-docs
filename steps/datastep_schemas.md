@@ -1,7 +1,7 @@
 # Data Step Schema
 [Data Step](#data-step)   
 
-# Data step Property schemas
+# Data Step Property Schemas
 
 [Data Step Property](#data-step-property)  
 [Checkbox Data Step Property](#checkbox-data-step-property)  
@@ -26,7 +26,7 @@
 ```typescript
 type DataStep {
     id: Pointer
-  ; name     : string
+  ; name: string
   ; isEnabled: boolean
   ; orderedName: string
 }
@@ -35,11 +35,11 @@ type DataStep {
 
 ## Data Step Property
 
-### Data Step Property Object
+### Data Step Property
 ```typescript
 interface DataStepProperty {
   id: Pointer
-  name : string
+  name: string
   dataType: DataStepPropertyDataType
   required: boolean
   visible: boolean

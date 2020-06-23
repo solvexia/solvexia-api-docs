@@ -3,9 +3,9 @@
 [Update file metadata](#Update-file-metadata)  
 [Upload a file](#upload-a-file)  
 [Download a file](#Download-a-file)  
-[Start Upload Chunks Session](#start-upload-chunk-session)  
-[Upload Chunk](#upload-chunk)  
-[Commit Upload Chunk Session](#commit-upload-session)  
+[Start upload chunks session](#start-upload-chunk-session)  
+[Upload chunk](#upload-chunk)  
+[Commit upload chunk session](#commit-upload-session)  
 
 ---
 
@@ -21,18 +21,18 @@ GET /v1/files/{fileId}/metadata
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| fileId | `string` | The file id to request. |
+| fileId | `string` | The file id to request metadata for. |
 
 #### Query parameters
-Query parameters are not expected.
+The query parameters are not expected.
 
 #### Request body
-Request body must be empty.
+The request body must be empty.
 
 #### Response body
-Successful response contains an instance of a [File](./file_schemas.md/#file-object).
+The successful response contains an instance of a [File](./file_schemas.md/#file).
 
-Error response will return an [Error Response](../response_codes.md)  
+The error response contains an [Error](../response_codes.md).
 
 ### Example
 
@@ -67,14 +67,13 @@ POST /v1/files/{fileId}/metadata
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| fileId | `string` | The file id to request. |
+| fileId | `string` | The id of the file to update metadata for. |
 
 #### Query parameters
-Query parameters are not expected.
+The query parameters are not expected.
 
 #### Request body
-Request body must contain a [File](./file_schemas.md/#file-object) json.
-Only the 'name' field may be changed.
+The request body must contain an instance of [File](./file_schemas.md/#file). Note that only the `name` field may be changed.
 
 ```json
 {
@@ -83,9 +82,9 @@ Only the 'name' field may be changed.
 ```
 
 #### Response body
-Successful response contains a [File](./file_schemas.md/#file-object) json.
+The successful response contains an instance of a [File](./file_schemas.md/#file).
 
-Error response will return an [Error Response](../response_codes.md)  
+The error response contains an [Error](../response_codes.md).
 
 ### Example
 
@@ -110,7 +109,7 @@ Response
 
 ## Upload a file
 
-Upload file as a form data using streaming.
+Uploads file as a form data using streaming.
 
 ```apacheconfig
 POST /v1/files/{fileId}
@@ -123,16 +122,16 @@ POST /v1/files/{fileId}
 | fileId | `string` | The file id to upload. |
 
 #### Query parameters
-Query parameters are not expected.
+The query parameters are not expected.
 
 #### Request body
-Request body must contain form data.
+The request body must contain form data.
 
 
 #### Response body
-Successful response contains [File](./file_schemas.md/#file-object) json.
+The successful response contains an instance of a [File](./file_schemas.md/#file).
 
-Error response will return an [Error Response](../response_codes.md)  
+The error response contains an [Error](../response_codes.md).
 
 ### Example
 
@@ -172,15 +171,15 @@ GET /v1/files/{fileId}
 | fileId | `string` | The id of the file requested to download. |
 
 #### Query parameters
-Query parameters are not expected.
+The query parameters are not expected.
 
 #### Request body
-Request body must be empty.
+The request body must be empty.
 
 #### Response body
-Successful response contains file byte array.
+The successful response contains file byte array.
 
-Error response will return an [Error Response](../response_codes.md)  
+The error response contains an [Error](../response_codes.md).
 
 ### Example
 
@@ -195,9 +194,9 @@ Response
 ---
 
 
-## Start Upload Chunk Session
+## Start upload chunk session
 
-Start an upload chunk session for a file
+Starts an upload chunk session for a file.
 
 ```apacheconfig
 POST /v1/files/{fileId}/uploadsessions
@@ -210,16 +209,16 @@ POST /v1/files/{fileId}/uploadsessions
 | fileId | `string` | The file id to upload. |
 
 #### Query parameters
-Query parameters are not expected.
+The query parameters are not expected.
 
 #### Request body
-Request body must must be empty
+The request body must must be empty.
 
 
 #### Response body
-Successful response contains a [Upload Session](./file_schemas.md/#upload-session-object) Json.
+The successful response contains an instance of [Upload Session](./file_schemas.md/#upload-session).
 
-Error response will return an [Error Response](../response_codes.md)  
+The error response contains an [Error](../response_codes.md).
 
 ### Example
 
@@ -238,12 +237,12 @@ Response
 ```
 ---
 
-## Upload Chunk
+## Upload chunk
 
-Upload chunk of a file to the upload session for a file
+Uploads a chunk of a file to the upload session for a file.
 
 ```apacheconfig
-POST /v1/files/{fileId}/uploadsessions/{uploadSessionId}/chunks/{chunkid}
+POST /v1/files/{fileId}/uploadsessions/{uploadSessionId}/chunks/{chunkId}
 ```
 
 #### Path parameters
@@ -252,19 +251,19 @@ POST /v1/files/{fileId}/uploadsessions/{uploadSessionId}/chunks/{chunkid}
 | ------------- |------------- | -------------|
 | fileId | `string` | The file id to upload. |
 | uploadSessionId | `string` | The upload session id to upload too. |
-| chunkid | `string` | The chunk id to upload too, it is the sequential number of the chunk |
+| chunkId | `string` | The chunk id to upload too, it is the sequential number of the chunk. |
 
 #### Query parameters
-Query parameters are not expected.
+The query parameters are not expected.
 
 #### Request body
-Request body must contain form data
+The request body must contain form data.
 
 
 #### Response body
-Successful response contains a [Chunk](./file_schemas.md/#chunk-object) Json.
+The successful response contains an instance of [Chunk](./file_schemas.md/#chunk).
 
-Error response will return an [Error Response](../response_codes.md)  
+The error response contains an [Error](../response_codes.md).
 
 ### Example
 
@@ -286,9 +285,9 @@ Response
 ```
 ---
 
-## Commit Upload Session
+## Commit upload session
 
-Finish the upload of file chunks
+Finishes the upload session for a file.
 
 ```apacheconfig
 POST /v1/files/{fileId}/uploadsessions/{uploadSessionId}/commit
@@ -298,20 +297,20 @@ POST /v1/files/{fileId}/uploadsessions/{uploadSessionId}/commit
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| fileId | `string` | The file id to upload. |
-| uploadSessionId | `string` | The upload session id to upload too. |
+| fileId | `string` | The file id to finish upload session for. |
+| uploadSessionId | `string` | The upload session id to finish. |
 
 #### Query parameters
-Query parameters are not expected.
+The query parameters are not expected.
 
 #### Request body
-Request body must be empty
+The request body must be empty.
 
 
 #### Response body
-Successful response contains [File](./file_schemas.md/#file-object) json.
+The successful response contains an instance of a [File](./file_schemas.md/#file).
 
-Error response will return an [Error Response](../response_codes.md)  
+The error response contains an [Error](../response_codes.md).
 
 ### Example
 
