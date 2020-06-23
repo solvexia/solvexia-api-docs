@@ -13,7 +13,7 @@ Public third party applications that rely on GitHub for authentication should no
 Instead, they must use the Authorise Code Flow web flow.
 
 ### Table of Contents
-[Client Credentials Flow](#client-Credentials-flow)  
+[Client Credentials Flow](#client-credentials-flow)  
 [Authorization Code Flow](#authorize-code-flow)  
 [API Request with Token](#call-solveXia-public-api-with-access-token)
 

@@ -3,16 +3,16 @@
 [Get a table](#get-a-table)  
 [Create a table](#create-a-table)  
 [Update a table](#update-a-table)  
-[Get Columns of a table](#get-columns-of-a-table)  
-[Create a Column](#create-a-column)  
-[Update a Column](#update-a-column)  
+[Get columns of a table](#get-columns-of-a-table)  
+[Create a column](#create-a-column)  
+[Update a column](#update-a-column)  
 [Delete a column](#delete-a-column)
 
 ---
 
 ## Get a table
 
-Get a Table
+Returns the table at the given table id.
 
 ```apacheconfig
 GET /v1/tables/{tableId}
@@ -22,19 +22,18 @@ GET /v1/tables/{tableId}
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| tableId | `string` | The table id to of a table. |
+| tableId | `string` | The table to request. |
 
 #### Query parameters
-Query parameters are not expected.
+The query parameters are not expected.
 
 #### Request body
-
-Request body must be empty.
+The request body must be empty.
 
 #### Response body
-Successful response contains a [table](./tables_schemas.md/#table-object) json.
+The successful response contains an instance of [Table](./tables_schemas.md/#table-object).
 
-Error response will return an [Error Response](../response_codes.md)  
+The error response contains an [Error](../response_codes.md).
 
 ### Example
 
@@ -61,7 +60,7 @@ Response
 
 ## Create a table
 
-Creates a table
+Creates a table, returning the newly created table.
 
 ```apacheconfig
 POST /v1/tables
@@ -69,30 +68,30 @@ POST /v1/tables
 
 #### Path parameters
 
-Path parameters are not expected.
+The path parameters are not expected.
 
 #### Query parameters
-Query parameters are not expected.
+The query parameters are not expected.
 
 #### Request body
-Request body must contain a valid [Table object](./tables_schemas/#table-object) json.
-with the following fields
-```javascript
+The request body must contain an instance of [Table](./tables_schemas/#table-object). The following fields will be used to create a table.
+
+```typescript
 { 
-  "name" : string,
-  "description": string
+  name       : string;
+  description: string
 }
 ```
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| name | `string` | Name of the table, must be unique. |
-| description | `string` | description of the table. |
+| name | `string` | The unique name of the table. |
+| description | `string` | The description of the table. |
 
 #### Response body
-Successful response contains a [Table object](./tables_schemas/#table-object) json.
+The successful response contains an instance of [Table](./tables_schemas/#table-object).
 
-Error response will return an [Error Response](../response_codes.md)  
+The error response contains an [Error](../response_codes.md).
 
 ### Example
 
@@ -108,7 +107,7 @@ Response
 {
     "id": "mt-8239",
     "name": "publicapitable3",
-    "description": "hurhurt2",
+    "description": "archive table",
     "dateCreated": "2020-06-18T00:50:09.323",
     "dateModified": "2020-06-18T00:50:09.323",
     "sizeInBytes": 0.00,
@@ -119,7 +118,7 @@ Response
 
 ## Update a table
 
-Updates a table
+Updates table parameters.
 
 ```apacheconfig
 POST /v1/tables/{tableId}
@@ -129,30 +128,30 @@ POST /v1/tables/{tableId}
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| tableId | `string` | The table id to of a table. |
+| tableId | `string` | The id of the table to update. |
 
 #### Query parameters
-Query parameters are not expected.
+The query parameters are not expected.
 
 #### Request body
-Request body must contain a valid [Table object](./tables_schemas/#table-object) json.
-with one or more of the following fields
-```javascript
+The request body must contain an instance of [Table](./tables_schemas/#table-object). One or more of the following fields will be used to update the table.
+
+```typescript
 { 
-  "name" : string,
-  "description": string
+  name       : string;
+  description: string
 }
 ```
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| name | `string` | Name of the table, must be unique. |
-| description | `string` | description of the table. |
+| name | `string` | The unique name of the table. |
+| description | `string` | The description of the table. |
 
 #### Response body
-Successful response contains a [Table object](./tables_schemas/#table-object) json.
+The successful response contains an instance of [Table](./tables_schemas/#table-object).
 
-Error response will return an [Error Response](../response_codes.md)  
+The error response contains an [Error](../response_codes.md).
 
 ### Example
 
@@ -177,9 +176,9 @@ Response
 ```
 ---
 
-## Get Columns of a table
+## Get columns of a table
 
-Gets the columns of a table
+Returns a column list of a table.
 
 ```apacheconfig
 GET /v1/tables/{tableId}/columns
@@ -189,19 +188,19 @@ GET /v1/tables/{tableId}/columns
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| tableId | `string` | The table id to of a table. |
+| tableId | `string` | The id of a table to request columns from. |
 
 #### Query parameters
-Query parameters are not expected.
+The query parameters are not expected.
 
 #### Request body
 
-Request body must be empty.
+The request body must be empty.
 
 #### Response body
-Successful response contains an array of [column](./tables_schemas.md/#column-object) json.
+The successful response contains an array of instances of [Column](./tables_schemas.md/#column-object).
 
-Error response will return an [Error Response](../response_codes.md)  
+The error response contains an [Error](../response_codes.md).
 
 ### Example
 
@@ -240,9 +239,9 @@ Response
 ```
 ---
 
-## Create a Column
+## Create a column
 
-Creates a column for a table
+Creates a column in a table, returning the newly created column.
 
 ```apacheconfig
 POST /v1/tables/{tableId}/columns/
@@ -255,34 +254,34 @@ POST /v1/tables/{tableId}/columns/
 | tableId | `string` | The table id to of a table. |
 
 #### Query parameters
-Query parameters are not expected.
+The query parameters are not expected.
 
 #### Request body
-Request body must contain a valid [column](./tables_schemas.md/#column-object) json.
-'name' and 'dataType' are required.
-```javascript
+The request body must contain an instance of [Column](./tables_schemas.md/#column-object). The following fields will be used to create a column.
+
+```typescript
 { 
-  "name" : string,
-  "dataType": TableColumnDataType,
-  "nullable": boolean,
-  "fieldLength": number,
-  "defaultValue": string/number/boolean
+  name        : string;
+  dataType    : TableColumnDataType;
+  nullable    : boolean;
+  fieldLength : number;
+  defaultValue: string | number | boolean
 }
 ```
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| name | `string` | REQUIRED. Name of the table, must be unique. |
+| name | `string` | REQUIRED. The unique name of the column. |
 | dataType | `TableColumnDataType` |REQUIRED. [ColumnType](#table-column-type) . |
-| nullable | `boolean` | OPTIONAL. Whether a column can accept null values, default true |
-| fieldLength | `number` | OPTIONAL. Number of characters for 'FixedLengthText' dataType, default null  (which sets fixedLengthText to MAX) |
-| nullable | `boolean` | OPTIONAL. Whether a column can accept null values, default true |
-| defaultValue | `string/number/boolean` | OPTIONAL. The default value for the column, based on dataType |
+| nullable | `boolean` | OPTIONAL. Whether the column can accept null values, default is `true`. |
+| fieldLength | `number` | OPTIONAL. Number of characters for 'FixedLengthText' dataType, default is `null` (which sets fixedLengthText to MAX). |
+| nullable | `boolean` | OPTIONAL. Whether the column can accept `null` values, default is `true`. |
+| defaultValue | `string|number|boolean` | OPTIONAL. The default value for the column, based on `dataType`. |
 
 #### Response body
-Successful response contains a [column](./tables_schemas.md/#column-object) json.
+The successful response contains an instance of [Column](./tables_schemas.md/#column-object).
 
-Error response will return an [Error Response](../response_codes.md)  
+The error response contains an [Error](../response_codes.md).
 
 ### Example
 
@@ -300,14 +299,14 @@ Response
   "dataType": "number",
   "defaultValue":5,
   "fieldLength": null,
-  "nullable":false
+  "nullable": false
 }
 ```
 ---
 
 ## Update a Column
 
-Updates a column for a table
+Updates table column parameters.
 
 ```apacheconfig
 POST /v1/tables/{tableId}/columns/{columnName}
@@ -317,38 +316,38 @@ POST /v1/tables/{tableId}/columns/{columnName}
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| tableId | `string` | The table id to of a table. |
-| ColumnName | `string` | The name of a column, you may indicate a column with spaces either by url-encoded spaces or '_' e.g. for 'column space' it can be 'column%20space' or 'column_space' . |
+| tableId | `string` | The id of a table to update the column for. |
+| ColumnName | `string` | The name of the column to update. You may indicate a column with spaces either by url-encoded spaces or '_' e.g. for `column space` it can be `column%20space` or `column_space`. |
 
 #### Query parameters
-Query parameters are not expected.
+The query parameters are not expected.
 
 #### Request body
-Request body must contain a valid [column](./tables_schemas.md/#column-object) json.
-one or more of the following is required.
+The request body must contain an instance of [Column](./tables_schemas.md/#column-object). One or more of the following fields will be used to update the column.
+
 ```javascript
 { 
-  "name" : string,
-  "dataType": TableColumnDataType,
-  "nullable": boolean,
-  "fieldLength": number,
-  "defaultValue": string/number/boolean
+  name        : string;
+  dataType    : TableColumnDataType;
+  nullable    : boolean;
+  fieldLength : number;
+  defaultValue: string | number | boolean
 }
 ```
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| name | `string` | Name of the table, must be unique. |
+| name | `string` | The unique name of the column. |
 | dataType | `TableColumnDataType` | [ColumnType](#table-column-type) . |
-| nullable | `boolean` | Whether a column can accept null values, default true |
-| fieldLength | `number` | Number of characters for 'FixedLengthText' dataType, default (max) |
-| nullable | `boolean` | Whether a column can accept null values, default true |
-| defaultValue | `string/number/boolean` | The default value for the column, based on dataType |
+| nullable | `boolean` | Whether the column can accept null values, default is `true`. |
+| fieldLength | `number` | Number of characters for 'FixedLengthText' dataType, default is `null` (which sets fixedLengthText to MAX). |
+| nullable | `boolean` | Whether the column can accept `null` values, default is `true`. |
+| defaultValue | `string|number|boolean` | The default value for the column, based on `dataType`. |
 
 #### Response body
-Successful response contains a [column](./tables_schemas.md/#column-object) json.
+The successful response contains an instance of [Column](./tables_schemas.md/#column-object).
 
-Error response will return an [Error Response](../response_codes.md)  
+The error response contains an [Error](../response_codes.md).
 
 ### Example
 
@@ -373,7 +372,7 @@ Response
 
 ## Delete a column
 
-Delete a column
+Delete a table column.
 
 ```apacheconfig
 DELETE /v1/tables/{tableId}/columns/{columnName}
@@ -383,20 +382,20 @@ DELETE /v1/tables/{tableId}/columns/{columnName}
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| tableId | `string` | The table id to of a table. |
-| ColumnName | `string` | The name of a column, you may indicate a column with spaces either by url-encoded spaces or '_' e.g. for 'column space' it can be 'column%20space' or 'column_space' . |
+| tableId | `string` | The id of a table to delete the column from. |
+| ColumnName | `string` | The name of the column to delete. You may indicate a column with spaces either by url-encoded spaces or '_' e.g. for `column space` it can be `column%20space` or `column_space`. |
 
 #### Query parameters
-Query parameters are not expected.
+The query parameters are not expected.
 
 #### Request body
 
-Request body must be empty.
+The request body must be empty.
 
 #### Response body
-There is no Response Body
+The response body is empty.
 
-Error response will return an [Error Response](../response_codes.md)  
+The error response contains an [Error](../response_codes.md).
 
 ### Example
 
