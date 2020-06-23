@@ -78,7 +78,7 @@ The request body must contain an instance of [Table](./tables_schemas/#table-obj
 
 ```typescript
 { 
-  name       : string;
+  name: string;
   description: string
 }
 ```
@@ -138,7 +138,7 @@ The request body must contain an instance of [Table](./tables_schemas/#table-obj
 
 ```typescript
 { 
-  name       : string;
+  name: string;
   description: string
 }
 ```
@@ -261,10 +261,10 @@ The request body must contain an instance of [Column](./tables_schemas.md/#colum
 
 ```typescript
 { 
-  name        : string;
-  dataType    : TableColumnDataType;
-  nullable    : boolean;
-  fieldLength : number;
+  name: string;
+  dataType: TableColumnDataType;
+  nullable: boolean;
+  fieldLength: number;
   defaultValue: string | number | boolean
 }
 ```
@@ -295,16 +295,16 @@ Response
 
 ```json
 { 
-  "name" : "col4",
+  "name": "col4",
   "dataType": "number",
-  "defaultValue":5,
+  "defaultValue": 5,
   "fieldLength": null,
   "nullable": false
 }
 ```
 ---
 
-## Update a Column
+## Update a column
 
 Updates table column parameters.
 
@@ -327,10 +327,10 @@ The request body must contain an instance of [Column](./tables_schemas.md/#colum
 
 ```javascript
 { 
-  name        : string;
-  dataType    : TableColumnDataType;
-  nullable    : boolean;
-  fieldLength : number;
+  name: string;
+  dataType: TableColumnDataType;
+  nullable: boolean;
+  fieldLength: number;
   defaultValue: string | number | boolean
 }
 ```
@@ -383,7 +383,7 @@ DELETE /v1/tables/{tableId}/columns/{columnName}
 | Name | Type | Description |
 | ------------- |------------- | -------------|
 | tableId | `string` | The id of a table to delete the column from. |
-| ColumnName | `string` | The name of the column to delete. You may indicate a column with spaces either by url-encoded spaces or '_' e.g. for `column space` it can be `column%20space` or `column_space`. |
+| columnName | `string` | The name of the column to delete. You may indicate a column with spaces either by url-encoded spaces or '_' e.g. for `column space` it can be `column%20space` or `column_space`. |
 
 #### Query parameters
 The query parameters are not expected.

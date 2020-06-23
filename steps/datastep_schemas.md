@@ -25,7 +25,7 @@
 
 ```typescript
 type DataStep {
-    id: Pointer
+    id: string
   ; name: string
   ; isEnabled: boolean
   ; orderedName: string
@@ -38,13 +38,13 @@ type DataStep {
 ### Data Step Property
 ```typescript
 interface DataStepProperty {
-  id: Pointer
-  name: string
-  dataType: DataStepPropertyDataType
-  required: boolean
-  visible: boolean
-  informationFlowType: DataStepPropertyInformationFlowType
-  mouseoverText: string
+    id: string
+  ; name: string
+  ; dataType: DataStepPropertyDataType
+  ; required: boolean
+  ; visible: boolean
+  ; informationFlowType: DataStepPropertyInformationFlowType
+  ; mouseoverText: string
 }
 ```
 
@@ -58,16 +58,16 @@ interface CheckboxDataStepProperty extends DataStepProperty {
 ### Dropdown Data Step Property
 ```typescript
 interface DropdownDataStepProperty extends DataStepProperty {
-  value: string
-  options: string[]
+    value: string
+  ; options: string[]
 }
 ```
 
 ### Text Data Step Property
 ```typescript
 interface TextDataStepProperty extends DataStepProperty {
-  value: string
-  foregroundColor: string
+    value: string
+  ; foregroundColor: string
 }
 ```
 
@@ -88,8 +88,8 @@ interface NumberDataStepProperty extends DataStepProperty {
 ### Decimal Data Step Property
 ```typescript
 interface DecimalDataStepProperty extends DataStepProperty {
-  value: number
-  decimalPoint: number
+    value: number
+  ; decimalPoint: number
 }
 ```
 
@@ -110,7 +110,7 @@ interface DatePickerDataStepProperty extends DataStepProperty {
 ### File Data Step Property
 ```typescript
 interface FileDataStepProperty extends DataStepProperty {
-  File: Pointer
+  File: string
 }
 ```
 

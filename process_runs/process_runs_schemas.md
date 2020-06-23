@@ -1,10 +1,10 @@
-# Process runs schemas
+# Process Run Schemas
 
 [Process Run](#process-run)  
 [Process Run Request ](#process-run-request)  
 [Process Run Status](#process-run-status)  
 
-# Process runs Types
+# Process Run Types
 [Process Run Request Type](#process-run-request-type)
 [Process Run Status Type](#process-run-status-type)
 
@@ -14,34 +14,34 @@
 
 ```typescript
 type ProcessRun = {
-  id: string
-  name: string
-  process: string
-  description: string
-  lastModifiedBy: string
-  dateModified: string
-  dateCreated: string
-  alertEmailAddress: string
-  alertSMS: string
+    id: string
+  ; name: string
+  ; process: string
+  ; description: string
+  ; lastModifiedBy: string
+  ; dateModified: string
+  ; dateCreated: string
+  ; alertEmailAddress: string
+  ; alertSMS: string
 }
 ```
 ## Process Run Request
 
 ```typescript
 type ProcessRunRequest = {
-  request: ProcessRunRequestType
-  processRunId: string
+    request: ProcessRunRequestType
+  ; processRunId: string
 }
 ```
 
 ## Process Run Status
 ```typescript
 type ProcessRunStatus = {
-  id: string
-  dateStarted: string
-  dateFinished: string
-  runDurationInSeconds: number
-  status: ProcessRunStatus
+    id: string
+  ; dateStarted: string
+  ; dateFinished: string
+  ; runDurationInSeconds: number
+  ; status: ProcessRunStatus
 }
 ```
 ---
@@ -55,7 +55,7 @@ enum ProcessRunRequestType {
 }
 ```
 
-#### Process Run Status Type
+## Process Run Status Type
 ```typescript
 enum ProcessRunStatusType {
   "NotStarted" = 1,
@@ -67,7 +67,7 @@ enum ProcessRunStatusType {
 }
 ```
 
-#### Process Step Status Type
+## Process Step Status Type
 ```typescript
 enum ProcessStepStatusType {
   "NotStarted" = 1,

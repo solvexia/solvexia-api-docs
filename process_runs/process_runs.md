@@ -1,16 +1,16 @@
-# Process Runs APIs
+# Process Run APIs
 
 [Get a process run](#get-a-process-run)  
 [Start a process run](#start-a-process-run)  
 [Cancel a process run](#Cancel-a-process-run)  
 [Get process run status](#get-process-run-status)  
-[Get a list of Data steps in a process run](#get-process-run-data-steps)
+[Get a list of data steps in a process run](#get-process-run-data-steps)
 
 ---
 
 ## Get a process run
 
-Returns a [Process Run](./process_runs_schemas.md/#process-run).
+Returns a process run at the given id.
 
 ```apacheconfig
 GET /v1/processruns/{processRunId}
@@ -23,10 +23,10 @@ GET /v1/processruns/{processRunId}
 | processRunId | `string` | The process run id to request. |
 
 #### Query parameters
-Query parameters are not expected.
+The query parameters are not expected.
 
 #### Request body
-Request body must be empty.
+The request body must be empty.
 
 #### Response body
 Successful response contains a [Process Run](./process_runs_schemas.md/#process-run).
@@ -60,31 +60,30 @@ Response
 
 ## Start a process run
 
-Start a process run.
+Starts a process run.
 
 ```apacheconfig
 POST /v1/requests
 ```
 
 #### Path parameters
-Path parameters are not expected
+The path parameters are not expected.
 
 #### Query parameters
-Query parameters are not expected.
+The query parameters are not expected.
 
 #### Request body
-Request body must contain a [Process Run Request](./process_runs_schemas.md/#process-run-request)
-and 'request' property must be 'ProcessRun_CancelRq'
+The request body must contain an instance of [Process Run Request](./process_runs_schemas.md/#process-run-request). `request` property must be `ProcessRun_StartRq`.
 
 ```json
 {
   "request":"ProcessRun_StartRq",
-  "processRunId":"pr-114278"
+  "processRunId": "pr-114278"
 }
 ```
 
 #### Response body
-Successful response contains [Process Run Status](./process_runs_schemas.md/#process-run-status).
+The successful response contains an instance of [Process Run Status](./process_runs_schemas.md/#process-run-status).
 
 The error response contains an [Error](../response_codes.md).
 
@@ -111,31 +110,30 @@ Response
 
 ## Cancel a process run
 
-Cancel a currently running process run.
+Cancels a currently running process run.
 
 ```apacheconfig
 POST /v1/requests
 ```
 
 #### Path parameters
-Path parameters are not expected
+The path parameters are not expected.
 
 #### Query parameters
-Query parameters are not expected.
+The query parameters are not expected.
 
 #### Request body
-Request body must contain a [Process Run Request](./process_runs_schemas.md/#process-run-request)
-and 'request' property must be 'ProcessRun_CancelRq'
+The request body must contain an instance of [Process Run Request](./process_runs_schemas.md/#process-run-request). `request` property must be `ProcessRun_CancelRq`.
 
 ```json
 {
-  "request":"ProcessRun_CancelRq",
-  "processRunId":"pr-114278"
+  "request": "ProcessRun_CancelRq",
+  "processRunId": "pr-114278"
 }
 ```
 
 #### Response body
-Successful response contains a [Process Run Status](./process_runs_schemas.md/#process-run-status).
+The successful response contains an instance of [Process Run Status](./process_runs_schemas.md/#process-run-status).
 
 The error response contains an [Error](../response_codes.md).
 
@@ -162,7 +160,7 @@ Response
 
 ## Get process run status
 
-Get Run Status of a Process Run.
+Returns run status of a process run.
 
 ```apacheconfig
 GET /v1/processRuns/{processRunId}/runstatus
@@ -175,14 +173,14 @@ GET /v1/processRuns/{processRunId}/runstatus
 | processRunId | `string` | The process run id to request a run status for. |
 
 #### Query parameters
-Query parameters are not expected.
+The query parameters are not expected.
 
 #### Request body
 
-Request body must be empty.
+The request body must be empty.
 
 #### Response body
-Successful response contains a [Process Run Status](./process_runs_schemas.md/#process-run-status).
+The successful response contains an instance of [Process Run Status](./process_runs_schemas.md/#process-run-status).
 
 The error response contains an [Error](../response_codes.md).
 
@@ -207,9 +205,9 @@ Response
 ```
 ---
 
-## Get Process Run Data Steps
+## Get process run data steps
 
-Returns a list of all Data Steps for a specific process run.
+Returns a list of data steps for a process run.
 
 ```apacheconfig
 GET /v1/processruns/{processRunId}/steps
@@ -219,17 +217,17 @@ GET /v1/processruns/{processRunId}/steps
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| processrunId | `string` | The process run id to request a list of steps in a process run. |
+| processrunId | `string` | The process run id to request a list of data steps from. |
 
 #### Query parameters
-Query parameters are not expected.
+The query parameters are not expected.
 
 #### Request body
 
-Request body must be empty.
+The request body must be empty.
 
 #### Response body
-Successful response contains an array of [dataSteps](../steps/datastep_schemas.md/#data-step) for a process.
+The successful response contains an array of instances of [Data Step](../steps/datastep_schemas.md/#data-step).
 
 The error response contains an [Error](../response_codes.md).
 

@@ -1,16 +1,16 @@
 # Process APIs
 
-[Process List](#process-list)  
+[Get a process list](#get-a-process-list)  
 [Get a process](#get-a-process)  
 [Create a process run](#create-a-process-run)  
-[Process Run List of a process](#get-a-list-of-process-runs)  
-[Data Steps of a process](#get-process-data-steps)  
+[Process run list of a process](#get-a-list-of-process-runs)  
+[Data steps of a process](#get-process-data-steps)  
 
 ---
 
-## Process List
+## Get a process list
 
-List all processes the user has access too. Filters can be supplied to filter the results.
+Lists all processes the user has access to. The caller can supply filters to adjust the results.
 
 ```apacheconfig
 GET /api/v1/processes
@@ -25,15 +25,15 @@ This request does not have any path parameters.
 | Name | Type |Description |
 | ------------- |------------- | -------------|
 |name|`string`|Filters the results by the process name.|
-|dateCreatedStart|`string`|Filters the results by the date created start.  |
-|dateCreatedEnd|`string`|Filters the results by the process name. |
+|dateCreatedStart|`string`|The filter to return processes with `dateCreated` parameter older than `dateCreatedStart`.  |
+|dateCreatedEnd|`string`|The filter to return processes with `dateCreated` parameter earlier than `dateCreatedEnd`. |
 
 #### Request body
-Request body must be empty.
+The request body must be empty.
 
 #### Response
 
-Successful response contains an array of [Process List Item](./schemas.md/#process-list-item).
+The successful response contains an array of instances of [Process List Item](./schemas.md/#process-list-item).
 
 The error response contains an [Error](../response_codes.md).
 
@@ -63,7 +63,7 @@ Response
 
 ## Get a process
 
-Gets the process for the user.
+Returns a process at a given id.
 
 ```apacheconfig
 GET /v1/processes/{processId}
@@ -73,17 +73,17 @@ GET /v1/processes/{processId}
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| processId | `string` | The process id to request. |
+| processId | `string` | The id of a process to request. |
 
 
 #### Query parameters
-Query parameters are not expected.
+The query parameters are not expected.
 
 #### Request body
-Request body must be empty.
+The request body must be empty.
 
 #### Response body
-Successful response contains a [Process](./schemas.md/#process).
+The successful response contains an instance of a [Process](./schemas.md/#process).
 
 The error response contains an [Error](../response_codes.md).
 
@@ -115,7 +115,7 @@ Response
 
 ## Create a process run
 
-Creates a process run for a process. The process run itself is created, but not started.
+Creates a process run of a process, returning the newly created process run. The process run itself is created, but not started.
 
 ```apacheconfig
 POST /v1/processes/{processId}/processruns
@@ -128,13 +128,13 @@ POST /v1/processes/{processId}/processruns
 | processId | `string` | The process id to create a process run from. |
 
 #### Query parameters
-Query parameters are not expected.
+The query parameters are not expected.
 
 #### Request body
-Request body must be empty.
+The request body must be empty.
 
 #### Response body
-Successful response contains a [Process run](../process_runs/process_runs_schemas.md/#process-run)
+The successful response contains an instance of a [Process Run](../process_runs/process_runs_schemas.md/#process-run).
 
 The error response contains an [Error](../response_codes.md).
 
@@ -165,7 +165,7 @@ Response
 
 ## Get a list of process runs
 
-Returns a list of all process runs for a specific process.
+Returns a list of process runs for a process.
 
 ```apacheconfig
 GET /v1/processes/{processId}/processruns
@@ -175,16 +175,16 @@ GET /v1/processes/{processId}/processruns
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| processId | `string` | The process id to get a list of process runs for. |
+| processId | `string` | The process id to get a list of process runs for a process. |
 
 #### Query parameters
-Query parameters are not expected.
+The query parameters are not expected.
 
 #### Request body
-Request body must be empty.
+The request body must be empty.
 
 #### Response body
-Successful response contains an array of [Process Run List Item](./schemas.md/#process-list-item) for a process.
+The successful response contains an array of instances [Process Run List Item](./schemas.md/#process-list-item).
 
 The error response contains an [Error](../response_codes.md).
 
@@ -211,9 +211,9 @@ Response
 ]
 ```
 ---
-## Get Process Data Steps
+## Get process data steps
 
-Returns a list of all Data Steps for a specific process.
+Returns a list of data steps of a process.
 
 ```apacheconfig
 GET /v1/processes/{processId}/steps
@@ -223,16 +223,16 @@ GET /v1/processes/{processId}/steps
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| processId | `string` | The process id to get a list of process runs for. |
+| processId | `string` | The process id to get a list of data steps for. |
 
 #### Query parameters
-Query parameters are not expected.
+The query parameters are not expected.
 
 #### Request body
-Request body must be empty.
+The request body must be empty.
 
 #### Response body
-Successful response contains an array of [dataSteps](../steps/datastep_schemas.md/#data-step) for a process.
+The successful response contains an array of instances of [Data Step](../steps/datastep_schemas.md/#data-step).
 
 The error response contains an [Error](../response_codes.md).
 

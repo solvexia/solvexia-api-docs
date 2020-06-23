@@ -1,6 +1,6 @@
 # SolveXia API Docs
 
-This is an official repository for SolveXia API documentation https://app.solvexia.com/api/. Please follow this repository to see the changes over time.
+This is an official repository for the SolveXia API documentation https://app.solvexia.com/api/. Please follow this repository to see the changes over time.
 
 For bug reports or change proposals for APIs please use issues, or create pull requests.
 

@@ -9,11 +9,11 @@
 
 ```typescript
 type File = {
-  id: Pointer
-  name: string
-  sizeInBytes: number
-  fileExtension: string
-  url: string
+    id: Pointer
+  ; name: string
+  ; sizeInBytes: number
+  ; fileExtension: string
+  ; url: string
 }
 ```
 
@@ -27,9 +27,9 @@ type UploadSession = {
 ## File Chunk
 ```typescript
 type FileChunk = {
-  fileId: string
-  uploadSessionId: string
-  chunkId: number
-  chunkHash: string
+    fileId: string
+  ; uploadSessionId: string
+  ; chunkId: number
+  ; chunkHash: string
 }
 ```
