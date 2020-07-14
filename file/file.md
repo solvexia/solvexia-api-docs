@@ -186,7 +186,7 @@ The error response contains an [Error](../response_codes.md).
 Request
 
 ```shell
-curl 'https://app.solvexia.com/api/v1/files/f-2238' -x GET --header 'Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg'
+curl 'https://app.solvexia.com/api/v1/files/f-2238' -x GET --header 'Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg'--output "./123.txt"
 ```
 
 Response
