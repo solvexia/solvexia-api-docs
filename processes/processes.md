@@ -106,7 +106,7 @@ Response
     "availableToSubscriber": false,
     "runsAvailableToSubscriber": false,
     "description": "Description here",
-    "lastModifiedBy": "usaseed.john.adams",
+    "lastModifiedBy": "usa.john.adams",
     "dateModified": "2020-06-15T02:21:35.1500000",
     "dateCreated": "2020-06-15T02:21:32.2300000"
 }
@@ -156,7 +156,7 @@ Response
   "alertEmailAddress": "",
   "alertSMS": "",
   "description": "Description here",
-  "lastModifiedBy": "usaseed.john.adams",
+  "lastModifiedBy": "usa.john.adams",
   "dateModified": "2020-06-17T04:55:54.5430000",
   "dateCreated": "2020-06-17T04:55:54.5430000"
 }
