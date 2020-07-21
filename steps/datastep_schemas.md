@@ -121,6 +121,7 @@ interface FileDataStepProperty extends DataStepProperty {
 enum SysVarVariableType {
   USERNAME = "USERNAME",
   USER_ID = "USER_ID",
+  USER_EMAIL = "USER_EMAIL",
   PROCESS_ID = "PROCESS_ID",
   PROCESS_NAME = "PROCESS_NAME",
   CURRENT_DATE_TIME = "CURRENT_DATE_TIME"
