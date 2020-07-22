@@ -25,11 +25,11 @@ interface Table {
 
 ```typescript
 interface TableColumn {
-  ; name: string
+    name: string
   ; dataType: TableColumnDataType
   ; nullable: boolean
   ; fieldLength: number
-  ; defaultValue: string
+  ; defaultValue: string | boolean | number
 }
 ```
 ---
