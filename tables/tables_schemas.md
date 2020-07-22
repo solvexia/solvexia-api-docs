@@ -38,8 +38,8 @@ interface TableColumn {
 ```typescript
 enum TableColumnDataType {
   Number = "Number",
-  FixedLengthText = "Fixed length text",
-  TrueFalse = "True/False",
+  FixedLengthText = "FixedLengthText",
+  TrueFalse = "TrueFalse",
   Datetime = "Datetime",
   Decimal = "Decimal",
   Money = "Money"
