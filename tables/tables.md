@@ -276,7 +276,7 @@ The request body must contain an instance of [Column](./tables_schemas.md/#colum
 | nullable | `boolean` | OPTIONAL. Whether the column can accept null values, default is `true`. |
 | fieldLength | `number` | OPTIONAL. Number of characters for 'FixedLengthText' dataType, default is `null` (which sets fixedLengthText to MAX). |
 | nullable | `boolean` | OPTIONAL. Whether the column can accept `null` values, default is `true`. |
-| defaultValue | `string|number|boolean` | OPTIONAL. The default value for the column, based on `dataType`. |
+| defaultValue | `string`, `number`, `boolean` | OPTIONAL. The default value for the column, based on `dataType`. |
 
 #### Response body
 The successful response contains an instance of [Column](./tables_schemas.md/#column-object).
@@ -338,11 +338,11 @@ The request body must contain an instance of [Column](./tables_schemas.md/#colum
 | Name | Type | Description |
 | ------------- |------------- | -------------|
 | name | `string` | The unique name of the column. |
-| dataType | `TableColumnDataType` | [ColumnType](#table-column-type) . |
+| dataType | `TableColumnDataType` | [ColumnType](./tables_schemas.md/#table-column-type) . |
 | nullable | `boolean` | Whether the column can accept null values, default is `true`. |
 | fieldLength | `number` | Number of characters for 'FixedLengthText' dataType, default is `null` (which sets fixedLengthText to MAX). |
 | nullable | `boolean` | Whether the column can accept `null` values, default is `true`. |
-| defaultValue | `string|number|boolean` | The default value for the column, based on `dataType`. |
+| defaultValue | `string`, `number`, `boolean` | The default value for the column, based on `dataType`. |
 
 #### Response body
 The successful response contains an instance of [Column](./tables_schemas.md/#column-object).
