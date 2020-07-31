@@ -96,7 +96,8 @@ interface DecimalDataStepProperty extends DataStepProperty {
 ### System Variable Data Step Property
 ```typescript
 interface SystemVariableDataStepProperty extends DataStepProperty {
-  value: SystemVariableType
+    variableType: SystemVariableType
+  ; value: string
 }
 ```
 
