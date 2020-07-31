@@ -111,7 +111,7 @@ interface DatePickerDataStepProperty extends DataStepProperty {
 ### File Data Step Property
 ```typescript
 interface FileDataStepProperty extends DataStepProperty {
-  File: string
+  file: string
 }
 ```
 
