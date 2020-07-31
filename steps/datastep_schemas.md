@@ -89,7 +89,7 @@ interface NumberDataStepProperty extends DataStepProperty {
 ```typescript
 interface DecimalDataStepProperty extends DataStepProperty {
     value: number
-  ; decimalPoint: number
+  ; decimalPoints: number
 }
 ```
 
