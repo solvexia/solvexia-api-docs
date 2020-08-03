@@ -14,10 +14,10 @@ interface Table {
     id: string
   ; name : string
   ; description: string
-  ; sizeInBytes: decimal
+  ; sizeInBytes: number
   ; dateCreated: string
   ; dateModified: string
-  ; version: int
+  ; version: number
 }
 ```
 
