@@ -37,11 +37,11 @@ interface TableColumn {
 ## Table Column Type
 ```typescript
 enum TableColumnDataType {
-  Number = "Number",
-  FixedLengthText = "FixedLengthText",
-  TrueFalse = "TrueFalse",
-  Datetime = "Datetime",
-  Decimal = "Decimal",
-  Money = "Money"
+  Number = "number",
+  FixedLengthText = "fixedLengthText",
+  TrueFalse = "trueFalse",
+  Datetime = "datetime",
+  Decimal = "decimal",
+  Money = "money"
 }
 ```
