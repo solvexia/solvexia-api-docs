@@ -41,7 +41,6 @@ enum TableColumnDataType {
   FixedLengthText = "fixedLengthText",
   TrueFalse = "trueFalse",
   Datetime = "datetime",
-  Decimal = "decimal",
   Money = "money"
 }
 ```
