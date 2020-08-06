@@ -25,11 +25,11 @@ interface Table {
 
 ```typescript
 interface TableColumn {
-  ; name: string
+    name: string
   ; dataType: TableColumnDataType
   ; nullable: boolean
   ; fieldLength: number
-  ; defaultValue: string
+  ; defaultValue: string | boolean | number
 }
 ```
 ---
@@ -37,11 +37,10 @@ interface TableColumn {
 ## Table Column Type
 ```typescript
 enum TableColumnDataType {
-  Number = "Number",
-  FixedLengthText = "Fixed length text",
-  TrueFalse = "True/False",
-  Datetime = "Datetime",
-  Decimal = "Decimal",
-  Money = "Money"
+  Number = "number",
+  FixedLengthText = "fixedLengthText",
+  TrueFalse = "trueFalse",
+  Datetime = "datetime",
+  Money = "money"
 }
 ```
