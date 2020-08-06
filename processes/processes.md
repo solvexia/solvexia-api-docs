@@ -45,6 +45,12 @@ Request
 curl https://app.solvexia.com/api/v1/processes -X GET -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg"
 ```
 
+With query parameters
+
+```shell
+curl https://app.solvexia.com/api/v1/processes?name=sales&dateCreatedStart=2020-07-28T00:28:10.677Z -X GET -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg"
+```
+
 Response
 
 ```json
