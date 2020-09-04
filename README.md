@@ -7,7 +7,7 @@ For bug reports or change proposals for APIs please use issues, or create pull r
 ## OAuth
 The following pages detail the OAuth API's that govern OAuth authorization flows, in order to be able to generate tokens to use SolveXia APIs.
 
-[OAuth APIs](./authentication-oauth2.0.md)  
+[OAuth APIs](./oauth/authentication-oauth2.0.md)  
 
 ## Solvexia APIs
 The following pages detail the Solvexia API's to manage client resources in SolveXia automation system.
