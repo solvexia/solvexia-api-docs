@@ -1,16 +1,16 @@
 # Authorizing OAuth Apps
 
-OAuth2.0 is a protocol that allows SolveXia to communicate with third-party applications, authorise them and grant access via a generated access tokens.
+OAuth2.0 is a protocol that allows SolveXia to communicate with third-party applications, authorize them and grant access via a generated access token.
 
 OAuth2.0 flow in SolveXia is implemented according to [RFC 6749](https://tools.ietf.org/html/rfc6749) 
 to make the integration with SolveXia API as easy as possible.
 
-SolveXia API provides two main methods for generating access tokens: **Client Credentials Flow**, **Authorise Code Flow**.
+SolveXia API provides two main methods for generating access tokens: **Client Credentials Flow**, **Authorize Code Flow**.
 
-We strongly recommend using Authorise Code Flow for client production applications. 
-The Client Credentials Flow is intended to be used by internal scripts or for testing purposes. 
+We strongly recommend using authorize Code Flow for client production applications. 
+The [Client Credentials Flow](#client-credentials-flow) is intended to be used by internal scripts or for testing purposes. 
 Public third party applications that rely on SolveXia for authentication should not ask for or collect SolveXia user credentials.
-Instead, they must use the Authorise Code Flow web flow.
+Instead, they must use the [Authorization Code Flow](#authorize-code-flow).
 
 
 ### Index
@@ -22,7 +22,7 @@ Instead, they must use the Authorise Code Flow web flow.
 ## Client Credentials Flow
 
 Client Credentials Flow is available for limited contexts like internal scripts or testing. 
-The flow contains just one step which generates access token by supplying client_id and client_secret.
+The flow contains just one step which generates an access token by supplying client_id and client_secret.
 
 #### Generate access token
 
@@ -44,8 +44,8 @@ https://[env].solvexia.com/oauth/token
 
 | Name | Type |Description |
 | ------------- |------------- | -------------|
-|client_id|`string`|REQUIRED. Client id that you've received when you created an application in SolveXia.|
-|client_secret|`string`|REQUIRED. Client secret that you've received when you created an application in SolveXia.|
+|client_id|`string`|REQUIRED. Client id that you received when you created an application in SolveXia.|
+|client_secret|`string`|REQUIRED. Client secret that you received when you created an application in SolveXia.|
 |grant_type|`string`|REQUIRED. For this flow grant type should always equal to "client_credentials".|
 
 ##### Response
@@ -59,7 +59,7 @@ https://[env].solvexia.com/oauth/token
 ```
 | Name | Type |Description |
 | ------------- |------------- | -------------|
-|access_token|`string`|Access token to use for subequent API's.|
+|access_token|`string`|Access token to use for subsequent API's.|
 |token_type|`string`|Will always be "Bearer".|
 |expires_in|`number`|Seconds in which the access token will expire, for the user application to handle.|
 
@@ -73,12 +73,12 @@ curl -X POST "https://app.solvexia.com/oauth/token" \
 
 ## Authorize Code Flow
 
-Authorize Code Flow is for client public applications.
+Authorize Code Flow is for the client public applications.
 
 The flow contains the following steps:
 1. Redirect to SolveXia authorization endpoint
-2. SolveXia propmts user to login and consent
-3. Generate access token & refresh token by supplying authorisation code and client id
+2. SolveXia prompts user to login and consent
+3. Generate access token & refresh token by supplying authorization code and client id
 
 User can refresh the access token with refresh token
 
@@ -98,18 +98,18 @@ https://[env].solvexia.com/authorize?client_id=your_client_id&response_type=code
 |redirect_uri|`string`|OPTIONAL. If not supplied it will use configured redirect url of the oauth application, if supplied it must match the oauth application redirect url.|
 |state|`string`|OPTIONAL. Specifies any string value that your application uses to maintain state between your authorization request and the authorization server's response.|
 
-After SolveXia authorization server successfully verifies your parameters it will redirect user to the login page and further authorization form.
+After the SolveXia authorization server successfully verifies your parameters, it will redirect the user to the login page and, as a next step, to the authorization form.
 
-#### 2. SolveXia propmts user to login and consent
+#### 2. SolveXia prompts user to login and consent
 ![login](login.png)
 
 In this step, the user logs in and considers whether to grant your application the requested access. At this stage, SolveXia displays a consent form that shows the name of your application.
-The user can then authorise access to their SolveXia resources requested by your application or refuse the request.
+The user can then authorize access to their SolveXia resources requested by your application or refuse the request.
 
 ![authorize](authorize.png)
 
-If user authorises access you will be redirected back to the supplied (or configured) redirect uri with authorization code in the query string.
-If you supplied additional state parameter in the first step, SolveXia will return that as well.
+If the user authorizes access, you will be redirected back to the supplied (or configured) redirect uri with the authorization code in the query string.
+If you supplied an additional state parameter in the first step, SolveXia will return that as well.
 
 ```http
 GET
@@ -118,7 +118,7 @@ https://example.return_url.com?code=authorization_code
 
 #### 3. Exchange authorization code for access and refresh tokens
 
-Finally you can exchange the authorization code for an access token. Note, that authorization code has a short life span of 5 seconds.
+Finally, you can exchange the authorization code for an access token. Note, that authorization code has a short life span of 5 seconds.
 
 ```http
 POST
@@ -148,7 +148,7 @@ https://[env].solvexia.com/oauth/token
 
 ##### Response
 
-By default response comes in JSON.
+By default, response comes in JSON.
 
 ```json
 {
@@ -160,7 +160,7 @@ By default response comes in JSON.
 ```
 | Name | Type |Description |
 | ------------- |------------- | -------------|
-|access_token|`string`|Access token to use for subequent API's.|
+|access_token|`string`|Access token to use for subsequent API's.|
 |refresh_token|`string`|Refresh token to use for Refresh request to generate new Access Token. Has a default expiration of 6 months.|
 |token_type|`string`|Will always be "Bearer".|
 |expires_in|`number`|Seconds in which the access token will expire, for the user application to handle.|
@@ -203,7 +203,7 @@ https://[env].solvexia.com/oauth/token
 
 ##### Response
 
-By default response comes in JSON.
+By default, response comes in JSON.
 
 ```json
 {
@@ -215,7 +215,7 @@ By default response comes in JSON.
 ```
 | Name | Type |Description |
 | ------------- |------------- | -------------|
-|access_token|`string`|Access token to use for subequent API's.|
+|access_token|`string`|Access token to use for subsequent API's.|
 |refresh_token|`string`|Refresh token to use for Refresh request to generate new Access Token. Has a default expiration of 6 months.|
 |token_type|`string`|Will always be "Bearer".|
 |expires_in|`number`|Seconds in which the access token will expire, for the user application to handle.|
@@ -232,8 +232,7 @@ curl -X POST "https://app.solvexia.com/oauth/token" \
 ## Call SolveXia public API with access token
 
 ```http
-GET 
-https://app.solvexia.com/api/v1/processes
+GET https://app.solvexia.com/api/v1/processes
 
 Authorization: Bearer ACCESS_TOKEN
 ```
