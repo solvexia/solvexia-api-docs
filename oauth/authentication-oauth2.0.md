@@ -109,7 +109,7 @@ The user can then authorize access to their SolveXia resources requested by your
 ![authorize](authorize.png)
 
 If the user authorizes access, you will be redirected back to the supplied (or configured) redirect uri with the authorization code in the query string.
-If you supplied an additional state parameter in the first step, SolveXia will return that as well.
+If you supplied an optional state parameter in the first step, SolveXia will return that as well.
 
 ```http
 GET
