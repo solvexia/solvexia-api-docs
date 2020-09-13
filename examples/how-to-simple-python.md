@@ -28,12 +28,12 @@ First we need to create a function that obtains an access token via Client Crede
 
 ```python
 
-import "requests"
-import "sys"
+import requests
+import sys
 
-client_id = "***"
-client_secret = "***"
-environment = "https://app.solvexia.com"
+client_id = "your_client_id"
+client_secret = "your_client_secret"
+environment = "https://your_environment_name.solvexia.com"
 
 def get_access_token():
   pload = {'client_id': client_id, 'client_secret': client_secret, 'grant_type': 'client_credentials'}
@@ -49,16 +49,17 @@ def get_access_token():
 
 ### Make an API call
 
-Now we are ready to make an API call.
+Now we are ready to make an API call. 
+To run the script against with your application credentials replace client_id, client_secret, environment url and process id.
 
 ```python
 
-import "requests"
-import "sys"
+import requests
+import sys
 
-client_id = "***"
-client_secret = "***"
-environment = "https://app.solvexia.com"
+client_id = "your_client_id"
+client_secret = "your_client_secret"
+environment = "https://your_environment_name.solvexia.com"
 
 def get_access_token():
   pload = {'client_id': client_id, 'client_secret': client_secret, 'grant_type': 'client_credentials'}
@@ -80,7 +81,7 @@ def get_process_by_id(pid):
           sys.exit()
   return resp.json()
 
-process = get_process_by_id('p-10616')
+process = get_process_by_id('your_process_id')
 
 print(process)
 
