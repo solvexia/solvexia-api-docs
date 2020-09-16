@@ -40,8 +40,8 @@ def get_access_token():
   url = environment + '/oauth/token'
   r = requests.post(url, data = pload)
   if r.status_code != 200 :
-          print("Error with generating an Access Token via Client Credential Flow")
-          sys.exit()
+    print("Error with generating an Access Token via Client Credential Flow")
+    sys.exit()
   access_token = r.json()['access_token']
   hload = {'Authorization': 'Bearer ' + access_token}
   return hload
@@ -50,7 +50,7 @@ def get_access_token():
 ### Make an API call
 
 Now we are ready to make an API call. 
-To run the script against with your application credentials replace client_id, client_secret, environment url and process id.
+To run the script with your application credentials, replace client_id, client_secret, environment url and process id.
 
 ```python
 
@@ -66,8 +66,8 @@ def get_access_token():
   url = environment + '/oauth/token'
   r = requests.post(url, data = pload)
   if r.status_code != 200 :
-          print("Error with generating an Access Token via Client Credential Flow")
-          sys.exit()
+    print("Error with generating an Access Token via Client Credential Flow")
+    sys.exit()
   access_token = r.json()['access_token']
   hload = {'Authorization': 'Bearer ' + access_token}
   return hload
@@ -76,9 +76,9 @@ def get_process_by_id(pid):
   hload = get_access_token()
   resp = requests.get(environment + '/api/v1/processes/' + pid, headers = hload)
   if resp.status_code != 200 :
-          print("Error occured while getting a process with pid" + pid)
-          print(resp.json().message)
-          sys.exit()
+    print("Error occured while getting a process with pid" + pid)
+    print(resp.json().message)
+    sys.exit()
   return resp.json()
 
 process = get_process_by_id('your_process_id')
