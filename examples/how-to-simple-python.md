@@ -36,15 +36,16 @@ client_secret = "your_client_secret"
 environment = "https://your_environment_name.solvexia.com"
 
 def get_access_token():
-  pload = {'client_id': client_id, 'client_secret': client_secret, 'grant_type': 'client_credentials'}
-  url = environment + '/oauth/token'
-  r = requests.post(url, data = pload)
-  if r.status_code != 200 :
-    print("Error with generating an Access Token via Client Credential Flow")
-    sys.exit()
-  access_token = r.json()['access_token']
-  hload = {'Authorization': 'Bearer ' + access_token}
-  return hload
+    pload = {'client_id': client_id, 'client_secret': client_secret,
+             'grant_type': 'client_credentials'}
+    url = environment + '/oauth/token'
+    r = requests.post(url, data=pload)
+    if r.status_code != 200:
+        print("Error with generating an Access Token via Client Credential Flow")
+        sys.exit()
+    access_token = r.json()['access_token']
+    hload = {'Authorization': 'Bearer ' + access_token}
+    return hload
 ```
 
 ### Make an API call
@@ -62,24 +63,28 @@ client_secret = "your_client_secret"
 environment = "https://your_environment_name.solvexia.com"
 
 def get_access_token():
-  pload = {'client_id': client_id, 'client_secret': client_secret, 'grant_type': 'client_credentials'}
-  url = environment + '/oauth/token'
-  r = requests.post(url, data = pload)
-  if r.status_code != 200 :
-    print("Error with generating an Access Token via Client Credential Flow")
-    sys.exit()
-  access_token = r.json()['access_token']
-  hload = {'Authorization': 'Bearer ' + access_token}
-  return hload
+    pload = {'client_id': client_id, 'client_secret': client_secret,
+             'grant_type': 'client_credentials'}
+    url = environment + '/oauth/token'
+    r = requests.post(url, data=pload)
+    if r.status_code != 200:
+        print("Error with generating an Access Token via Client Credential Flow")
+        sys.exit()
+    access_token = r.json()['access_token']
+    hload = {'Authorization': 'Bearer ' + access_token}
+    return hload
 
-def get_process_by_id(pid): 
-  hload = get_access_token()
-  resp = requests.get(environment + '/api/v1/processes/' + pid, headers = hload)
-  if resp.status_code != 200 :
-    print("Error occured while getting a process with pid" + pid)
-    print(resp.json().message)
-    sys.exit()
-  return resp.json()
+
+def get_process_by_id(pid):
+    hload = get_access_token()
+    resp = requests.get(
+        environment + '/api/v1/processes/' + pid, headers=hload)
+    if resp.status_code != 200:
+        print("Error occured while getting a process with pid" + pid)
+        print(resp.json().message)
+        sys.exit()
+    return resp.json()
+
 
 process = get_process_by_id('your_process_id')
 
