@@ -86,7 +86,7 @@ User can refresh the access token with refresh token
 
 ```http
 GET
-https://[env].solvexia.com/authorize?client_id=your_client_id&response_type=code&redirect_uri=your_return_url
+https://[env].solvexia.com/oauth/authorize?client_id=your_client_id&response_type=code&redirect_uri=your_return_url
 ```
 
 ##### Parameters
