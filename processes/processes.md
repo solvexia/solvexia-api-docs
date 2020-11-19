@@ -137,7 +137,12 @@ POST /v1/processes/{processId}/processruns
 The query parameters are not expected.
 
 #### Request body
-The request body must be empty.
+The request body is optional. When supplied, it must be in the following format. Run name is prefixed with given "namePrefix"
+```
+{
+   "namePrefix": string
+}
+```
 
 #### Response body
 The successful response contains an instance of a [Process Run](../process_runs/process_runs_schemas.md/#process-run).
