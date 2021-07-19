@@ -138,7 +138,7 @@ The query parameters are not expected.
 The request body must be empty.
 
 #### Response body
-The successful response contains an instance of [Data Step Property](#./datastep_schemas.md/#data-step-property).
+The successful response contains an instance of [Data Step Property](./datastep_schemas.md/#data-step-property).
 
 The error response contains an [Error](../response_codes.md).
 
@@ -185,10 +185,10 @@ POST /v1/steps/{stepId}/properties/{propertyId}
 The query parameters are not expected.
 
 #### Request body
-The request body must contain an instance of [Data Step Property](#./datastep_schemas.md/#data-step-property).
+The request body must contain an instance of [Data Step Property](./datastep_schemas.md/#data-step-property).
 
 #### Response body
-The successful response contains an instance of [Data Step Property](#./datastep_schemas.md/#data-step-property).
+The successful response contains an instance of [Data Step Property](./datastep_schemas.md/#data-step-property).
 
 The error response contains an [Error](../response_codes.md).
 
