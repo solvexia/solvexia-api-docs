@@ -3,10 +3,6 @@
 [Get a user group list](#get-a-user-group-list)  
 [Get a user group](#get-a-user-group)  
 [Get members for a user group](#get-members-for-a-user-group)  
-[Create a process run](#create-a-process-run)  
-[Process run list of a process](#get-a-list-of-process-runs)  
-[Data steps of a process](#get-process-data-steps)  
-
 ---
 
 ## Get a user group list
@@ -147,9 +143,9 @@ Response
 ```json
 {
   "id": "pr-114283",
-  "accountActive": false,
-  "city": null,
-  "country": null,
+  "accountActive": true,
+  "city": "Sydney",
+  "country": "Australia",
   "dateOfBirth": null,
   "department": null,
   "email": "tom.jordan@example.com",
