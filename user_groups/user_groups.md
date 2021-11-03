@@ -3,11 +3,12 @@
 [Get a user group list](#get-a-user-group-list)  
 [Get a user group](#get-a-user-group)  
 [Get members for a user group](#get-members-for-a-user-group)  
+
 ---
 
 ## Get a user group list
 
-Lists all the user groups.
+List all the user groups.
 
 ```apacheconfig
 GET /api/v1/userGroups
@@ -107,7 +108,7 @@ Response
 
 ## Get members for a user group
 
-Get list of members for a user group.
+Get a list of members for a user group.
 
 ```apacheconfig
 POST /v1/userGroups/{userGroupId}/members
