@@ -4,7 +4,7 @@
 [Get a user group](#get-a-user-group)  
 [Get members for a user group](#get-members-for-a-user-group)  
 [Get user group permission](#get-user-group-permission) 
-[Add/Update user group permission for a resource](#add/update-user-group-permission-for-a-resource)
+[Add or update user group permission for a resource](#add-or-update-user-group-permission-for-a-resource)
 
 ---
 
@@ -172,7 +172,7 @@ The query parameters are not expected.
 The request body must be empty.
 
 #### Response body
-The successful response contains a list of [Permission](../users/user_groups_schemas.md/#permission).
+The successful response contains a list of [Permission](./user_groups_schemas.md/#permission).
 
 The error response contains an [Error](../response_codes.md).
 
@@ -202,7 +202,7 @@ Response
 ```
 ---
 
-## Add/Update user group permission for a resource
+## Add or update user group permission for a resource
 
 Add or update resource permission of a user group.
 
@@ -215,6 +215,7 @@ POST /v1/userGroups/{userGroupId}/permissions/{resourceId}
 | Name | Type | Description |
 | ------------- |------------- | -------------|
 | userGroupId | `string` | The user group id to request. |
+| resourceId | `string` | The resource id to add or update. |
 
 #### Query parameters
 The query parameters are not expected.
@@ -223,7 +224,7 @@ The query parameters are not expected.
 The request body must be empty.
 
 #### Response body
-The successful response contains a [Permission Role Type](../users/user_groups_schemas.md/##permission-role-type).
+The successful response contains a [Permission Role Type](./user_groups_schemas.md/##permission-role-type).
 
 The error response contains an [Error](../response_codes.md).
 
@@ -244,6 +245,7 @@ Response
   "role": "Editor"
 }
 ```
+
 ---
 
 ## Delete user group permission for a resource
@@ -259,6 +261,7 @@ DELETE /v1/userGroups/{userGroupId}/permissions/{resourceId}
 | Name | Type | Description |
 | ------------- |------------- | -------------|
 | userGroupId | `string` | The user group id to request. |
+| resourceId | `string` | The resource id to delete. |
 
 #### Query parameters
 The query parameters are not expected.
@@ -282,4 +285,5 @@ curl "https:///app.solvexia.com/api/v1/userGroups/ug-114273/permisions/p-2343" -
 Response
 
 200 OK
+
 ---
