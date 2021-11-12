@@ -3,7 +3,7 @@
 [Get a user group list](#get-a-user-group-list)  
 [Get a user group](#get-a-user-group)  
 [Get members for a user group](#get-members-for-a-user-group)  
-[Get user group permission](#get-user-group-permission)
+[Get user group permission](#get-user-group-permission)  
 [Add or update user group permission for a resource](#add-or-update-user-group-permission-for-a-resource)
 
 ---
