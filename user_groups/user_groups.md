@@ -225,7 +225,7 @@ The query parameters are not expected.
 The request body must be empty.
 
 #### Response body
-The successful response contains a [Permission Role Type](./user_groups_schemas.md/##permission-role-type).
+The successful response contains a [Permission Role Type](./user_groups_schemas.md/#permission-role-type).
 
 The error response contains an [Error](../response_codes.md).
 
