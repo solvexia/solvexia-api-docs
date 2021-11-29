@@ -192,12 +192,12 @@ Response
   {
     "resourceId": "p-2343",
     "resourceName": "Sales reconciliation",
-    "role": "Executor"
+    "role": "executor"
   },
   {
     "resourceId": "mt-4323",
     "resourceName": "Monthly Revenue",
-    "role": "Reader"
+    "role": "reader"
   }
 ]
 ```
@@ -222,7 +222,11 @@ POST /v1/userGroups/{userGroupId}/permissions/{resourceId}
 The query parameters are not expected.
 
 #### Request body
-The request body must be empty.
+```json
+{
+  "role": "editor"
+}
+```
 
 #### Response body
 The successful response contains a [Permission Role Type](./user_groups_schemas.md/#permission-role-type).
@@ -234,7 +238,7 @@ The error response contains an [Error](../response_codes.md).
 Request
 
 ```shell
-curl "https:///app.solvexia.com/api/v1/userGroups/ug-114273/permisions/p-2343" -X POST -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg" -H "Content-Type: application/json" -d '{"role": "Editor"}'
+curl "https:///app.solvexia.com/api/v1/userGroups/ug-114273/permisions/p-2343" -X POST -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg" -H "Content-Type: application/json" -d '{"role": "editor"}'
 ```
 
 Response
@@ -243,7 +247,7 @@ Response
 {
   "resourceId": "p-2343",
   "resourceName": "Sales reconciliation",
-  "role": "Editor"
+  "role": "editor"
 }
 ```
 
