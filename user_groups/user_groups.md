@@ -4,8 +4,8 @@
 [Get a user group](#get-a-user-group)  
 [Get members for a user group](#get-members-for-a-user-group)  
 [Get user group permission](#get-user-group-permission)  
-[Add or update user group permission for a resource](#add-or-update-user-group-permission-for-a-resource)  
-[Delete or update user group permission for a resource](#delete-user-group-permission-for-a-resource)
+[Add or update user group permission](#add-or-update-user-group-permission)  
+[Delete or update user group permission](#delete-user-group-permission)
 
 ---
 

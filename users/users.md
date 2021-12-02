@@ -4,8 +4,8 @@
 [Get a user](#get-a-user)  
 [Disable user account](#disable-user-account)  
 [Get user permission](#get-user-permission)  
-[Add or update user permission for a resource](#add-or-update-user-permission-for-a-resource)  
-[Delete user permission for a resource](#delete-user-permission-for-a-resource)
+[Add or update user permission](#add-or-update-user-permission)  
+[Delete user permission](#delete-user-permission)
 
 ---
 
