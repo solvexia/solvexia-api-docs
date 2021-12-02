@@ -42,12 +42,6 @@ Request
 curl https://app.solvexia.com/api/v1/userGroups -X GET -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg"
 ```
 
-With query parameters
-
-```shell
-curl https://app.solvexia.com/api/v1/userGroups -X GET -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg"
-```
-
 Response
 
 ```json
@@ -139,16 +133,22 @@ The error response contains an [Error](../response_codes.md).
 Request
 
 ```shell
-curl "https:///app.solvexia.com/api/v1/userGroups/ug-114273/members" -X POST -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg"
+curl "https://app.solvexia.com/api/v1/userGroups/ug-114273/members" -X GET -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg"
 ```
 
 Response
 
 ```json
-{
-  "id": "pr-114283",
-  "loginName": "template.tom.jordan"
-}
+[
+  {
+    "id": "u-1233",
+    "loginName": "template.tom.jordan"
+  },
+  {
+    "id": "u-1463",
+    "loginName": "template.jack.mayer"
+  }
+]
 ```
 ---
 
@@ -182,7 +182,7 @@ The error response contains an [Error](../response_codes.md).
 Request
 
 ```shell
-curl "https:///app.solvexia.com/api/v1/userGroups/ug-114273/permisions" -X POST -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg"
+curl "https://app.solvexia.com/api/v1/userGroups/ug-114273/permisions" -X GET -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg"
 ```
 
 Response
@@ -203,7 +203,7 @@ Response
 ```
 ---
 
-## Add or update user group permission for a resource
+## Add or update user group permission
 
 Add or update resource permission of a user group.
 
@@ -238,7 +238,7 @@ The error response contains an [Error](../response_codes.md).
 Request
 
 ```shell
-curl "https:///app.solvexia.com/api/v1/userGroups/ug-114273/permisions/p-2343" -X POST -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg" -H "Content-Type: application/json" -d '{"role": "editor"}'
+curl "https://app.solvexia.com/api/v1/userGroups/ug-114273/permisions/p-2343" -X POST -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg" -H "Content-Type: application/json" -d '{"role": "editor"}'
 ```
 
 Response
@@ -253,7 +253,7 @@ Response
 
 ---
 
-## Delete user group permission for a resource
+## Delete user group permission
 
 Delete resource permission of a user group.
 
@@ -284,7 +284,7 @@ The error response contains an [Error](../response_codes.md).
 Request
 
 ```shell
-curl "https:///app.solvexia.com/api/v1/userGroups/ug-114273/permisions/p-2343" -X POST -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg"
+curl "https://app.solvexia.com/api/v1/userGroups/ug-114273/permisions/p-2343" -X DELETE -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg"
 ```
 
 Response
