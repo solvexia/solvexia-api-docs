@@ -4,7 +4,7 @@
 [Get a user](#get-a-user)  
 [Disable user account](#disable-user-account)  
 [Get user permission](#get-user-permission)  
-[Add or update user permission](#add-or-update-user-permission)  
+[Add or update user permission for a given resource](#add-or-update-user-permission-for-a-given-resource)  
 [Delete user permission](#delete-user-permission)
 
 ---
@@ -198,7 +198,7 @@ The query parameters are not expected.
 The request body must be empty.
 
 #### Response body
-The successful response contains a list of [Permission](./permissions/permissions_schemas.md/#permission).
+The successful response contains a list of [Permission](../permissions/permissions_schemas.md/#permission).
 
 The error response contains an [Error](../response_codes.md).
 
@@ -254,7 +254,7 @@ The query parameters are not expected.
 ```
 
 #### Response body
-The successful response contains a [Permission Role Type](./permissions/permissions_schemas.md/#permission-role-type).
+The successful response contains a [Permission Role Type](../permissions/permissions_schemas.md/#permission-role-type).
 
 The error response contains an [Error](../response_codes.md).
 

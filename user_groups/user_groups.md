@@ -4,7 +4,7 @@
 [Get a user group](#get-a-user-group)  
 [Get members for a user group](#get-members-for-a-user-group)  
 [Get user group permission](#get-user-group-permission)  
-[Add or update user group permission](#add-or-update-user-group-permission)  
+[Add or update user group permission for a given resource](#add-or-update-user-group-permission-for-a-given-resource)  
 [Delete or update user group permission](#delete-user-group-permission)
 
 ---
@@ -173,7 +173,7 @@ The query parameters are not expected.
 The request body must be empty.
 
 #### Response body
-The successful response contains a list of [Permission](./permissions/permissions_schemas.md/#permission).
+The successful response contains a list of [Permission](../permissions/permissions_schemas.md/#permission).
 
 The error response contains an [Error](../response_codes.md).
 
