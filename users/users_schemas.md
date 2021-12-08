@@ -1,9 +1,7 @@
-# Process schemas
+# User schemas
 
 [User List Item](#user-list-item)  
 [User](#user)  
-[Permission](#permission)  
-[Permission Role Type](#permission-role-type)
 
 ## User List Item
 
@@ -33,27 +31,5 @@ type User = {
   ; timeZoneHasDaylightSavings: boolean
   ; timezone: string
   ; userRole: string
-}
-```
-## Permission
-
-### Permission
-
-```typescript
-type Permission = {
-    resourceId: string
-  ; resourceName: string
-  ; role: PermissionRoleType
-}
-```
-
-### Permission Role Type
-
-```typescript
-enum PermissionRoleType {
-  Owner = "owner",
-  Editor = "editor",
-  Executor = "executor",
-  Reader = "reader"
 }
 ```

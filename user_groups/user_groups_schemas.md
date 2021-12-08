@@ -1,9 +1,7 @@
-# Process schemas
+# User Group schemas
 
 [User Group List Item](#user-group-list-item)  
 [User Group](#user-group)  
-[Permission](#permission)  
-[Permission Role Type](#permission-role-type)
 
 ## User Group List Item
 
@@ -21,27 +19,5 @@ type UserGroup = {
     id: string
   ; name: string
   ; description: string
-}
-```
-## Permission
-
-### Permission
-
-```typescript
-type Permission = {
-    resourceId: string
-  ; resourceName: string
-  ; role: PermissionRoleType
-}
-```
-
-### Permission Role Type
-
-```typescript
-enum PermissionRoleType {
-  Owner = "Owner",
-  Editor = "Editor",
-  Executor = "Executor",
-  Reader = "Reader"
 }
 ```

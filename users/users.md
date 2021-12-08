@@ -198,7 +198,7 @@ The query parameters are not expected.
 The request body must be empty.
 
 #### Response body
-The successful response contains a list of [Permission](./users_schemas.md/#permission).
+The successful response contains a list of [Permission](./permissions/permissions_schemas.md/#permission).
 
 The error response contains an [Error](../response_codes.md).
 
@@ -228,7 +228,7 @@ Response
 ```
 ---
 
-## Add or update user permission
+## Add or update user permission for a given resource
 
 Add or update resource permission of a user.
 
@@ -254,7 +254,7 @@ The query parameters are not expected.
 ```
 
 #### Response body
-The successful response contains a [Permission Role Type](./users_schemas.md/#permission-role-type).
+The successful response contains a [Permission Role Type](./permissions/permissions_schemas.md/#permission-role-type).
 
 The error response contains an [Error](../response_codes.md).
 
