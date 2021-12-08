@@ -3,7 +3,7 @@
 [Get a user group list](#get-a-user-group-list)  
 [Get a user group](#get-a-user-group)  
 [Get members for a user group](#get-members-for-a-user-group)  
-[Get user group permission](#get-user-group-permission)  
+[Get user group permissions](#get-user-group-permissions)  
 [Add or update user group permission for a given resource](#add-or-update-user-group-permission-for-a-given-resource)  
 [Delete or update user group permission](#delete-user-group-permission)
 
@@ -152,7 +152,7 @@ Response
 ```
 ---
 
-## Get user group permission
+## Get user group permissions
 
 Get a list of user group permissions.
 

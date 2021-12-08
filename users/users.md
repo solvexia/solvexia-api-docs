@@ -3,7 +3,7 @@
 [Get a user list](#get-a-user-list)  
 [Get a user](#get-a-user)  
 [Disable user account](#disable-user-account)  
-[Get user permission](#get-user-permission)  
+[Get user permissions](#get-user-permissions)  
 [Add or update user permission for a given resource](#add-or-update-user-permission-for-a-given-resource)  
 [Delete user permission](#delete-user-permission)
 
@@ -177,7 +177,7 @@ Response
 ```
 ---
 
-## Get user permission
+## Get user permissions
 
 Get a list of user permissions.
 
