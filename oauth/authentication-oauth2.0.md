@@ -101,12 +101,12 @@ https://[env].solvexia.com/oauth/authorize?client_id=your_client_id&response_typ
 After the SolveXia authorization server successfully verifies your parameters, it will redirect the user to the login page and, as a next step, to the authorization form.
 
 #### 2. SolveXia prompts user to login and consent
-![login](login.png)
+![login](login_new.png)
 
 In this step, the user logs in and considers whether to grant your application the requested access. At this stage, SolveXia displays a consent form that shows the name of your application.
 The user can then authorize access to their SolveXia resources requested by your application or refuse the request.
 
-![authorize](authorize.png)
+![authorize](authorize_new.png)
 
 If the user authorizes access, you will be redirected back to the supplied (or configured) redirect uri with the authorization code in the query string.
 If you supplied an optional state parameter in the first step, SolveXia will return that as well.
