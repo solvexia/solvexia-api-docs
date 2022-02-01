@@ -24,6 +24,7 @@ type User = {
   ; accountActive: boolean
   ; city: string
   ; country: string
+  ; department: string
   ; dateOfBirth: string
   ; lastSignInDate: string
   ; phoneNumberLand: string

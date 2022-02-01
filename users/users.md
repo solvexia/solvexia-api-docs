@@ -63,7 +63,7 @@ Response
 Returns a user at a given id.
 
 ```apacheconfig
-GET /v1/users/{useId}
+GET /v1/users/{userId}
 ```
 
 #### Path parameters
@@ -121,7 +121,7 @@ Response
 Disable a user account.
 
 ```apacheconfig
-POST /v1/users/{useId}
+POST /v1/users/{userId}
 ```
 
 #### Path parameters
@@ -233,7 +233,7 @@ Response
 Add or update resource permission of a user.
 
 ```apacheconfig
-POST /v1/users/{useId}/permissions/{resourceId}
+POST /v1/users/{userId}/permissions/{resourceId}
 ```
 
 #### Path parameters
