@@ -36,5 +36,5 @@ The following pages detail the Solvexia API's to manage client resources in Solv
 [Data Step APIs](./steps/datasteps.md)  
 [Table APIs](./tables/tables.md)   
 [File APIs](./file/file.md)   
-[User APIs](./users/users.md)
+[User APIs](./users/users.md)   
 [User Group APIs](./user_groups/user_groups.md)
