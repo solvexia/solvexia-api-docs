@@ -1,7 +1,8 @@
 # User schemas
 
 [User List Item](#user-list-item)  
-[User](#user)  
+[User](#user) 
+[Account Status](#account-status) 
 
 ## User List Item
 
@@ -32,5 +33,14 @@ type User = {
   ; timeZoneHasDaylightSavings: boolean
   ; timezone: string
   ; userRole: string
+}
+```
+
+## Account Status
+
+```typescript
+enum AccountStatus = {
+    "Active": "Active"
+  ; "Suspended": "Suspended"
 }
 ```

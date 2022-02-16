@@ -134,9 +134,10 @@ POST /v1/users/{userId}
 The query parameters are not expected.
 
 #### Request body
+The request body must contain a property [Account Status](../users/users_schemas.md/#account-status) 
 ```json
 {
-    "accountActive": false
+    "accountStatus": "Suspended"
 }
 ```
 
