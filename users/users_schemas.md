@@ -42,5 +42,6 @@ type User = {
 enum AccountStatus = {
     "Active": "Active"
   ; "Suspended": "Suspended"
+  ; "Locked": "Locked"
 }
 ```
