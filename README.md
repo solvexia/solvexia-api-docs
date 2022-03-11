@@ -4,6 +4,10 @@ This is an official repository for the SolveXia Public API documentation. Please
 
 For bug reports or change proposals for APIs please use issues, or create pull requests.
 
+## Overview
+
+SolveXia APIs allow users to manage and control their data in SolveXia system programmatically and extend SolveXia capabilities in new and powerful ways. SolveXia APIs use the [OAuth 2.0 protocol](https://datatracker.ietf.org/doc/html/rfc6749) for authentication and authorization. SolveXia supports two main flows: Client Credentials flow for the server-to-server communication and Authorization Code flow for client-side integration scenarios.
+
 ## Gettings started
 
 In order to get started using SolveXia Public API you need to create an application in SolveXia API portal.
