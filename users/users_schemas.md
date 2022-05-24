@@ -2,6 +2,7 @@
 
 [User List Item](#user-list-item)  
 [User](#user)  
+[Account Status](#account-status)
 
 ## User List Item
 
@@ -22,6 +23,7 @@ type User = {
   ; loginName: string
   ; email: string
   ; accountActive: boolean
+  ; accountStatus: string
   ; city: string
   ; country: string
   ; department: string
@@ -32,5 +34,14 @@ type User = {
   ; timeZoneHasDaylightSavings: boolean
   ; timezone: string
   ; userRole: string
+}
+```
+
+## Account Status
+```typescript
+enum AccountStatus = {
+    "Active": "Active"
+  ; "Suspended": "Suspended"
+  ; "Locked": "Locked"
 }
 ```
