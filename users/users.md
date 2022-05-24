@@ -2,8 +2,7 @@
 
 [Get a user list](#get-a-user-list)  
 [Get a user](#get-a-user)  
-[Create user account](#create-user-account)
-[Disable user account](#disable-user-account)  
+[Create user account](#create-user-account)  
 [Get user permissions](#get-user-permissions)  
 [Add or update user permission for a given resource](#add-or-update-user-permission-for-a-given-resource)  
 [Delete user permission](#delete-user-permission)
@@ -135,13 +134,13 @@ The query parameters are not expected.
 #### Request body
 
 | Name | Type | Description | Required |
-| ------------- |------------- | -------------| --- |
+| ---- | ---- | ------------| :---: |
 | email | `string` | The new user’s email. | &#9745; |
 | firstName | `string` | The new user’s first name. | &#9745; |
 | lastName | `string` | The new user’s last name. | &#9745; |
 | password | `string` | The new user’s password. | &#9745; |
 | userRole | `enum` | The new user’s [role](./users_schemas.md/#user-roles). | &#9745; |
-| timezone | `enum` | The new user’s [timezone](./users_schemas.md/#time-zone). | <ul><li>- [x] required</li></ul> |
+| timezone | `enum` | The new user’s [timezone](./users_schemas.md/#time-zone). | &#9745; |
 
 Example
 ```json
