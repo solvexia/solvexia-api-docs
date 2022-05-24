@@ -3,7 +3,7 @@
 [Get a user list](#get-a-user-list)  
 [Get a user](#get-a-user)  
 [Create user account](#create-user-account)  
-[Disable user account](#disable-user-account)
+[Disable user account](#disable-user-account)<br />
 [Get user permissions](#get-user-permissions)  
 [Add or update user permission for a given resource](#add-or-update-user-permission-for-a-given-resource)  
 [Delete user permission](#delete-user-permission)
