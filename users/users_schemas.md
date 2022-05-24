@@ -3,6 +3,8 @@
 [User List Item](#user-list-item)  
 [User](#user)  
 [Account Status](#account-status)
+[User Roles](#user-roles)
+[Time Zone](#time-zone)
 
 ---
 
