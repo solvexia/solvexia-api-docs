@@ -136,12 +136,12 @@ The query parameters are not expected.
 
 | Name | Type | Description | Required |
 | ------------- |------------- | -------------| --- |
-| email | `string` | The new user’s email. | <ul><li>- [x]</li></ul> |
-| firstName | `string` | The new user’s first name. | <ul><li>- [x]</li></ul> |
-| lastName | `string` | The new user’s last name. | <ul><li>- [x]</li></ul> |
-| password | `string` | The new user’s password. | <ul><li>- [x]</li></ul> |
-| userRole | `enum` | The new user’s [role](./users_schemas.md/#user-roles). | <ul><li>- [x]</li></ul> |
-| timezone | `enum` | The new user’s [timezone](./users_schemas.md/#time-zone). | <ul><li>- [x]</li></ul> |
+| email | `string` | The new user’s email. | &#9745; |
+| firstName | `string` | The new user’s first name. | &#9745; |
+| lastName | `string` | The new user’s last name. | &#9745; |
+| password | `string` | The new user’s password. | &#9745; |
+| userRole | `enum` | The new user’s [role](./users_schemas.md/#user-roles). | &#9745; |
+| timezone | `enum` | The new user’s [timezone](./users_schemas.md/#time-zone). | <ul><li>- [x] required</li></ul> |
 
 Example
 ```json
