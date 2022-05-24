@@ -6,6 +6,8 @@
 [User Roles](#user-roles)
 [Time Zone](#time-zone)
 
+---
+
 ## User List Item
 
 ```typescript
@@ -59,7 +61,7 @@ enum UserRole {
 }
 ```
 
-# Time Zone
+## Time Zone
 
 ```typescript
 enum TimeZone {

@@ -136,12 +136,12 @@ The query parameters are not expected.
 
 | Name | Type | Description | Required |
 | ------------- |------------- | -------------| --- |
-| email | `string` | The new user’s email. | - [x] |
-| firstName | `string` | The new user’s first name. | - [x] |
-| lastName | `string` | The new user’s last name. | - [x] |
-| password | `string` | The new user’s password. | - [x] |
-| userRole | `enum` | The new user’s [role](./users_schemas.md/#user-roles). | - [x] |
-| timezone | `enum` | The new user’s [timezone](./users_schemas.md/#time-zone). | - [x] |
+| email | `string` | The new user’s email. | <ul><li>- [x]</li></ul> |
+| firstName | `string` | The new user’s first name. | <ul><li>- [x]</li></ul> |
+| lastName | `string` | The new user’s last name. | <ul><li>- [x]</li></ul> |
+| password | `string` | The new user’s password. | <ul><li>- [x]</li></ul> |
+| userRole | `enum` | The new user’s [role](./users_schemas.md/#user-roles). | <ul><li>- [x]</li></ul> |
+| timezone | `enum` | The new user’s [timezone](./users_schemas.md/#time-zone). | <ul><li>- [x]</li></ul> |
 
 Example
 ```json
