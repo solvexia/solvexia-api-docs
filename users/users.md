@@ -177,8 +177,8 @@ Response
     "lastName": "Benson",
     "loginName": "template.mona.benson",
     "email": "mona.benson@sample.com",
-    "accountActive": false,
-    "accountStatus": "Suspended",
+    "accountActive": true,
+    "accountStatus": "Active",
     "city": "Sydney",
     "country": "Australia",
     "dateOfBirth": null,
@@ -210,6 +210,12 @@ POST /v1/users/{userId}
 The query parameters are not expected.
 
 #### Request body
+
+| Name | Type | Description | Required |
+| ---- | ---- | ------------| :---: |
+| accountActive | `boolean` | The new user’s [Account Status](./users_schemas.md/#account-status). | &#9745; |
+
+Example
 ```json
 {
     "accountActive": false
