@@ -2,6 +2,7 @@
 
 [Get a user list](#get-a-user-list)  
 [Get a user](#get-a-user)  
+[Create user account](#create-user-account)
 [Disable user account](#disable-user-account)  
 [Get user permissions](#get-user-permissions)  
 [Add or update user permission for a given resource](#add-or-update-user-permission-for-a-given-resource)  
@@ -135,12 +136,12 @@ The query parameters are not expected.
 
 | Name | Type | Description | Required |
 | ------------- |------------- | -------------| --- |
-| email | `string` | The new user’s email. | [x] |
-| firstName | `string` | The new user’s first name. | [x] |
-| lastName | `string` | The new user’s last name. | [x] |
-| password | `string` | The new user’s password. | [x] |
-| userRole | `enum` | The new user’s [role](./users_schemas.md/#user-roles). | [x] |
-| timezone | `enum` | The new user’s [timezone](./users_schemas.md/#time-zone). | [x] |
+| email | `string` | The new user’s email. | - [x] |
+| firstName | `string` | The new user’s first name. | - [x] |
+| lastName | `string` | The new user’s last name. | - [x] |
+| password | `string` | The new user’s password. | - [x] |
+| userRole | `enum` | The new user’s [role](./users_schemas.md/#user-roles). | - [x] |
+| timezone | `enum` | The new user’s [timezone](./users_schemas.md/#time-zone). | - [x] |
 
 Example
 ```json

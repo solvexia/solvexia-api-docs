@@ -52,10 +52,10 @@ enum AccountStatus = {
 
 ```typescript
 enum UserRole {
-  "Subscriber" = "Subscriber",
-  "Designer" = "Designer",
-  "ClientAdmin" = "ClientAdmin",
-  "SVXAdmin" = "SVXAdmin"
+    "Subscriber" = "Subscriber"
+  ; "Designer" = "Designer"
+  ; "ClientAdmin" = "ClientAdmin"
+  ; "SVXAdmin" = "SVXAdmin"
 }
 ```
 
@@ -63,7 +63,7 @@ enum UserRole {
 
 ```typescript
 enum TimeZone {
-  "(UTC-12:00) International Date Line West"
+    "(UTC-12:00) International Date Line West"
   ; "(UTC-11:00) Coordinated Universal Time-11"
   ; "(UTC-10:00) Aleutian Islands"
   ; "(UTC-10:00) Hawaii"
