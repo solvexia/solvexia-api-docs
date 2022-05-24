@@ -165,7 +165,7 @@ The error response contains an [Error](../response_codes.md).
 Request
 
 ```shell
-curl "https:///app.solvexia.com/api/v1/users" -X POST -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg" -H "Content-Type: application/json" -d '{"email": "tom.brown@company.com", "firstName": "Tom", "lastName": "Brown","password": "Strongpassword12","userRole": "Designer","timezone": "(UTC+10:00) Canberra, Melbourne, Sydney"}'
+curl "https:///app.solvexia.com/api/v1/users" -X POST -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg" -H "Content-Type: application/json" -d '{"email": "mona.benson@sample.com", "firstName": "Mona", "lastName": "Benson","password": "Samplepassword12","userRole": "Designer","timezone": "(UTC+10:00) Canberra, Melbourne, Sydney"}'
 ```
 
 Response
