@@ -117,6 +117,80 @@ Response
 ```
 ---
 
+## Create user account
+
+Create a user account.
+
+```apacheconfig
+POST /v1/users
+```
+
+#### Path parameters
+The path parameters are not expected.
+
+#### Query parameters
+The query parameters are not expected.
+
+#### Request body
+
+| Name | Type | Description | Required |
+| ------------- |------------- | -------------| --- |
+| email | `string` | The new user’s email. | [x] |
+| firstName | `string` | The new user’s first name. | [x] |
+| lastName | `string` | The new user’s last name. | [x] |
+| password | `string` | The new user’s password. | [x] |
+| userRole | `enum` | The new user’s [role](./users_schemas.md/#user-roles). | [x] |
+| timezone | `enum` | The new user’s [timezone](./users_schemas.md/#time-zone). | [x] |
+
+Example
+```json
+{
+    "email": "mona.benson@sample.com",
+    "firstName": "Mona",
+    "lastName": "Benson",
+    "password": "Samplepassword12",
+    "userRole": "Designer",
+    "timezone": "(UTC+10:00) Canberra, Melbourne, Sydney"
+}
+```
+
+#### Response body
+The successful response contains an array of instances of a [User](../users/users_schemas.md/#user).
+
+The error response contains an [Error](../response_codes.md).
+
+### Example
+
+Request
+
+```shell
+curl "https:///app.solvexia.com/api/v1/users" -X POST -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg" -H "Content-Type: application/json" -d '{"email": "tom.brown@company.com", "firstName": "Tom", "lastName": "Brown","password": "Strongpassword12","userRole": "Designer","timezone": "(UTC+10:00) Canberra, Melbourne, Sydney"}'
+```
+
+Response
+
+```json
+{
+    "id": "u-11427",
+    "firstName": "Mona",
+    "lastName": "Benson",
+    "loginName": "template.mona.benson",
+    "email": "mona.benson@sample.com",
+    "accountActive": false,
+    "accountStatus": "Suspended",
+    "city": "Sydney",
+    "country": "Australia",
+    "dateOfBirth": null,
+    "department": null,
+    "lastSignInDate": "2011-03-14T14:56:00.0000000",
+    "phoneNumberLand": null,
+    "phoneNumberMobile": null,
+    "timezone": "(UTC+10:00) Canberra, Melbourne, Sydney",
+    "userRole": "Designer"
+}
+```
+---
+
 ## Disable user account
 
 Disable a user account.
@@ -128,7 +202,7 @@ POST /v1/users/{userId}
 #### Path parameters
 
 | Name | Type | Description |
-| ------------- |------------- | -------------|
+| ------------- |------------- | -------------| 
 | userId | `string` | The user id to request. |
 
 #### Query parameters
@@ -229,6 +303,7 @@ Response
 ]
 ```
 ---
+
 
 ## Add or update user permission for a given resource
 
