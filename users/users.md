@@ -134,12 +134,12 @@ The query parameters are not expected.
 
 #### Request body
 
-| Name | Type | Description | Required |
+| Name | Type | Description | Required | Example |
 | ---- | ---- | ------------| :---: |
 | email | `string` | The new user’s email. | &#9745; |
 | firstName | `string` | The new user’s first name. | &#9745; |
 | lastName | `string` | The new user’s last name. | &#9745; |
-| password | `string` | The new user’s password. | &#9745; |
+| password | `string` | The new user’s password. Password must be at least 10 characters and should contain at least 1 digit and 1 character in UPPERCASE. | &#9745; |
 | userRole | `enum` | The new user’s [role](./users_schemas.md/#user-roles). | &#9745; |
 | timezone | `enum` | The new user’s [timezone](./users_schemas.md/#time-zone). | &#9745; |
 
@@ -179,11 +179,11 @@ Response
     "email": "mona.benson@sample.com",
     "accountActive": true,
     "accountStatus": "Active",
-    "city": "Sydney",
-    "country": "Australia",
+    "city": null,
+    "country": null,
     "dateOfBirth": null,
     "department": null,
-    "lastSignInDate": "2011-03-14T14:56:00.0000000",
+    "lastSignInDate": null,
     "phoneNumberLand": null,
     "phoneNumberMobile": null,
     "timezone": "(UTC+10:00) Canberra, Melbourne, Sydney",
@@ -213,12 +213,12 @@ The query parameters are not expected.
 
 | Name | Type | Description | Required |
 | ---- | ---- | ------------| :---: |
-| accountActive | `boolean` | The new user’s [Account Status](./users_schemas.md/#account-status). | &#9745; |
+| accountStatus | `enum` | The new user’s [Account Status](./users_schemas.md/#account-status). | &#9745; |
 
 Example
 ```json
 {
-    "accountActive": false
+    "accountStatus": false
 }
 ```
 
