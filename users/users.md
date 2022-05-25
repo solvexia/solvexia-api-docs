@@ -218,7 +218,7 @@ The query parameters are not expected.
 Example
 ```json
 {
-    "accountStatus": false
+    "accountStatus": "Suspended"
 }
 ```
 
