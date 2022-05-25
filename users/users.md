@@ -134,7 +134,7 @@ The query parameters are not expected.
 
 #### Request body
 
-| Name | Type | Description | Required | Example |
+| Name | Type | Description | Required |
 | ---- | ---- | ------------| :---: |
 | email | `string` | The new user’s email. | &#9745; |
 | firstName | `string` | The new user’s first name. | &#9745; |
