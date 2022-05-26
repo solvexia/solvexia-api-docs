@@ -2,10 +2,10 @@
 
 [Get a user group list](#get-a-user-group-list)  
 [Get a user group](#get-a-user-group)  
-[Get members for a user group](#get-members-for-a-user-group) 
-[Add member to a user group](#add-member-to-a-user-group)
-[Remove member from a user group](#remove-member-from-a-user-group) 
-[Get user group permissions](#get-user-group-permissions)  
+[Get members for a user group](#get-members-for-a-user-group) <br />
+[Add member to a user group](#add-member-to-a-user-group) <br />
+[Remove member from a user group](#remove-member-from-a-user-group) <br />
+[Get user group permissions](#get-user-group-permissions) 
 [Add or update user group permission for a given resource](#add-or-update-user-group-permission-for-a-given-resource)  
 [Delete or update user group permission](#delete-user-group-permission)
 
@@ -126,7 +126,7 @@ The query parameters are not expected.
 The request body must be empty.
 
 #### Response body
-The successful response contains an array of instances of a [Member](../user_groups/user_group_schemas.md/#member).
+The successful response contains an array of instances of a [Member](./user_groups_schemas.md/#member).
 
 The error response contains an [Error](../response_codes.md).
 
@@ -176,7 +176,7 @@ The query parameters are not expected.
 The request body must be empty.
 
 #### Response body
-The successful response contains a [Member](../user_groups/user_group_schemas.md/#member).
+The successful response contains a [Member](./user_groups_schemas.md/#member).
 
 The error response contains an [Error](../response_codes.md).
 

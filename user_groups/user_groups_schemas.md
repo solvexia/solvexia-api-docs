@@ -1,7 +1,7 @@
 # User Group schemas
 
 [User Group List Item](#user-group-list-item)  
-[User Group](#user-group) 
+[User Group](#user-group) <br />
 [Member](#member) 
 
 ## User Group List Item
