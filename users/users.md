@@ -136,7 +136,7 @@ The query parameters are not expected.
 
 | Name | Type | Description | Required | Example |
 | ---- | ---- | ------------| :------: | ------- |
-| email | `string` | The new user’s email. | &#9745; | "email": "mona.benson@sample.com" |
+| email | `string` | The new user’s email. | &#9745; | "email": "mona.benson<span>@sample.</span>com" |
 | firstName | `string` | The new user’s first name. | &#9745; | "firstName": "Mona" |
 | lastName | `string` | The new user’s last name. | &#9745; | "lastName": "Benson" |
 | password | `string` | The new user’s password. Password must be at least 10 characters long and should contain at least 1 digit and 1 character in UPPERCASE. | &#9745; | "password": "Samplepassword12" |
