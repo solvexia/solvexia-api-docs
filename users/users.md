@@ -211,9 +211,9 @@ The query parameters are not expected.
 
 #### Request body
 
-| Name | Type | Description | Required |
-| ---- | ---- | ------------| :---: |
-| accountStatus | `enum` | The new user’s [Account Status](./users_schemas.md/#account-status). | &#9745; |
+| Name | Type | Description | Required | Example |
+| ---- | ---- | ------------| :------: | ------- |
+| accountStatus | `enum` | The new user’s [Account Status](./users_schemas.md/#account-status). | &#9745; | "accountStatus": "Suspended" |
 
 Example
 ```json
