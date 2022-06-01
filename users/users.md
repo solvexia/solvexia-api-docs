@@ -2,7 +2,8 @@
 
 [Get a user list](#get-a-user-list)  
 [Get a user](#get-a-user)  
-[Disable user account](#disable-user-account)  
+[Create user account](#create-user-account)  
+[Disable user account](#disable-user-account)<br />
 [Get user permissions](#get-user-permissions)  
 [Add or update user permission for a given resource](#add-or-update-user-permission-for-a-given-resource)  
 [Delete user permission](#delete-user-permission)
@@ -117,6 +118,80 @@ Response
 ```
 ---
 
+## Create user account
+
+Create a user account.
+
+```apacheconfig
+POST /v1/users
+```
+
+#### Path parameters
+The path parameters are not expected.
+
+#### Query parameters
+The query parameters are not expected.
+
+#### Request body
+
+| Name | Type | Description | Required | Example |
+| ---- | ---- | ------------| :------: | ------- |
+| email | `string` | The new user’s email. | &#9745; | "email": "mona.benson<span>@sample.</span>com" |
+| firstName | `string` | The new user’s first name. | &#9745; | "firstName": "Mona" |
+| lastName | `string` | The new user’s last name. | &#9745; | "lastName": "Benson" |
+| password | `string` | The new user’s password. Password must be at least 10 characters long and should contain at least 1 digit and 1 character in UPPERCASE. | &#9745; | "password": "Samplepassword12" |
+| userRole | `enum` | The new user’s [role](./users_schemas.md/#user-roles). | &#9745; | "userRole": "Designer" |
+| timezone | `enum` | The new user’s [timezone](./users_schemas.md/#time-zone). | &#9745; | "timezone": "(UTC+10:00) Canberra, Melbourne, Sydney" |
+
+Example
+```json
+{
+    "email": "mona.benson@sample.com",
+    "firstName": "Mona",
+    "lastName": "Benson",
+    "password": "Samplepassword12",
+    "userRole": "Designer",
+    "timezone": "(UTC+10:00) Canberra, Melbourne, Sydney"
+}
+```
+
+#### Response body
+The successful response contains an array of instances of a [User](../users/users_schemas.md/#user).
+
+The error response contains an [Error](../response_codes.md).
+
+### Example
+
+Request
+
+```shell
+curl "https:///app.solvexia.com/api/v1/users" -X POST -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg" -H "Content-Type: application/json" -d '{"email": "mona.benson@sample.com", "firstName": "Mona", "lastName": "Benson","password": "Samplepassword12","userRole": "Designer","timezone": "(UTC+10:00) Canberra, Melbourne, Sydney"}'
+```
+
+Response
+
+```json
+{
+    "id": "u-11427",
+    "firstName": "Mona",
+    "lastName": "Benson",
+    "loginName": "template.mona.benson",
+    "email": "mona.benson@sample.com",
+    "accountActive": true,
+    "accountStatus": "Active",
+    "city": null,
+    "country": null,
+    "dateOfBirth": null,
+    "department": null,
+    "lastSignInDate": null,
+    "phoneNumberLand": null,
+    "phoneNumberMobile": null,
+    "timezone": "(UTC+10:00) Canberra, Melbourne, Sydney",
+    "userRole": "Designer"
+}
+```
+---
+
 ## Disable user account
 
 Disable a user account.
@@ -128,16 +203,22 @@ POST /v1/users/{userId}
 #### Path parameters
 
 | Name | Type | Description |
-| ------------- |------------- | -------------|
+| ------------- |------------- | -------------| 
 | userId | `string` | The user id to request. |
 
 #### Query parameters
 The query parameters are not expected.
 
 #### Request body
+
+| Name | Type | Description | Required | Example |
+| ---- | ---- | ------------| :------: | ------- |
+| accountStatus | `enum` | The new user’s [Account Status](./users_schemas.md/#account-status). | &#9745; | "accountStatus": "Suspended" |
+
+Example
 ```json
 {
-    "accountActive": false
+    "accountStatus": "Suspended"
 }
 ```
 
@@ -229,6 +310,7 @@ Response
 ]
 ```
 ---
+
 
 ## Add or update user permission for a given resource
 
