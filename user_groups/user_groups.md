@@ -2,9 +2,9 @@
 
 [Get a user group list](#get-a-user-group-list)  
 [Get a user group](#get-a-user-group)  
-[Get members for a user group](#get-members-for-a-user-group) <br />
-[Add member to a user group](#add-member-to-a-user-group) <br />
-[Remove member from a user group](#remove-member-from-a-user-group) <br />
+[Get users for a user group](#get-users-for-a-user-group) <br />
+[Add a user to a user group](#add-a-user-to-a-user-group) <br />
+[Remove a user from a user group](#remove-a-user-from-a-user-group) <br />
 [Get user group permissions](#get-user-group-permissions) <br />
 [Add or update user group permission for a given resource](#add-or-update-user-group-permission-for-a-given-resource) <br />
 [Delete or update user group permission](#delete-user-group-permission)
