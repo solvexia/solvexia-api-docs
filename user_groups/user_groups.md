@@ -65,7 +65,7 @@ Response
 Returns a user group at a given id.
 
 ```apacheconfig
-GET /v1/userGroups/{userGroupId}
+GET /v1/usergroups/{userGroupId}
 ```
 
 #### Path parameters
@@ -91,7 +91,7 @@ The error response contains an [Error](../response_codes.md).
 Request
 
 ```shell
-curl https://app.solvexia.com/api/v1/userGroups/ug-114273 -X GET -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg"
+curl https://app.solvexia.com/api/v1/usergroups/ug-114273 -X GET -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg"
 ```
 
 Response
@@ -105,12 +105,12 @@ Response
 ```
 ---
 
-## Get members for a user group
+## Get users for a user group
 
 Get a list of members for a user group.
 
 ```apacheconfig
-GET /v1/userGroups/{userGroupId}/members
+GET /v1/usergroups/{userGroupId}/users
 ```
 
 #### Path parameters
@@ -126,7 +126,7 @@ The query parameters are not expected.
 The request body must be empty.
 
 #### Response body
-The successful response contains an array of instances of a [Member](./user_groups_schemas.md/#member).
+The successful response contains an array of instances of a [User](./user_groups_schemas.md/#user).
 
 The error response contains an [Error](../response_codes.md).
 
@@ -135,7 +135,7 @@ The error response contains an [Error](../response_codes.md).
 Request
 
 ```shell
-curl "https://app.solvexia.com/api/v1/userGroups/ug-114273/members" -X GET -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg"
+curl "https://app.solvexia.com/api/v1/usergroups/ug-114273/users" -X GET -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg"
 ```
 
 Response
@@ -154,12 +154,12 @@ Response
 ```
 ---
 
-## Add member to a user group
+## Add a user to a user group
 
-Add a member to a user group.
+Add a user to a user group.
 
 ```apacheconfig
-POST /v1/userGroups/{userGroupId}/members/{userId}
+POST /v1/usergroups/{userGroupId}/users
 ```
 
 #### Path parameters
@@ -167,16 +167,24 @@ POST /v1/userGroups/{userGroupId}/members/{userId}
 | Name | Type | Description |
 | ------------- |------------- | -------------|
 | userGroupId | `string` | The user group id to request. |
-| userId | `string` | The user id to add. |
 
 #### Query parameters
 The query parameters are not expected.
 
 #### Request body
-The request body must be empty.
+| Name | Type | Description | Required | Example |
+| ---- | ---- | ------------| :------: | ------- |
+| id | `string` | The user id to add. | &#9745; | "id": "u-1233" |
+
+Example
+```json
+{
+    "id": "u-1233"
+}
+```
 
 #### Response body
-The successful response contains a [Member](./user_groups_schemas.md/#member).
+The successful response contains a [User](./user_groups_schemas.md/#User).
 
 The error response contains an [Error](../response_codes.md).
 
@@ -185,7 +193,7 @@ The error response contains an [Error](../response_codes.md).
 Request
 
 ```shell
-curl "https://app.solvexia.com/api/v1/userGroups/ug-114273/members/u-1233" -X POST -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg"
+curl "https://app.solvexia.com/api/v1/usergroups/ug-114273/users/u-1233" -X POST -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg" -H "Content-Type: application/json" -d '{"id": "u-1234"}'
 ```
 
 Response
@@ -199,12 +207,12 @@ Response
 
 ---
 
-## Remove member from a user group
+## Remove a user from a user group
 
-Remove a member from a user group.
+Remove a user from a user group.
 
 ```apacheconfig
-DELETE /v1/userGroups/{userGroupId}/members/{userId}
+DELETE /v1/usergroups/{userGroupId}/users/{userId}
 ```
 
 #### Path parameters
@@ -230,7 +238,7 @@ The error response contains an [Error](../response_codes.md).
 Request
 
 ```shell
-curl "https://app.solvexia.com/api/v1/userGroups/ug-114273/members/u-1233" -X DELETE -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg"
+curl "https://app.solvexia.com/api/v1/usergroups/ug-114273/users/u-1233" -X DELETE -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg"
 ```
 
 Response
@@ -244,7 +252,7 @@ Response
 Get a list of user group permissions.
 
 ```apacheconfig
-GET /v1/userGroups/{userGroupId}/permissions
+GET /v1/usergroups/{userGroupId}/permissions
 ```
 
 #### Path parameters
@@ -269,7 +277,7 @@ The error response contains an [Error](../response_codes.md).
 Request
 
 ```shell
-curl "https://app.solvexia.com/api/v1/userGroups/ug-114273/permisions" -X GET -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg"
+curl "https://app.solvexia.com/api/v1/usergroups/ug-114273/permisions" -X GET -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg"
 ```
 
 Response
@@ -295,7 +303,7 @@ Response
 Add or update resource permission of a user group.
 
 ```apacheconfig
-POST /v1/userGroups/{userGroupId}/permissions/{resourceId}
+POST /v1/usergroups/{userGroupId}/permissions/{resourceId}
 ```
 
 #### Path parameters
@@ -325,7 +333,7 @@ The error response contains an [Error](../response_codes.md).
 Request
 
 ```shell
-curl "https://app.solvexia.com/api/v1/userGroups/ug-114273/permisions/p-2343" -X POST -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg" -H "Content-Type: application/json" -d '{"role": "editor"}'
+curl "https://app.solvexia.com/api/v1/usergroups/ug-114273/permisions/p-2343" -X POST -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg" -H "Content-Type: application/json" -d '{"role": "editor"}'
 ```
 
 Response
@@ -345,7 +353,7 @@ Response
 Delete resource permission of a user group.
 
 ```apacheconfig
-DELETE /v1/userGroups/{userGroupId}/permissions/{resourceId}
+DELETE /v1/usergroups/{userGroupId}/permissions/{resourceId}
 ```
 
 #### Path parameters
@@ -371,7 +379,7 @@ The error response contains an [Error](../response_codes.md).
 Request
 
 ```shell
-curl "https://app.solvexia.com/api/v1/userGroups/ug-114273/permisions/p-2343" -X DELETE -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg"
+curl "https://app.solvexia.com/api/v1/usergroups/ug-114273/permisions/p-2343" -X DELETE -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg"
 ```
 
 Response

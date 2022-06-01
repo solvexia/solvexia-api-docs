@@ -2,7 +2,7 @@
 
 [User Group List Item](#user-group-list-item)  
 [User Group](#user-group) <br />
-[Member](#member) 
+[User](#user) 
 
 ## User Group List Item
 
@@ -23,10 +23,10 @@ type UserGroup = {
 }
 ```
 
-## Member
+## User
 
 ```typescript
-type Member = {
+type User = {
     id: string
   ; loginName: string
 }
