@@ -7,7 +7,7 @@
 ## User List Item
 
 ```typescript
-type User = {
+type UserListItem = {
     id: string
   ; loginName: string
 }
