@@ -31,7 +31,6 @@ type User = {
   ; lastSignInDate: string
   ; phoneNumberLand: string
   ; phoneNumberMobile: string
-  ; timeZoneHasDaylightSavings: boolean
   ; timezone: string
   ; userRole: string
 }
