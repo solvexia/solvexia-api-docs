@@ -22,12 +22,3 @@ type UserGroup = {
   ; description: string
 }
 ```
-
-## User
-
-```typescript
-type User = {
-    id: string
-  ; loginName: string
-}
-```

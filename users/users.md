@@ -48,11 +48,11 @@ Response
 [
   {
     "id": "u-2345",
-    "name": "Mona Benson"
+    "loginName": "template.mona.benson"
   },
   {
     "id": "u-23577",
-    "name": "Jill Watkin"
+    "loginName": "template.jill.watkin"
   }
 ]
 ```

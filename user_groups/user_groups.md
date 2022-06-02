@@ -126,7 +126,7 @@ The query parameters are not expected.
 The request body must be empty.
 
 #### Response body
-The successful response contains an array of instances of a [User](./user_groups_schemas.md/#user).
+The successful response contains an array of instances of a [User](../users/users_schemas.md/#user-list-item).
 
 The error response contains an [Error](../response_codes.md).
 
