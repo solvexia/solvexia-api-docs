@@ -184,7 +184,7 @@ Example
 ```
 
 #### Response body
-The successful response contains a [User](./user_groups_schemas.md/#User).
+The successful response contains a [User List Item](../users/users_schemas.md/#user-list-item).
 
 The error response contains an [Error](../response_codes.md).
 
