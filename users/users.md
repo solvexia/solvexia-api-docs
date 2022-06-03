@@ -49,11 +49,11 @@ Response
 [
   {
     "id": "u-2345",
-    "name": "Mona Benson"
+    "loginName": "template.mona.benson"
   },
   {
     "id": "u-23577",
-    "name": "Jill Watkin"
+    "loginName": "template.jill.watkin"
   }
 ]
 ```
@@ -111,7 +111,6 @@ Response
     "lastSignInDate": "2011-03-14T14:56:00.0000000",
     "phoneNumberLand": null,
     "phoneNumberMobile": null,
-    "timeZoneHasDaylightSavings": true,
     "timezone": "(UTC+10:00) Canberra, Melbourne, Sydney",
     "userRole": "Designer"
 }
@@ -253,7 +252,6 @@ Response
     "lastSignInDate": "2011-03-14T14:56:00.0000000",
     "phoneNumberLand": null,
     "phoneNumberMobile": null,
-    "timeZoneHasDaylightSavings": true,
     "timezone": "(UTC+10:00) Canberra, Melbourne, Sydney",
     "userRole": "Designer"
 }

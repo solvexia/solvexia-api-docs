@@ -13,7 +13,7 @@
 ```typescript
 type UserListItem = {
     id: string
-  ; name: string
+  ; loginName: string
 }
 ```
 
