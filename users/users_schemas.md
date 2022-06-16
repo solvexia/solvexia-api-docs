@@ -26,7 +26,6 @@ type User = {
   ; lastName: string
   ; loginName: string
   ; email: string
-  ; accountActive: boolean
   ; accountStatus: string
   ; city: string
   ; country: string
