@@ -4,8 +4,9 @@
 [Get a user](#get-a-user)  
 [Create user account](#create-user-account)  
 [Disable user account](#disable-user-account)<br />
-[Get user permissions](#get-user-permissions)  
-[Add or update user permission for a given resource](#add-or-update-user-permission-for-a-given-resource)  
+[Get user permissions](#get-user-permissions)<br />  
+[Add user permission for a given resource](#add-user-permission-for-a-given-resource)<br />
+[Update user permission for a given resource](#update-user-permission-for-a-given-resource)<br /> 
 [Delete user permission](#delete-user-permission)
 
 ---
@@ -310,9 +311,9 @@ Response
 ---
 
 
-## Add or update user permission for a given resource
+## Add user permission for a given resource
 
-Add or update resource permission of a user.
+Add resource permission of a user.
 
 ```apacheconfig
 POST /v1/users/{userId}/permissions/{resourceId}
@@ -323,7 +324,57 @@ POST /v1/users/{userId}/permissions/{resourceId}
 | Name | Type | Description |
 | ------------- |------------- | -------------|
 | userId | `string` | The user id to request. |
-| resourceId | `string` | The resource id to add or update. |
+| resourceId | `string` | The resource id to add. |
+
+#### Query parameters
+The query parameters are not expected.
+
+#### Request body
+```json
+{
+  "role": "reader"
+}
+```
+
+#### Response body
+The successful response contains a [Permission Role Type](../permissions/permissions_schemas.md/#permission-role-type).
+
+The error response contains an [Error](../response_codes.md).
+
+### Example
+
+Request
+
+```shell
+curl "https://app.solvexia.com/api/v1/users/u-11427/permisions/p-2343" -X POST -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg" -H "Content-Type: application/json" -d '{"role": "reader"}'
+```
+
+Response
+
+```json
+{
+  "resourceId": "p-2343",
+  "resourceName": "Sales reconciliation",
+  "role": "reader"
+}
+```
+
+---
+
+## Update user permission for a given resource
+
+Update resource permission of a user.
+
+```apacheconfig
+PUT /v1/users/{userId}/permissions/{resourceId}
+```
+
+#### Path parameters
+
+| Name | Type | Description |
+| ------------- |------------- | -------------|
+| userId | `string` | The user id to request. |
+| resourceId | `string` | The resource id to update. |
 
 #### Query parameters
 The query parameters are not expected.
@@ -345,7 +396,7 @@ The error response contains an [Error](../response_codes.md).
 Request
 
 ```shell
-curl "https://app.solvexia.com/api/v1/users/u-11427/permisions/p-2343" -X POST -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg" -H "Content-Type: application/json" -d '{"role": "editor"}'
+curl "https://app.solvexia.com/api/v1/users/u-11427/permisions/p-2343" -X PUT -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg" -H "Content-Type: application/json" -d '{"role": "editor"}'
 ```
 
 Response

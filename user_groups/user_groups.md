@@ -6,7 +6,8 @@
 [Add a user to a user group](#add-a-user-to-a-user-group) <br />
 [Remove a user from a user group](#remove-a-user-from-a-user-group) <br />
 [Get user group permissions](#get-user-group-permissions) <br />
-[Add or update user group permission for a given resource](#add-or-update-user-group-permission-for-a-given-resource) <br />
+[Add user group permission for a given resource](#add-user-group-permission-for-a-given-resource) <br />
+[Update user group permission for a given resource](#update-user-group-permission-for-a-given-resource) <br />
 [Delete or update user group permission](#delete-user-group-permission)
 
 ---
@@ -298,9 +299,9 @@ Response
 ```
 ---
 
-## Add or update user group permission for a given resource
+## Add user group permission for a given resource
 
-Add or update resource permission of a user group.
+Add resource permission of a user group.
 
 ```apacheconfig
 POST /v1/usergroups/{userGroupId}/permissions/{resourceId}
@@ -311,7 +312,58 @@ POST /v1/usergroups/{userGroupId}/permissions/{resourceId}
 | Name | Type | Description |
 | ------------- |------------- | -------------|
 | userGroupId | `string` | The user group id to request. |
-| resourceId | `string` | The resource id to add or update. |
+| resourceId | `string` | The resource id to add. |
+
+#### Query parameters
+The query parameters are not expected.
+
+#### Request body
+```json
+{
+  "role": "reader"
+}
+```
+
+#### Response body
+The successful response contains a [Permission Role Type](../permissions/permissions_schemas.md/#permission-role-type).
+
+The error response contains an [Error](../response_codes.md).
+
+### Example
+
+Request
+
+```shell
+curl "https://app.solvexia.com/api/v1/usergroups/ug-114273/permisions/p-2343" -X POST -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg" -H "Content-Type: application/json" -d '{"role": "reader"}'
+```
+
+Response
+
+```json
+{
+  "resourceId": "p-2343",
+  "resourceName": "Sales reconciliation",
+  "role": "reader"
+}
+```
+
+---
+
+
+## Update user group permission for a given resource
+
+Update resource permission of a user group.
+
+```apacheconfig
+PUT /v1/usergroups/{userGroupId}/permissions/{resourceId}
+```
+
+#### Path parameters
+
+| Name | Type | Description |
+| ------------- |------------- | -------------|
+| userGroupId | `string` | The user group id to request. |
+| resourceId | `string` | The resource id to update. |
 
 #### Query parameters
 The query parameters are not expected.
@@ -333,7 +385,7 @@ The error response contains an [Error](../response_codes.md).
 Request
 
 ```shell
-curl "https://app.solvexia.com/api/v1/usergroups/ug-114273/permisions/p-2343" -X POST -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg" -H "Content-Type: application/json" -d '{"role": "editor"}'
+curl "https://app.solvexia.com/api/v1/usergroups/ug-114273/permisions/p-2343" -X PUT -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg" -H "Content-Type: application/json" -d '{"role": "editor"}'
 ```
 
 Response
