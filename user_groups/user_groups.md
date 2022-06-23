@@ -304,7 +304,7 @@ Response
 Add resource permission of a user group.
 
 ```apacheconfig
-POST /v1/usergroups/{userGroupId}/permissions/{resourceId}
+POST /v1/usergroups/{userGroupId}/permissions
 ```
 
 #### Path parameters
@@ -320,6 +320,7 @@ The query parameters are not expected.
 #### Request body
 ```json
 {
+  "resourceId": "p-2343",
   "role": "reader"
 }
 ```
@@ -334,7 +335,8 @@ The error response contains an [Error](../response_codes.md).
 Request
 
 ```shell
-curl "https://app.solvexia.com/api/v1/usergroups/ug-114273/permisions/p-2343" -X POST -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg" -H "Content-Type: application/json" -d '{"role": "reader"}'
+curl "https://app.solvexia.com/api/v1/usergroups/ug-114273/permisions" -X POST -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg" -H "Content-Type: application/json" -d '{
+  "resourceId": "p-2343", "role": "reader"}'
 ```
 
 Response
@@ -355,7 +357,7 @@ Response
 Update resource permission of a user group.
 
 ```apacheconfig
-PUT /v1/usergroups/{userGroupId}/permissions/{resourceId}
+POST /v1/usergroups/{userGroupId}/permissions/{resourceId}
 ```
 
 #### Path parameters
@@ -385,7 +387,7 @@ The error response contains an [Error](../response_codes.md).
 Request
 
 ```shell
-curl "https://app.solvexia.com/api/v1/usergroups/ug-114273/permisions/p-2343" -X PUT -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg" -H "Content-Type: application/json" -d '{"role": "editor"}'
+curl "https://app.solvexia.com/api/v1/usergroups/ug-114273/permisions/p-2343" -X POST -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg" -H "Content-Type: application/json" -d '{"role": "editor"}'
 ```
 
 Response
