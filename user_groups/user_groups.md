@@ -311,7 +311,7 @@ POST /v1/usergroups/{userGroupId}/permissions
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| userGroupId | `string` | The user group id to add permission for. |
+| userGroupId | `string` | The user group id to set up the permission for. |
 
 #### Query parameters
 The query parameters are not expected.
@@ -319,7 +319,7 @@ The query parameters are not expected.
 #### Request body
 | Name | Type | Description | Required | Example |
 | ---- | ---- | ------------| :------: | ------- |
-| resourceId | `string` | The resource id to add permission to. | &#9745; | "resourceId": "p-2343" |
+| resourceId | `string` | The resource id to set up the new permission to. | &#9745; | "resourceId": "p-2343" |
 | role | `string` | The user group’s permission role for the resource. | &#9745; | "role": "reader" |
 
 Example
@@ -370,7 +370,7 @@ POST /v1/usergroups/{userGroupId}/permissions/{resourceId}
 | Name | Type | Description |
 | ------------- |------------- | -------------|
 | userGroupId | `string` | The user group id to update the permission for. |
-| resourceId | `string` | The resource id to update. |
+| resourceId | `string` | The resource id to update with the new permission. |
 
 #### Query parameters
 The query parameters are not expected.
@@ -424,8 +424,8 @@ DELETE /v1/usergroups/{userGroupId}/permissions/{resourceId}
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| userGroupId | `string` | The user group id to update the permission for. |
-| resourceId | `string` | The resource id to delete. |
+| userGroupId | `string` | The user group id to delete. |
+| resourceId | `string` | The resource id to delete the permission from. |
 
 #### Query parameters
 The query parameters are not expected.
