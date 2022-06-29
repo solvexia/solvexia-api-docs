@@ -311,13 +311,18 @@ POST /v1/usergroups/{userGroupId}/permissions
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| userGroupId | `string` | The user group id to request. |
-| resourceId | `string` | The resource id to add. |
+| userGroupId | `string` | The user group id to add permission for. |
 
 #### Query parameters
 The query parameters are not expected.
 
 #### Request body
+| Name | Type | Description | Required | Example |
+| ---- | ---- | ------------| :------: | ------- |
+| resourceId | `string` | The resource id to add permission to. | &#9745; | "resourceId": "p-2343" |
+| role | `string` | The user group’s permission role for the resource. | &#9745; | "role": "reader" |
+
+Example
 ```json
 {
   "resourceId": "p-2343",
@@ -326,7 +331,7 @@ The query parameters are not expected.
 ```
 
 #### Response body
-The successful response contains a [Permission Role Type](../permissions/permissions_schemas.md/#permission-role-type).
+The successful response contains a [Permission Role](../permissions/permissions_schemas.md/#permission-role).
 
 The error response contains an [Error](../response_codes.md).
 
@@ -364,13 +369,18 @@ POST /v1/usergroups/{userGroupId}/permissions/{resourceId}
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| userGroupId | `string` | The user group id to request. |
+| userGroupId | `string` | The user group id to update the permission for. |
 | resourceId | `string` | The resource id to update. |
 
 #### Query parameters
 The query parameters are not expected.
 
 #### Request body
+| Name | Type | Description | Required | Example |
+| ---- | ---- | ------------| :------: | ------- |
+| role | `string` | The user’s permission role for the resource. | &#9745; | "role": "reader" |
+
+Example
 ```json
 {
   "role": "editor"
@@ -378,7 +388,7 @@ The query parameters are not expected.
 ```
 
 #### Response body
-The successful response contains a [Permission Role Type](../permissions/permissions_schemas.md/#permission-role-type).
+The successful response contains a [Permission Role](../permissions/permissions_schemas.md/#permission-role).
 
 The error response contains an [Error](../response_codes.md).
 
@@ -414,7 +424,7 @@ DELETE /v1/usergroups/{userGroupId}/permissions/{resourceId}
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| userGroupId | `string` | The user group id to request. |
+| userGroupId | `string` | The user group id to update the permission for. |
 | resourceId | `string` | The resource id to delete. |
 
 #### Query parameters

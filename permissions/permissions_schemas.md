@@ -1,7 +1,7 @@
 ## Permission schemas
 
 [Permission](#permission)  
-[Permission Role Type](#permission-role-type)
+[Permission Role](#permission-role)
 
 ### Permission
 
@@ -9,14 +9,14 @@
 type Permission = {
     resourceId: string
   ; resourceName: string
-  ; role: PermissionRoleType
+  ; role: PermissionRole
 }
 ```
 
-### Permission Role Type
+### Permission Role
 
 ```typescript
-enum PermissionRoleType {
+enum PermissionRole {
   Owner = "owner",
   Editor = "editor",
   Executor = "executor",
