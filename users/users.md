@@ -129,7 +129,7 @@ GET /v1/users/{userId}/usergroups
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| userId | `string` | The id of a user to request. |
+| userId | `string` | The id of a user to request a list of groups for. |
 
 
 #### Query parameters
@@ -139,7 +139,7 @@ The query parameters are not expected.
 The request body must be empty.
 
 #### Response body
-The successful response contains a [User Group List Item](../user_groups/user_groups_schemas.md/#user-group-list-item).
+The successful response contains a list of [User Group List Item](../user_groups/user_groups_schemas.md/#user-group-list-item).
 
 The error response contains an [Error](../response_codes.md).
 
