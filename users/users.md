@@ -1,9 +1,10 @@
 # User APIs
 
 [Get a user list](#get-a-user-list)  
-[Get a user](#get-a-user)<br />
-[Get a list of user group that a user belongs to](#get-a-list-of-user-group-that-a-user-belongs-to)<br />  [Create user account](#create-user-account)  
-[Disable user account](#disable-user-account)<br />
+[Get a user](#get-a-user)
+[Get a list of user groups that a user belongs to](#get-a-list-of-user-groups-that-a-user-belongs-to)  
+[Create user account](#create-user-account)  
+[Disable user account](#disable-user-account)
 [Get user permissions](#get-user-permissions)  
 [Add or update user permission for a given resource](#add-or-update-user-permission-for-a-given-resource)  
 [Delete user permission](#delete-user-permission)
@@ -116,9 +117,9 @@ Response
 ```
 ---
 
-## Get a list of user group that a user belongs to
+## Get a list of user groups that a user belongs to
 
-Returns a list of user group a user belongs to.
+Returns a list of user groups a user belongs to.
 
 ```apacheconfig
 GET /v1/users/{userId}/usergroups
