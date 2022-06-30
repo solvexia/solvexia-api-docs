@@ -2,8 +2,7 @@
 
 [Get a user list](#get-a-user-list)  
 [Get a user](#get-a-user)<br />
-[Get a list of user group that a user belongs to](#get-a-list-of-user-group-that-a-user-belongs-to)<br />  
-[Create user account](#create-user-account)  
+[Get a list of user group that a user belongs to](#get-a-list-of-user-group-that-a-user-belongs-to)<br />  [Create user account](#create-user-account)  
 [Disable user account](#disable-user-account)<br />
 [Get user permissions](#get-user-permissions)  
 [Add or update user permission for a given resource](#add-or-update-user-permission-for-a-given-resource)  
