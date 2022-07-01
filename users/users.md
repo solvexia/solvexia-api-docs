@@ -212,7 +212,7 @@ The query parameters are not expected.
 | ---- | ---- | ------------| :------: | ------- |
 | firstName | `string` | The user’s new first name. | &#9744; | "firstName": "Jane" |
 | lastName | `string` | The user’s new last name. | &#9744; | "lastName": "Jordan" |
-| email | `string` | The user’s new email. | &#9744; | "email": "tom.jordan@sample.com" |
+| email | `string` | The user’s new email. | &#9744; | "email": "tom.jordan<span>@sample.</span>com" |
 | accountStatus | `enum` | The user’s new [Account Status](./users_schemas.md/#account-status). | &#9744; | "accountStatus": "Suspended" |
 | city | `string` | The user’s new city. | &#9744; | "city": "Brisbane" |
 | country | `string` | The user’s new country. | &#9744; | "country": "New Zeland" |
