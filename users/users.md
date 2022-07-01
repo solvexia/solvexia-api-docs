@@ -207,6 +207,7 @@ POST /v1/users/{userId}
 The query parameters are not expected.
 
 #### Request body
+The request body contains a list of the User fields that can be updated.
 
 | Name | Type | Description | Required | Example |
 | ---- | ---- | ------------| :------: | ------- |
@@ -218,9 +219,9 @@ The query parameters are not expected.
 | country | `string` | The user’s new country. | &#9744; | "country": "New Zeland" |
 | dateOfBirth | `string` | The user’s new dateOfBirth. The format needs to be in dd/MM/yyyy. | &#9744; | "dateOfBirth": "19/09/1999" |
 | department | `string` | The user’s new department. | &#9744; | "department": "Marketing" |
-| phoneNumberLand | `string` | The user’s new phoneNumberLand. | &#9744; | "phoneNumberLand": "Brisbane" |
-| phoneNumberMobile | `string` | The user’s new phoneNumberMobile. | &#9744; | "phoneNumberMobile": "Brisbane" |
-| timezone | `string` | The user’s new [timezone](./users_schemas.md/#time-zone). | &#9744; | "timezone": "Brisbane" |
+| phoneNumberLand | `string` | The user’s new phoneNumberLand. | &#9744; | "phoneNumberLand": "0281538412" |
+| phoneNumberMobile | `string` | The user’s new phoneNumberMobile. | &#9744; | "phoneNumberMobile": "0481538412" |
+| timezone | `string` | The user’s new [timezone](./users_schemas.md/#time-zone). | &#9744; | "timezone": "(UTC-10:00) Hawaii" |
 | userRole | `string` | The user’s new [role](./users_schemas.md/#user-roles). | &#9744; | "userRole": "Subscriber" |
 
 Example
