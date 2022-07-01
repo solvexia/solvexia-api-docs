@@ -154,7 +154,7 @@ Example
 ```
 
 #### Response body
-The successful response contains an array of instances of a [User](../users/users_schemas.md/#user).
+The successful response contains an instance of a [User](../users/users_schemas.md/#user).
 
 The error response contains an [Error](../response_codes.md).
 
@@ -233,7 +233,7 @@ Example
 ```
 
 #### Response body
-The successful response contains an array of instances of a [User](../users/users_schemas.md/#user).
+The successful response contains an instance of a [User](../users/users_schemas.md/#user).
 
 The error response contains an [Error](../response_codes.md).
 
