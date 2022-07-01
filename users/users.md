@@ -221,7 +221,7 @@ The query parameters are not expected.
 | phoneNumberLand | `string` | The user’s new phoneNumberLand. | &#9744; | "phoneNumberLand": "Brisbane" |
 | phoneNumberMobile | `string` | The user’s new phoneNumberMobile. | &#9744; | "phoneNumberMobile": "Brisbane" |
 | timezone | `string` | The user’s new [timezone](./users_schemas.md/#time-zone). | &#9744; | "timezone": "Brisbane" |
-| userRole | `string` | The user’s new [role](./users_schemas.md/#user-roles). | &#9744; | "userRole": "Brisbane" |
+| userRole | `string` | The user’s new [role](./users_schemas.md/#user-roles). | &#9744; | "userRole": "Subscriber" |
 
 Example
 ```json
