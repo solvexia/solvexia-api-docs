@@ -3,7 +3,7 @@
 [Get a user list](#get-a-user-list)  
 [Get a user](#get-a-user)  
 [Create user account](#create-user-account)  
-[Disable user account](#disable-user-account)<br />
+[Update user account](#update-user-account)<br />
 [Get user permissions](#get-user-permissions)  
 [Add or update user permission for a given resource](#add-or-update-user-permission-for-a-given-resource)  
 [Delete user permission](#delete-user-permission)
@@ -189,9 +189,9 @@ Response
 ```
 ---
 
-## Disable user account
+## Update user account
 
-Disable a user account.
+Update a user account.
 
 ```apacheconfig
 POST /v1/users/{userId}
@@ -210,12 +210,25 @@ The query parameters are not expected.
 
 | Name | Type | Description | Required | Example |
 | ---- | ---- | ------------| :------: | ------- |
-| accountStatus | `enum` | The new user’s [Account Status](./users_schemas.md/#account-status). | &#9745; | "accountStatus": "Suspended" |
+| firstName | `string` | The user’s new first name. | &#9744; | "firstName": "Jane" |
+| lastName | `string` | The user’s new last name. | &#9744; | "lastName": "Jordan" |
+| email | `string` | The user’s new email. | &#9744; | "email": "tom.jordan@sample.com" |
+| accountStatus | `enum` | The user’s new [Account Status](./users_schemas.md/#account-status). | &#9744; | "accountStatus": "Suspended" |
+| city | `string` | The user’s new city. | &#9744; | "city": "Brisbane" |
+| country | `string` | The user’s new country. | &#9744; | "country": "New Zeland" |
+| dateOfBirth | `string` | The user’s new dateOfBirth. The format needs to be in dd/MM/yyyy. | &#9744; | "dateOfBirth": "19/09/1999" |
+| department | `string` | The user’s new department. | &#9744; | "department": "Marketing" |
+| phoneNumberLand | `string` | The user’s new phoneNumberLand. | &#9744; | "phoneNumberLand": "Brisbane" |
+| phoneNumberMobile | `string` | The user’s new phoneNumberMobile. | &#9744; | "phoneNumberMobile": "Brisbane" |
+| timezone | `string` | The user’s new [timezone](./users_schemas.md/#time-zone). | &#9744; | "timezone": "Brisbane" |
+| userRole | `string` | The user’s new [role](./users_schemas.md/#user-roles). | &#9744; | "userRole": "Brisbane" |
 
 Example
 ```json
 {
-    "accountStatus": "Suspended"
+    "lastName": "Jordan",
+    "accountStatus": "Suspended",
+    "email": "mona.jordan@sample.com"
 }
 ```
 
@@ -229,7 +242,7 @@ The error response contains an [Error](../response_codes.md).
 Request
 
 ```shell
-curl "https:///app.solvexia.com/api/v1/users/u-11427" -X POST -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg" -H "Content-Type: application/json" -d '{"accountStatus": "Suspended"}'
+curl "https:///app.solvexia.com/api/v1/users/u-11427" -X POST -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg" -H "Content-Type: application/json" -d '{"lastName": "Jordan", "accountStatus": "Suspended", "email": "tom.jordan@sample.com"}'
 ```
 
 Response
@@ -238,9 +251,9 @@ Response
 {
     "id": "u-11427",
     "firstName": "Mona",
-    "lastName": "Benson",
+    "lastName": "Jordan",
     "loginName": "template.mona.benson",
-    "email": "mona.benson@sample.com",
+    "email": "mona.jordan@sample.com",
     "accountStatus": "Suspended",
     "city": "Sydney",
     "country": "Australia",
