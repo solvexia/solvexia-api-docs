@@ -207,7 +207,7 @@ POST /v1/users/{userId}
 The query parameters are not expected.
 
 #### Request body
-The request body contains a list of the User fields that can be updated.
+The request body contains a list of the [User](../users/users_schemas.md/#user) fields that can be updated.
 
 | Name | Type | Description | Required | Example |
 | ---- | ---- | ------------| :------: | ------- |
