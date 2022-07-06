@@ -332,7 +332,7 @@ The query parameters are not expected.
 | Name | Type | Description | Required | Example |
 | ---- | ---- | ------------| :------: | ------- |
 | resourceId | `string` | The resource id to set up the new permission to. | &#9745; | "resourceId": "p-2343" |
-| role | `enum` | The user’s permission role for the resource. | &#9745; | "role": "reader" |
+| role | `enum` | The user’s permission [role](./users_schemas.md/#user-roles) for the resource. | &#9745; | "role": "reader" |
 
 Example
 ```json
@@ -388,7 +388,7 @@ The query parameters are not expected.
 #### Request body
 | Name | Type | Description | Required | Example |
 | ---- | ---- | ------------| :------: | ------- |
-| role | `enum` | The user’s permission role for the resource. | &#9745; | "role": "reader" |
+| role | `enum` | The user’s permission [role](./users_schemas.md/#user-roles) for the resource. | &#9745; | "role": "reader" |
 
 Example
 ```json
