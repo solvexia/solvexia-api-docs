@@ -2,8 +2,8 @@
 
 [Get a user list](#get-a-user-list)  
 [Get a user](#get-a-user)  
-[Create user account](#create-user-account)  
-[Update user account](#update-user-account)<br />
+[Create user](#create-user)  
+[Update user](#update-user)<br />
 [Get user permissions](#get-user-permissions)  
 [Add or update user permission for a given resource](#add-or-update-user-permission-for-a-given-resource)  
 [Delete user permission](#delete-user-permission)
@@ -116,9 +116,9 @@ Response
 ```
 ---
 
-## Create user account
+## Create user
 
-Create a user account.
+Create a user.
 
 ```apacheconfig
 POST /v1/users
@@ -189,9 +189,9 @@ Response
 ```
 ---
 
-## Update user account
+## Update user
 
-Update a user account.
+Update a user.
 
 ```apacheconfig
 POST /v1/users/{userId}
