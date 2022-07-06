@@ -320,7 +320,7 @@ The query parameters are not expected.
 | Name | Type | Description | Required | Example |
 | ---- | ---- | ------------| :------: | ------- |
 | resourceId | `string` | The resource id to set up the new permission to. | &#9745; | "resourceId": "p-2343" |
-| role | `string` | The user group’s permission role for the resource. | &#9745; | "role": "reader" |
+| role | `enum` | The user group’s permission role for the resource. | &#9745; | "role": "reader" |
 
 Example
 ```json
@@ -331,7 +331,7 @@ Example
 ```
 
 #### Response body
-The successful response contains a [Permission Role](../permissions/permissions_schemas.md/#permission-role).
+The successful response contains a [Permission](../permissions/permissions_schemas.md/#permission).
 
 The error response contains an [Error](../response_codes.md).
 
@@ -378,7 +378,7 @@ The query parameters are not expected.
 #### Request body
 | Name | Type | Description | Required | Example |
 | ---- | ---- | ------------| :------: | ------- |
-| role | `string` | The user’s permission role for the resource. | &#9745; | "role": "reader" |
+| role | `enum` | The user’s permission role for the resource. | &#9745; | "role": "reader" |
 
 Example
 ```json
@@ -388,7 +388,7 @@ Example
 ```
 
 #### Response body
-The successful response contains a [Permission Role](../permissions/permissions_schemas.md/#permission-role).
+The successful response contains a [Permission](../permissions/permissions_schemas.md/#permission).
 
 The error response contains an [Error](../response_codes.md).
 
