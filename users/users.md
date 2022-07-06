@@ -2,7 +2,7 @@
 
 [Get a user list](#get-a-user-list)  
 [Get a user](#get-a-user)\
-[Get a list of user groups that a user belongs to](#get-a-list-of-user-groups-that-a-user-belongs-to)  
+[Get a list of user groups the user belongs to](#get-a-list-of-user-groups-the-user-belongs-to)  
 [Create user account](#create-user-account)  
 [Disable user account](#disable-user-account)\
 [Get user permissions](#get-user-permissions)  
@@ -117,9 +117,9 @@ Response
 ```
 ---
 
-## Get a list of user groups that a user belongs to
+## Get a list of user groups the user belongs to
 
-Returns a list of user groups a user belongs to.
+Returns a list of user groups the user belongs to.
 
 ```apacheconfig
 GET /v1/users/{userId}/usergroups
