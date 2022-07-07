@@ -1,11 +1,12 @@
 # User APIs
 
 [Get a user list](#get-a-user-list)  
-[Get a user](#get-a-user)   
+[Get a user](#get-a-user)  
+[Get a list of user groups the user belongs to](#get-a-list-of-user-groups-the-user-belongs-to)  
 [Create user](#create-user)  
-[Update user](#update-user)\
-[Get user permissions](#get-user-permissions)\
-[Add user permission for a given resource](#add-user-permission-for-a-given-resource)\
+[Update user](#update-user)  
+[Get user permissions](#get-user-permissions)  
+[Add user permission for a given resource](#add-user-permission-for-a-given-resource)  
 [Update user permission for a given resource](#update-user-permission-for-a-given-resource)  
 [Delete user permission](#delete-user-permission)
 
@@ -114,6 +115,56 @@ Response
     "timezone": "(UTC+10:00) Canberra, Melbourne, Sydney",
     "userRole": "Designer"
 }
+```
+---
+
+## Get a list of user groups the user belongs to
+
+Returns a list of user groups the user belongs to.
+
+```apacheconfig
+GET /v1/users/{userId}/usergroups
+```
+
+#### Path parameters
+
+| Name | Type | Description |
+| ------------- |------------- | -------------|
+| userId | `string` | The id of a user to request a list of groups for. |
+
+
+#### Query parameters
+The query parameters are not expected.
+
+#### Request body
+The request body must be empty.
+
+#### Response body
+The successful response contains a list of [User Group List Item](../user_groups/user_groups_schemas.md/#user-group-list-item).
+
+The error response contains an [Error](../response_codes.md).
+
+### Example
+
+Request
+
+```shell
+curl https://app.solvexia.com/api/v1/users/u-11427/usergroups -X GET -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg"
+```
+
+Response
+
+```json
+[
+  {
+    "id": "ug-4321",
+    "name": "Marketing Team"
+  },
+  {
+    "id": "ug-234987",
+    "name": "Project Team"
+  }
+]
 ```
 ---
 
@@ -472,3 +523,4 @@ Response
 200 OK
 
 ---
+
