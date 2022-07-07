@@ -47,6 +47,7 @@ https://[env].solvexia.com/oauth/token
 |client_id|`string`|REQUIRED. Client id that you received when you created an application in SolveXia.|
 |client_secret|`string`|REQUIRED. Client secret that you received when you created an application in SolveXia.|
 |grant_type|`string`|REQUIRED. For this flow grant type should always equal to "client_credentials".|
+|scope|`string`|OPTIONAL. A comma-separated list of [scopes](./oauth-scopes.md) your application requires to work.|
 
 ##### Response
 
@@ -97,6 +98,7 @@ https://[env].solvexia.com/oauth/authorize?client_id=your_client_id&response_typ
 |response_type|`string`|REQUIRED. will always be "code".|
 |redirect_uri|`string`|OPTIONAL. If not supplied it will use configured redirect url of the oauth application, if supplied it must match the oauth application redirect url.|
 |state|`string`|OPTIONAL. Specifies any string value that your application uses to maintain state between your authorization request and the authorization server's response.|
+|scope|`string`|OPTIONAL. A comma-separated list of [scopes](./oauth-scopes.md) your application requires to work.|
 
 After the SolveXia authorization server successfully verifies your parameters, it will redirect the user to the login page and, as a next step, to the authorization form.
 
@@ -127,6 +129,15 @@ https://[env].solvexia.com/oauth/token
 
 ##### Parameters
 
+
+| Name | Type |Description |
+| ------------- |------------- | -------------|
+|client_id|`string`|REQUIRED. Client id that you received when you created an application in SolveXia.|
+|client_secret|`string`|REQUIRED. Client secret that you received when you created an application in SolveXia.|
+|redirect_uri|`string`|OPTIONAL. If supplied during Step 1, it must match.|
+|grant_type|`string`|REQUIRED. For this flow grant type should always equal to "authorization_code".|
+|code|`string`|REQUIRED. code that was returned in query string in Step 3.|
+
 ```json
 {
     "client_id"    : "DDF-AAFBD447-55432-475B-83DB-B5AD78878821",
@@ -137,37 +148,31 @@ https://[env].solvexia.com/oauth/token
 }
 ```
 
-
-| Name | Type |Description |
-| ------------- |------------- | -------------|
-|client_id|`string`|REQUIRED. Client id that you received when you created an application in SolveXia.|
-|client_secret|`string`|REQUIRED. Client secret that you received when you created an application in SolveXia.|
-|redirect_uri|`string`|OPTIONAL. If supplied during Step 1, it must match.|
-|grant_type|`string`|REQUIRED. For this flow grant type should always equal to "authorization_code".|
-|code|`string`|REQUIRED. code that was returned in query string in Step 3.|
-
 ##### Response
 
 By default, response comes in JSON.
 
-```json
-{
-    "refresh_token": "430rt03erhge5heg9geiorhgeorgerguperg8h304g340gh0rhgerhgehrg349gjh3409hg3rtrt",
-    "access_token" : "syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg",
-    "token_type"   : "Bearer",
-    "expires_in"   : 599.1044945
-}
-```
 | Name | Type |Description |
 | ------------- |------------- | -------------|
 |access_token|`string`|Access token to use for subsequent API's.|
 |refresh_token|`string`|Refresh token to use for Refresh request to generate new Access Token. Has a default expiration of 6 months.|
 |token_type|`string`|Will always be "Bearer".|
 |expires_in|`number`|Seconds in which the access token will expire, for the user application to handle.|
+|scope|`string`|OPTIONAL. A comma-separated list of [scopes](./oauth-scopes.md) your application requires to work.|
+
+```json
+{
+    "refresh_token": "430rt03erhge5heg9geiorhgeorgerguperg8h304g340gh0rhgerhgehrg349gjh3409hg3rtrt",
+    "access_token" : "syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg",
+    "token_type"   : "Bearer",
+    "expires_in"   : 599.1044945,
+    "scope"        : "user_readonly,usergroup_readonly"
+}
+```
 
 ##### Example
 
-```bash
+```cURL
 curl -X POST "https://app.solvexia.com/oauth/token" \
      -H "Content-Type: application/json" \
      -d '{"client_id":"DDF-AAFBD447-55432-475B-83DB-B5AD78878821","client_secret":"B5AD78878821","grant_type":"authorization_code","code":"430rt03erhgehrg349gjh3409hg3rtrt"}'
@@ -219,11 +224,12 @@ By default, response comes in JSON.
 |refresh_token|`string`|Refresh token to use for Refresh request to generate new Access Token. Has a default expiration of 6 months.|
 |token_type|`string`|Will always be "Bearer".|
 |expires_in|`number`|Seconds in which the access token will expire, for the user application to handle.|
+|scope|`string`|OPTIONAL. A comma-separated list of [scopes](./oauth-scopes.md) your application requires to work.|
 
 
 ##### Example
 
-```bash
+```cURL
 curl -X POST "https://app.solvexia.com/oauth/token" \
      -H "Content-Type: application/json" \
      -d '{"client_id":"DDF-AAFBD447-55432-475B-83DB-B5AD78878821","client_secret":"B5AD78878821","grant_type":"refresh_token","refresh_token":"430rt03erhgehrg349gjh3409hg3rtrt"}'
@@ -232,14 +238,14 @@ curl -X POST "https://app.solvexia.com/oauth/token" \
 ## Call SolveXia public API with access token
 
 ```http
-GET https://app.solvexia.com/api/v1/processes
+GET https://[env].solvexia.com/api/v1/processes
 
 Authorization: Bearer ACCESS_TOKEN
 ```
 
 ##### Example
 
-```bash
+```cURL
 curl -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg" \
      https://app.solvexia.com/api/v1/processes
 ```
