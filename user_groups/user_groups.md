@@ -2,11 +2,12 @@
 
 [Get a user group list](#get-a-user-group-list)  
 [Get a user group](#get-a-user-group)  
-[Get users for a user group](#get-users-for-a-user-group)\
-[Add a user to a user group](#add-a-user-to-a-user-group)\
-[Remove a user from a user group](#remove-a-user-from-a-user-group)\
-[Get user group permissions](#get-user-group-permissions)\
-[Add or update user group permission for a given resource](#add-or-update-user-group-permission-for-a-given-resource)\
+[Get users for a user group](#get-users-for-a-user-group)
+[Add a user to a user group](#add-a-user-to-a-user-group)
+[Remove a user from a user group](#remove-a-user-from-a-user-group)
+[Get user group permissions](#get-user-group-permissions)
+[Add user group permission for a given resource](#add-user-group-permission-for-a-given-resource)
+[Update user group permission for a given resource](#update-user-group-permission-for-a-given-resource)
 [Delete or update user group permission](#delete-user-group-permission)
 
 ---
@@ -298,9 +299,67 @@ Response
 ```
 ---
 
-## Add or update user group permission for a given resource
+## Add user group permission for a given resource
 
-Add or update resource permission of a user group.
+Add resource permission to the user group.
+
+```apacheconfig
+POST /v1/usergroups/{userGroupId}/permissions
+```
+
+#### Path parameters
+
+| Name | Type | Description |
+| ------------- |------------- | -------------|
+| userGroupId | `string` | The user group id to set up the permission for. |
+
+#### Query parameters
+The query parameters are not expected.
+
+#### Request body
+| Name | Type | Description | Required | Example |
+| ---- | ---- | ------------| :------: | ------- |
+| resourceId | `string` | The resource id to set up the new permission to. | &#9745; | "resourceId": "p-2343" |
+| role | `enum` | The user group’s [permission role](../permissions/permissions_schemas.md/#permission-role) for the resource. | &#9745; | "role": "reader" |
+
+Example
+```json
+{
+  "resourceId": "p-2343",
+  "role": "reader"
+}
+```
+
+#### Response body
+The successful response contains a [Permission](../permissions/permissions_schemas.md/#permission).
+
+The error response contains an [Error](../response_codes.md).
+
+### Example
+
+Request
+
+```shell
+curl "https://app.solvexia.com/api/v1/usergroups/ug-114273/permisions" -X POST -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg" -H "Content-Type: application/json" -d '{
+  "resourceId": "p-2343", "role": "reader"}'
+```
+
+Response
+
+```json
+{
+  "resourceId": "p-2343",
+  "resourceName": "Sales reconciliation",
+  "role": "reader"
+}
+```
+
+---
+
+
+## Update user group permission for a given resource
+
+Update resource permission of the user group.
 
 ```apacheconfig
 POST /v1/usergroups/{userGroupId}/permissions/{resourceId}
@@ -310,13 +369,18 @@ POST /v1/usergroups/{userGroupId}/permissions/{resourceId}
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| userGroupId | `string` | The user group id to request. |
-| resourceId | `string` | The resource id to add or update. |
+| userGroupId | `string` | The user group id to update the permission for. |
+| resourceId | `string` | The resource id to update with the new permission. |
 
 #### Query parameters
 The query parameters are not expected.
 
 #### Request body
+| Name | Type | Description | Required | Example |
+| ---- | ---- | ------------| :------: | ------- |
+| role | `enum` | The user group’s [permission role](../permissions/permissions_schemas.md/#permission-role) for the resource. | &#9745; | "role": "reader" |
+
+Example
 ```json
 {
   "role": "editor"
@@ -324,7 +388,7 @@ The query parameters are not expected.
 ```
 
 #### Response body
-The successful response contains a [Permission Role Type](../permissions/permissions_schemas.md/#permission-role-type).
+The successful response contains a [Permission](../permissions/permissions_schemas.md/#permission).
 
 The error response contains an [Error](../response_codes.md).
 
@@ -360,8 +424,8 @@ DELETE /v1/usergroups/{userGroupId}/permissions/{resourceId}
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| userGroupId | `string` | The user group id to request. |
-| resourceId | `string` | The resource id to delete. |
+| userGroupId | `string` | The user group id to delete permission for. |
+| resourceId | `string` | The resource id to delete permission for. |
 
 #### Query parameters
 The query parameters are not expected.
