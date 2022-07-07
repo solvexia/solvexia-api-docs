@@ -1,11 +1,12 @@
 # User APIs
 
 [Get a user list](#get-a-user-list)  
-[Get a user](#get-a-user)  
+[Get a user](#get-a-user)   
 [Create user](#create-user)  
-[Update user](#update-user)<br />
-[Get user permissions](#get-user-permissions)  
-[Add or update user permission for a given resource](#add-or-update-user-permission-for-a-given-resource)  
+[Update user](#update-user)\
+[Get user permissions](#get-user-permissions)\
+[Add user permission for a given resource](#add-user-permission-for-a-given-resource)\
+[Update user permission for a given resource](#update-user-permission-for-a-given-resource)  
 [Delete user permission](#delete-user-permission)
 
 ---
@@ -321,9 +322,65 @@ Response
 ---
 
 
-## Add or update user permission for a given resource
+## Add user permission for a given resource
 
-Add or update resource permission of a user.
+Add resource permission to the user.
+
+```apacheconfig
+POST /v1/users/{userId}/permissions
+```
+
+#### Path parameters
+
+| Name | Type | Description |
+| ------------- |------------- | -------------|
+| userId | `string` | The user id to set up the permission for. |
+
+#### Query parameters
+The query parameters are not expected.
+
+#### Request body
+| Name | Type | Description | Required | Example |
+| ---- | ---- | ------------| :------: | ------- |
+| resourceId | `string` | The resource id to set up the new permission to. | &#9745; | "resourceId": "p-2343" |
+| role | `enum` | The user’s [permission role](../permissions/permissions_schemas.md/#permission-role) for the resource. | &#9745; | "role": "reader" |
+
+Example
+```json
+{
+  "resourceId": "p-2343",
+  "role": "reader"
+}
+```
+
+#### Response body
+The successful response contains a [Permission](../permissions/permissions_schemas.md/#permission).
+
+The error response contains an [Error](../response_codes.md).
+
+### Example
+
+Request
+
+```shell
+curl "https://app.solvexia.com/api/v1/users/u-11427/permisions" -X POST -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg" -H "Content-Type: application/json" -d '{"resourceId": "p-2343", "role": "reader"}'
+```
+
+Response
+
+```json
+{
+  "resourceId": "p-2343",
+  "resourceName": "Sales reconciliation",
+  "role": "reader"
+}
+```
+
+---
+
+## Update user permission for a given resource
+
+Update resource permission of the user.
 
 ```apacheconfig
 POST /v1/users/{userId}/permissions/{resourceId}
@@ -333,13 +390,18 @@ POST /v1/users/{userId}/permissions/{resourceId}
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| userId | `string` | The user id to request. |
-| resourceId | `string` | The resource id to add or update. |
+| userId | `string` | The user id to update the permission for. |
+| resourceId | `string` | The resource id to update with the new permission. |
 
 #### Query parameters
 The query parameters are not expected.
 
 #### Request body
+| Name | Type | Description | Required | Example |
+| ---- | ---- | ------------| :------: | ------- |
+| role | `enum` | The user’s [permission role](../permissions/permissions_schemas.md/#permission-role) for the resource. | &#9745; | "role": "reader" |
+
+Example
 ```json
 {
   "role": "editor"
@@ -347,7 +409,7 @@ The query parameters are not expected.
 ```
 
 #### Response body
-The successful response contains a [Permission Role Type](../permissions/permissions_schemas.md/#permission-role-type).
+The successful response contains a [Permission](../permissions/permissions_schemas.md/#permission).
 
 The error response contains an [Error](../response_codes.md).
 
@@ -383,8 +445,8 @@ DELETE /v1/users/{userId}/permissions/{resourceId}
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| userId | `string` | The user id to request. |
-| resourceId | `string` | The resource id to delete. |
+| userId | `string` | The user id to delete permission for. |
+| resourceId | `string` | The resource id to delete permission for. |
 
 #### Query parameters
 The query parameters are not expected.
