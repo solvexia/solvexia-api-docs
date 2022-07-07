@@ -424,7 +424,7 @@ DELETE /v1/usergroups/{userGroupId}/permissions/{resourceId}
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| userGroupId | `string` | The user group id to delete for. |
+| userGroupId | `string` | The user group id to delete permission for. |
 | resourceId | `string` | The resource id to delete permission for. |
 
 #### Query parameters
