@@ -435,7 +435,7 @@ DELETE /v1/users/{userId}/permissions/{resourceId}
 | Name | Type | Description |
 | ------------- |------------- | -------------|
 | userId | `string` | The user id to delete permission for. |
-| resourceId | `string` | The resource id to delete the permission for. |
+| resourceId | `string` | The resource id to delete permission for. |
 
 #### Query parameters
 The query parameters are not expected.
