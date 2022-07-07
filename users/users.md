@@ -3,10 +3,10 @@
 [Get a user list](#get-a-user-list)  
 [Get a user](#get-a-user)   
 [Create user](#create-user)  
-[Update user](#update-user)/
-[Get user permissions](#get-user-permissions)/
-[Add user permission for a given resource](#add-user-permission-for-a-given-resource)/
-[Update user permission for a given resource](#update-user-permission-for-a-given-resource)/  
+[Update user](#update-user)\
+[Get user permissions](#get-user-permissions)\
+[Add user permission for a given resource](#add-user-permission-for-a-given-resource)\
+[Update user permission for a given resource](#update-user-permission-for-a-given-resource)\  
 [Delete user permission](#delete-user-permission)
 
 ---
