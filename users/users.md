@@ -313,7 +313,7 @@ Response
 
 ## Add user permission for a given resource
 
-Add resource permission of a user.
+Add resource permission to the user.
 
 ```apacheconfig
 POST /v1/users/{userId}/permissions
@@ -369,7 +369,7 @@ Response
 
 ## Update user permission for a given resource
 
-Update resource permission of a user.
+Update resource permission of the user.
 
 ```apacheconfig
 POST /v1/users/{userId}/permissions/{resourceId}
@@ -434,8 +434,8 @@ DELETE /v1/users/{userId}/permissions/{resourceId}
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| userId | `string` | The user id to delete. |
-| resourceId | `string` | The resource id to delete the permission from. |
+| userId | `string` | The user id to delete permission for. |
+| resourceId | `string` | The resource id to delete the permission for. |
 
 #### Query parameters
 The query parameters are not expected.

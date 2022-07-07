@@ -301,7 +301,7 @@ Response
 
 ## Add user group permission for a given resource
 
-Add resource permission of a user group.
+Add resource permission to the user group.
 
 ```apacheconfig
 POST /v1/usergroups/{userGroupId}/permissions
@@ -359,7 +359,7 @@ Response
 
 ## Update user group permission for a given resource
 
-Update resource permission of a user group.
+Update resource permission of the user group.
 
 ```apacheconfig
 POST /v1/usergroups/{userGroupId}/permissions/{resourceId}
@@ -424,8 +424,8 @@ DELETE /v1/usergroups/{userGroupId}/permissions/{resourceId}
 
 | Name | Type | Description |
 | ------------- |------------- | -------------|
-| userGroupId | `string` | The user group id to delete. |
-| resourceId | `string` | The resource id to delete the permission from. |
+| userGroupId | `string` | The user group id to delete for. |
+| resourceId | `string` | The resource id to delete the permission for. |
 
 #### Query parameters
 The query parameters are not expected.
