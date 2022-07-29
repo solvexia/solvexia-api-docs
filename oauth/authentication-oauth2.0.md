@@ -47,7 +47,7 @@ https://[env].solvexia.com/oauth/token
 |client_id|`string`|REQUIRED. Client id that you received when you created an application in SolveXia.|
 |client_secret|`string`|REQUIRED. Client secret that you received when you created an application in SolveXia.|
 |grant_type|`string`|REQUIRED. For this flow grant type should always equal to "client_credentials".|
-|scope|`string`|OPTIONAL. A comma-separated list of [scopes](./oauth-scopes.md) your application requires to work.|
+|scope|`string`|OPTIONAL. A whitespace-separated list of [scopes](./oauth-scopes.md) your application requires to work.|
 
 ##### Response
 
@@ -98,7 +98,7 @@ https://[env].solvexia.com/oauth/authorize?client_id=your_client_id&response_typ
 |response_type|`string`|REQUIRED. will always be "code".|
 |redirect_uri|`string`|OPTIONAL. If not supplied it will use configured redirect url of the oauth application, if supplied it must match the oauth application redirect url.|
 |state|`string`|OPTIONAL. Specifies any string value that your application uses to maintain state between your authorization request and the authorization server's response.|
-|scope|`string`|OPTIONAL. A comma-separated list of [scopes](./oauth-scopes.md) your application requires to work.|
+|scope|`string`|OPTIONAL. A whitespace-separated list of [scopes](./oauth-scopes.md) your application requires to work.|
 
 After the SolveXia authorization server successfully verifies your parameters, it will redirect the user to the login page and, as a next step, to the authorization form.
 
@@ -158,7 +158,7 @@ By default, response comes in JSON.
 |refresh_token|`string`|Refresh token to use for Refresh request to generate new Access Token. Has a default expiration of 6 months.|
 |token_type|`string`|Will always be "Bearer".|
 |expires_in|`number`|Seconds in which the access token will expire, for the user application to handle.|
-|scope|`string`|OPTIONAL. A comma-separated list of [scopes](./oauth-scopes.md) your application requires to work.|
+|scope|`string`|OPTIONAL. A whitespace-separated list of [scopes](./oauth-scopes.md) your application requires to work.|
 
 ```json
 {
@@ -166,7 +166,7 @@ By default, response comes in JSON.
     "access_token" : "syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg",
     "token_type"   : "Bearer",
     "expires_in"   : 599.1044945,
-    "scope"        : "user_readonly,usergroup_readonly"
+    "scope"        : "user_read usergroup_read process"
 }
 ```
 
@@ -224,7 +224,7 @@ By default, response comes in JSON.
 |refresh_token|`string`|Refresh token to use for Refresh request to generate new Access Token. Has a default expiration of 6 months.|
 |token_type|`string`|Will always be "Bearer".|
 |expires_in|`number`|Seconds in which the access token will expire, for the user application to handle.|
-|scope|`string`|OPTIONAL. A comma-separated list of [scopes](./oauth-scopes.md) your application requires to work.|
+|scope|`string`|OPTIONAL. A whitespace-separated list of [scopes](./oauth-scopes.md) your application requires to work.|
 
 
 ##### Example
