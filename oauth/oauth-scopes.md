@@ -30,6 +30,4 @@ In Application, user can add the preferred scopes using whitespace-separated lis
 
 ### Default scopes for OAuth applications
 
-If the scopes are not set up for the application and the scopes are not set during the access token request 
-
-WIP
+If the scopes are not set up for the application and the scopes are not set during the access token request, the default scope will be process_read
