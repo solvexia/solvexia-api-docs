@@ -47,7 +47,7 @@ https://[env].solvexia.com/oauth/token
 |client_id|`string`|REQUIRED. Client id that you received when you created an application in SolveXia.|
 |client_secret|`string`|REQUIRED. Client secret that you received when you created an application in SolveXia.|
 |grant_type|`string`|REQUIRED. For this flow grant type should always equal to "client_credentials".|
-|scope|`string`|OPTIONAL. A whitespace-separated list of [scopes](./oauth-scopes.md) your application requires to work.|
+|scope|`string`|OPTIONAL. A whitespace-separated list of [scopes](./oauth-scopes.md).|
 
 ##### Response
 
@@ -158,7 +158,7 @@ By default, response comes in JSON.
 |refresh_token|`string`|Refresh token to use for Refresh request to generate new Access Token. Has a default expiration of 6 months.|
 |token_type|`string`|Will always be "Bearer".|
 |expires_in|`number`|Seconds in which the access token will expire, for the user application to handle.|
-|scope|`string`|OPTIONAL. A whitespace-separated list of [scopes](./oauth-scopes.md) your application requires to work.|
+|scope|`string`|OPTIONAL. A whitespace-separated list of [scopes](./oauth-scopes.md).|
 
 ```json
 {
@@ -224,7 +224,7 @@ By default, response comes in JSON.
 |refresh_token|`string`|Refresh token to use for Refresh request to generate new Access Token. Has a default expiration of 6 months.|
 |token_type|`string`|Will always be "Bearer".|
 |expires_in|`number`|Seconds in which the access token will expire, for the user application to handle.|
-|scope|`string`|OPTIONAL. A whitespace-separated list of [scopes](./oauth-scopes.md) your application requires to work.|
+|scope|`string`|OPTIONAL. A whitespace-separated list of [scopes](./oauth-scopes.md).|
 
 
 ##### Example
