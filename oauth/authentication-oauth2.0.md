@@ -98,7 +98,7 @@ https://[env].solvexia.com/oauth/authorize?client_id=your_client_id&response_typ
 |response_type|`string`|REQUIRED. will always be "code".|
 |redirect_uri|`string`|OPTIONAL. If not supplied it will use configured redirect url of the oauth application, if supplied it must match the oauth application redirect url.|
 |state|`string`|OPTIONAL. Specifies any string value that your application uses to maintain state between your authorization request and the authorization server's response.|
-|scope|`string`|OPTIONAL. A whitespace-separated list of [scopes](./oauth-scopes.md) your application requires to work.|
+|scope|`string`|OPTIONAL. A whitespace-separated list of [scopes](./oauth-scopes.md).|
 
 After the SolveXia authorization server successfully verifies your parameters, it will redirect the user to the login page and, as a next step, to the authorization form.
 
