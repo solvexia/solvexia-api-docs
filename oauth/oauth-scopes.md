@@ -8,8 +8,8 @@
 | `user_read` | Readonly access to users. |
 | `usergroup` | Read/write access to user groups. |
 | `usergroup_read` | Readonly access to user groups. |
-| `permissions` | Read/write access to resource permissions. |
-| `permissions_read` | Readonly access to resource permissions. |
+| `permission` | Read/write access to resource permissions. |
+| `permission_read` | Readonly access to resource permissions. |
 | `process` | Read/write access to processes. |
 | `process_execute` | Execute access to processes. |
 | `process_read` | Readonly access to processes. |
