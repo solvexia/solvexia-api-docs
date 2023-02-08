@@ -16,7 +16,7 @@ In order to get started using SolveXia Public API you need to create an applicat
 
 Any application that is intended to access SolveXia Public API must have authorization credentials that identify the application to SolveXia authorization server.
 
-Create authorization credentials for you app:
+Create authorization credentials for your app:
 
 1. Navigate to SolveXia API portal from the user dropdown menu.
 2. Click "Create new application".
