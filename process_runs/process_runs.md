@@ -67,7 +67,7 @@ Response
 Starts a process run.
 
 ```apacheconfig
-POST /v1/processruns/{processrunid}/start
+POST /v1/processruns/{processRunId}/start
 ```
 
 #### Path parameters
@@ -113,7 +113,7 @@ Response
 Cancels a currently running process run.
 
 ```apacheconfig
-POST /v1/processruns/{processrunid}/cancel
+POST /v1/processruns/{processRunId}/cancel
 ```
 
 #### Path parameters
@@ -378,7 +378,7 @@ Response
 Restart (or start) a step in a process run.
 
 ```apacheconfig
-POST /v1/processruns/{processRunId}/steps/{stepid}/start
+POST /v1/processruns/{processRunId}/steps/{stepId}/start
 ```
 
 #### Path parameters
@@ -427,7 +427,7 @@ Response
 Cancel a step in a process run.
 
 ```apacheconfig
-POST /v1/processruns/{processrunid}/steps/{stepid}/cancel
+POST /v1/processruns/{processRunId}/steps/{stepId}/cancel
 ```
 
 #### Path parameters
