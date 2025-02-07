@@ -8,6 +8,7 @@
 # Process Run Types
 [Process Run Request Type](#process-run-request-type)
 [Process Run Status Type](#process-run-status-type)
+[Process Step Status Type](#process-step-status-type)
 
 ---
 
@@ -53,7 +54,7 @@ type StepRunStatus = {
   ; dateStarted: string
   ; dateFinished: string
   ; runDurationInSeconds: number
-  ; status: ProcessRunStatus
+  ; status: ProcessStepStatusType
   ; completionMessage: string
 }
 ```
