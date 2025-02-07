@@ -2,7 +2,8 @@
 
 [Process Run](#process-run)  
 [Process Run Request ](#process-run-request)  
-[Process Run Status](#process-run-status)  
+[Process Run Status](#process-run-status) 
+[Step Run Status](#step-run-status) 
 
 # Process Run Types
 [Process Run Request Type](#process-run-request-type)
@@ -44,6 +45,19 @@ type ProcessRunStatus = {
   ; status: ProcessRunStatus
 }
 ```
+
+## Step Run Status
+```typescript
+type StepRunStatus = {
+    id: string
+  ; dateStarted: string
+  ; dateFinished: string
+  ; runDurationInSeconds: number
+  ; status: ProcessRunStatus
+  ; completionMessage: string
+}
+```
+
 ---
 
 ## Process Run Request Type

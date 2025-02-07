@@ -1,10 +1,15 @@
 # Process Run APIs
 
-[Get a process run](#get-a-process-run)  
-[Start a process run](#start-a-process-run)  
-[Cancel a process run](#Cancel-a-process-run)  
+[Get a process run](#get-a-process-run)
+[Start a process run (New)](#start-a-process-run-new)  
+[Cancel a process run (New)](#Cancel-a-process-run-new)   
+[Start a process run (Deprecated)](#start-a-process-run-deprecated)  
+[Cancel a process run (Deprecated)](#Cancel-a-process-run-deprecated)
+[Start a process run (New)]()
 [Get process run status](#get-process-run-status)  
 [Get a list of data steps in a process run](#get-process-run-data-steps)
+[Restart a step in a process run](#restart-a-step-in-a-process-run)
+[Cancel a step in a process run](#cancel-a-step-in-a-process-run)
 
 ---
 
@@ -58,7 +63,99 @@ Response
 ```
 ---
 
-## Start a process run
+## Start a process run (New)
+
+Starts a process run.
+
+```apacheconfig
+POST /v1/processruns/{processrunid}/start
+```
+
+#### Path parameters
+
+| Name | Type | Description |
+| ------------- |------------- | -------------|
+| processRunId | `string` | The process run id to start. |
+
+#### Query parameters
+The query parameters are not expected.
+
+#### Request body
+The request body must be empty.
+
+#### Response body
+The successful response contains an instance of [Process Run Status](./process_runs_schemas.md/#process-run-status).
+
+The error response contains an [Error](../response_codes.md).
+
+### Example
+
+Request
+
+```shell
+curl -X POST "https://app.solvexia.com/api/v1/processruns/pr-114278/start" -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg"
+```
+
+Response
+
+```json
+{
+  "id": "pr-114278",
+  "dateStarted": null,
+  "dateFinished": null,
+  "runDurationInSeconds": null,
+  "status": "Scheduled"
+}
+```
+---
+
+## Cancel a process run (New)
+
+Cancels a currently running process run.
+
+```apacheconfig
+POST /v1/processruns/{processrunid}/cancel
+```
+
+#### Path parameters
+
+| Name | Type | Description |
+| ------------- |------------- | -------------|
+| processRunId | `string` | The process run id to cancel. |
+
+#### Query parameters
+The query parameters are not expected.
+
+#### Request body
+The request body must be empty.
+
+#### Response body
+The successful response contains an instance of [Process Run Status](./process_runs_schemas.md/#process-run-status).
+
+The error response contains an [Error](../response_codes.md).
+
+### Example
+
+Request
+
+```shell
+curl -X POST "https://app.solvexia.com/api/v1/processruns/pr-263/cancel" -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg"
+```
+
+Response
+
+```json
+{
+  "id": "pr-263",
+  "dateFinished": null,
+  "dateStarted": "",
+  "runDurationInSec": 48,
+  "status": "Cancelled"
+}
+```
+---
+
+## Start a process run (Deprecated)
 
 Starts a process run.
 
@@ -108,7 +205,7 @@ Response
 ```
 ---
 
-## Cancel a process run
+## Cancel a process run (Deprecated)
 
 Cancels a currently running process run.
 
@@ -180,7 +277,7 @@ The query parameters are not expected.
 The request body must be empty.
 
 #### Response body
-The successful response contains an instance of [Process Run Status](./process_runs_schemas.md/#process-run-status).
+The successful response contains an instance of [Process Run Status](./process_runs_schemas.md/#process-run-status) and [Step Run Status](./process_runs_schemas.md/#step-run-status).
 
 The error response contains an [Error](../response_codes.md).
 
@@ -195,13 +292,31 @@ curl -X GET "https://app.solvexia.com/api/v1/processruns/pr-114278/runstatus" -H
 Response
 
 ```json
-{
-  "id": "pr-263",
-  "dateFinished": null,
-  "dateStarted": "",
-  "runDurationInSec": 48,
-  "status": "Cancelled"
-}
+[
+    {
+        "id": "pr-14896",
+        "dateStarted": "2025-02-05T22:40:19.923",
+        "dateFinished": "2025-02-05T22:55:51.923",
+        "runDurationInSeconds": 932,
+        "status": "Cancelled"
+    },
+    {
+        "id": "ds-14897",
+        "dateStarted": "2025-02-05T22:40:19.923",
+        "dateFinished": "2025-02-05T22:40:21.007",
+        "runDurationInSeconds": 1,
+        "status": "Success",
+        "completionMessage": ""
+    },
+    {
+        "id": "as-14903",
+        "dateStarted": "2025-02-05T22:53:11.987",
+        "dateFinished": null,
+        "runDurationInSeconds": null,
+        "status": "Cancelled",
+        "completionMessage": ""
+    }
+]
 ```
 ---
 
@@ -256,5 +371,103 @@ Response
         "name": "New data step 2"
     }
 ]
+```
+---
+
+## Restart a step in a process run
+
+Restart (or start) a step in a process run.
+
+```apacheconfig
+POST /v1/processruns/{processRunId}/steps/{stepid}/start
+```
+
+#### Path parameters
+
+| Name | Type | Description |
+| ------------- |------------- | -------------|
+| processRunId | `string` | The process run id of a step. |
+| stepId | `string` | The step id to request a restart. |
+
+#### Query parameters
+The query parameters are not expected.
+
+#### Request body
+
+The request body must be empty.
+
+#### Response body
+The successful response contains an instances of [Step Run Status]((./process_runs_schemas.md/#step-run-status)).
+
+The error response contains an [Error](../response_codes.md).
+
+### Example
+
+Request
+
+```shell
+curl -X POST "https://app.solvexia.com/api/v1/processruns/pr-114278/steps/as-20682/start" -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg"
+```
+
+Response
+
+```json
+{
+    "id": "as-20682",
+    "dateFinished": null,
+    "dateStarted": "2025-01-13T03:51:03.27Z",
+    "runDurationInSec": 2,
+    "status": "Running",
+    "completionMessage": "step is currently running"
+}
+```
+---
+
+## Cancel a step in a process run
+
+Cancel a step in a process run.
+
+```apacheconfig
+POST /v1/processruns/{processrunid}/steps/{stepid}/cancel
+```
+
+#### Path parameters
+
+| Name | Type | Description |
+| ------------- |------------- | -------------|
+| processRunId | `string` | The process run id of a step. |
+| stepId | `string` | The step id to request a restart. |
+
+#### Query parameters
+The query parameters are not expected.
+
+#### Request body
+
+The request body must be empty.
+
+#### Response body
+The successful response contains an instances of [Step Run Status]((./process_runs_schemas.md/#step-run-status)).
+
+The error response contains an [Error](../response_codes.md).
+
+### Example
+
+Request
+
+```shell
+curl -X POST "https://app.solvexia.com/api/v1/processruns/pr-114278/steps/as-20682/cancel" -H "Authorization: Bearer syPHeMY5H--kdRtfpoXTgYFF7LHgVOhIjOQ5QkIvSD68VZvc2_uAew.P07tEVThD5SqNCV_tFwbAg"
+```
+
+Response
+
+```json
+{
+    "id": "as-20682",
+    "dateFinished": null,
+    "dateStarted": "2025-01-13T03:51:03.27Z",
+    "runDurationInSec": 2,
+    "status": "cancelled",
+    "completionMessage": ""
+}
 ```
 ---
