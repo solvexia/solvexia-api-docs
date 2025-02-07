@@ -4,8 +4,11 @@
 [Start a process run (New)](#start-a-process-run-new)  
 [Cancel a process run (New)](#cancel-a-process-run-new)   
 [Start a process run (Deprecated)](#start-a-process-run-deprecated)  
-[Cancel a process run (Deprecated)](#cancel-a-process-run-deprecated) [Get process run status](#get-process-run-status)  
-[Get a list of data steps in a process run](#get-process-run-data-steps) [Restart a step in a process run](#restart-a-step-in-a-process-run) [Cancel a step in a process run](#cancel-a-step-in-a-process-run)
+[Cancel a process run (Deprecated)](#cancel-a-process-run-deprecated)  
+[Get process run status](#get-process-run-status)  
+[Get a list of data steps in a process run](#get-process-run-data-steps)  
+[Restart a step in a process run](#restart-a-step-in-a-process-run)  
+[Cancel a step in a process run](#cancel-a-step-in-a-process-run)
 
 ---
 

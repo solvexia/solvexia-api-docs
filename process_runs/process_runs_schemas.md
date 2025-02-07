@@ -2,10 +2,13 @@
 
 [Process Run](#process-run)  
 [Process Run Request ](#process-run-request)  
-[Process Run Status](#process-run-status) [Step Run Status](#step-run-status) 
+[Process Run Status](#process-run-status) 
+[Step Run Status](#step-run-status) 
 
 # Process Run Types
-[Process Run Request Type](#process-run-request-type) [Process Run Status Type](#process-run-status-type) [Process Step Status Type](#process-step-status-type)
+[Process Run Request Type](#process-run-request-type) 
+[Process Run Status Type](#process-run-status-type) 
+[Process Step Status Type](#process-step-status-type)
 
 ---
 
