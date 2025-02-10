@@ -7,7 +7,7 @@
 [Cancel a process run (Deprecated)](#cancel-a-process-run-deprecated)  
 [Get process run status](#get-process-run-status)  
 [Get a list of data steps in a process run](#get-process-run-data-steps)  
-[Get a step status in a process run](#get-a-step-status-in-a-process-run)
+[Get a step status in a process run](#get-a-step-status-in-a-process-run)  
 [Restart a step in a process run](#restart-a-step-in-a-process-run)  
 
 ---
