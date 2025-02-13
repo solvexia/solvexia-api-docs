@@ -74,7 +74,7 @@ The path parameters are not expected.
 The query parameters are not expected.
 
 #### Request body
-The request body must contain an instance of [Table](./tables_schemas/#table). The following fields will be used to create a table.
+The request body must contain an instance of [Table](./tables_schemas.md/#table). The following fields will be used to create a table.
 
 ```typescript
 { 
@@ -89,7 +89,7 @@ The request body must contain an instance of [Table](./tables_schemas/#table). T
 | description | `string` | The description of the table. |
 
 #### Response body
-The successful response contains an instance of [Table](./tables_schemas/#table).
+The successful response contains an instance of [Table](./tables_schemas.md/#table).
 
 The error response contains an [Error](../response_codes.md).
 
@@ -134,7 +134,7 @@ POST /v1/tables/{tableId}
 The query parameters are not expected.
 
 #### Request body
-The request body must contain an instance of [Table](./tables_schemas/#table). One or more of the following fields will be used to update the table.
+The request body must contain an instance of [Table](./tables_schemas.md/#table). One or more of the following fields will be used to update the table.
 
 ```typescript
 { 
@@ -149,7 +149,7 @@ The request body must contain an instance of [Table](./tables_schemas/#table). O
 | description | `string` | The description of the table. |
 
 #### Response body
-The successful response contains an instance of [Table](./tables_schemas/#table).
+The successful response contains an instance of [Table](./tables_schemas.md/#table).
 
 The error response contains an [Error](../response_codes.md).
 
