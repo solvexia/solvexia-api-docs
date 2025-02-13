@@ -1,13 +1,13 @@
 # Process Run APIs
 
 [Get a process run](#get-a-process-run)  
-[Start a process run (New)](#start-a-process-run-new)  
-[Cancel a process run (New)](#cancel-a-process-run-new)   
-[Start a process run (Deprecated)](#start-a-process-run-deprecated)  
-[Cancel a process run (Deprecated)](#cancel-a-process-run-deprecated)  
+[Start a process run](#start-a-process-run)  
+[Cancel a process run](#cancel-a-process-run)   
+[[Deprecated] Start a process run](#deprecated-start-a-process-run)  
+[[Deprecated] Cancel a process run](#deprecated-cancel-a-process-run)  
 [Get process run status](#get-process-run-status)  
 [Get a list of data steps in a process run](#get-process-run-data-steps)  
-[Get a step status in a process run](#get-a-step-status-in-a-process-run)  
+[Get a run status of a step in a process run](#get-a-run-status-of-a-step-in-a-process-run)  
 [Restart a step in a process run](#restart-a-step-in-a-process-run)  
 
 ---
@@ -62,9 +62,9 @@ Response
 ```
 ---
 
-## Start a process run (New)
+## Start a process run
 
-Starts a process run.
+Start a process run.
 
 ```apacheconfig
 POST /v1/processruns/{processRunId}/start
@@ -108,9 +108,9 @@ Response
 ```
 ---
 
-## Cancel a process run (New)
+## Cancel a process run
 
-Cancels a currently running process run.
+Cancel a process run.
 
 ```apacheconfig
 POST /v1/processruns/{processRunId}/cancel
@@ -154,7 +154,7 @@ Response
 ```
 ---
 
-## Start a process run (Deprecated)
+## [Deprecated] Start a process run
 
 Starts a process run.
 
@@ -204,7 +204,7 @@ Response
 ```
 ---
 
-## Cancel a process run (Deprecated)
+## [Deprecated] Cancel a process run
 
 Cancels a currently running process run.
 
@@ -355,9 +355,9 @@ Response
 ```
 ---
 
-## Get a step status in a process run
+## Get a run status of a step in a process run
 
-Get the status of a step in a process run.
+Return a run status of a step in a process run.
 
 ```apacheconfig
 GET /v1/processruns/{processRunId}/steps/{stepId}/runstatus
@@ -378,7 +378,7 @@ The query parameters are not expected.
 The request body must be empty.
 
 #### Response body
-The successful response contains an instances of [Step Run Status](./process_runs_schemas.md/#step-run-status).
+The successful response contains an instances of [Step Run Status](./steps_schemas.md/#step-run-status).
 
 The error response contains an [Error](../response_codes.md).
 
@@ -406,7 +406,7 @@ Response
 
 ## Restart a step in a process run
 
-Restart (or start) a step in a process run.
+Restart a process run from a step.
 
 ```apacheconfig
 POST /v1/processruns/{processRunId}/steps/{stepId}/restartfromhere

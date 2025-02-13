@@ -3,12 +3,11 @@
 [Process Run](#process-run)  
 [Process Run Request ](#process-run-request)  
 [Process Run Status](#process-run-status)  
-[Step Run Status](#step-run-status) 
 
 # Process Run Types
 [Process Run Request Type](#process-run-request-type)  
 [Process Run Status Type](#process-run-status-type)  
-[Process Step Status Type](#process-step-status-type) 
+[Process Step Run Status Type](#process-step-run-status-type) 
 
 ---
 
@@ -47,18 +46,6 @@ type ProcessRunStatus = {
 }
 ```
 
-## Step Run Status
-```typescript
-type StepRunStatus = {
-    id: string
-  ; dateStarted: string
-  ; dateFinished: string
-  ; runDurationInSeconds: number
-  ; status: ProcessStepStatusType
-  ; completionMessage: string
-}
-```
-
 ---
 
 ## Process Run Request Type
@@ -82,9 +69,9 @@ enum ProcessRunStatusType {
 }
 ```
 
-## Process Step Status Type
+## Process Step Run Status Type
 ```typescript
-enum ProcessStepStatusType {
+enum ProcessStepRunStatusType {
   "NotStarted" = 1,
   "Running" = 2,
   "Success" = 3,
