@@ -398,7 +398,7 @@ Response
     "dateFinished": null,
     "dateStarted": "2025-01-13T03:51:03.27Z",
     "runDurationInSec": 2,
-    "status": "cancelled",
+    "status": "Cancelled",
     "completionMessage": ""
 }
 ```
