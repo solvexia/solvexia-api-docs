@@ -378,7 +378,7 @@ The query parameters are not expected.
 The request body must be empty.
 
 #### Response body
-The successful response contains an instances of [Step Run Status](./steps_schemas.md/#step-run-status).
+The successful response contains an instances of [Step Run Status](../steps/steps_schemas.md/#step-run-status).
 
 The error response contains an [Error](../response_codes.md).
 
@@ -427,7 +427,7 @@ The query parameters are not expected.
 The request body must be empty.
 
 #### Response body
-The successful response contains an instances of [Step Run Status](./process_runs_schemas.md/#step-run-status).
+The successful response contains an instances of [Step Run Status](../steps/steps_schemas.md/#step-run-status).
 
 The error response contains an [Error](../response_codes.md).
 

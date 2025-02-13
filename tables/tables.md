@@ -31,7 +31,7 @@ The query parameters are not expected.
 The request body must be empty.
 
 #### Response body
-The successful response contains an instance of [Table](./tables_schemas.md/#table-object).
+The successful response contains an instance of [Table](./tables_schemas.md/#table).
 
 The error response contains an [Error](../response_codes.md).
 
@@ -74,7 +74,7 @@ The path parameters are not expected.
 The query parameters are not expected.
 
 #### Request body
-The request body must contain an instance of [Table](./tables_schemas/#table-object). The following fields will be used to create a table.
+The request body must contain an instance of [Table](./tables_schemas/#table). The following fields will be used to create a table.
 
 ```typescript
 { 
@@ -89,7 +89,7 @@ The request body must contain an instance of [Table](./tables_schemas/#table-obj
 | description | `string` | The description of the table. |
 
 #### Response body
-The successful response contains an instance of [Table](./tables_schemas/#table-object).
+The successful response contains an instance of [Table](./tables_schemas/#table).
 
 The error response contains an [Error](../response_codes.md).
 
@@ -134,7 +134,7 @@ POST /v1/tables/{tableId}
 The query parameters are not expected.
 
 #### Request body
-The request body must contain an instance of [Table](./tables_schemas/#table-object). One or more of the following fields will be used to update the table.
+The request body must contain an instance of [Table](./tables_schemas/#table). One or more of the following fields will be used to update the table.
 
 ```typescript
 { 
@@ -149,7 +149,7 @@ The request body must contain an instance of [Table](./tables_schemas/#table-obj
 | description | `string` | The description of the table. |
 
 #### Response body
-The successful response contains an instance of [Table](./tables_schemas/#table-object).
+The successful response contains an instance of [Table](./tables_schemas/#table).
 
 The error response contains an [Error](../response_codes.md).
 
@@ -198,7 +198,7 @@ The query parameters are not expected.
 The request body must be empty.
 
 #### Response body
-The successful response contains an array of instances of [Column](./tables_schemas.md/#column-object).
+The successful response contains an array of instances of [Column](./tables_schemas.md/#column).
 
 The error response contains an [Error](../response_codes.md).
 
@@ -257,7 +257,7 @@ POST /v1/tables/{tableId}/columns/
 The query parameters are not expected.
 
 #### Request body
-The request body must contain an instance of [Column](./tables_schemas.md/#column-object). The following fields will be used to create a column.
+The request body must contain an instance of [Column](./tables_schemas.md/#column). The following fields will be used to create a column.
 
 ```typescript
 { 
@@ -272,14 +272,14 @@ The request body must contain an instance of [Column](./tables_schemas.md/#colum
 | Name | Type | Description |
 | ------------- |------------- | -------------|
 | name | `string` | REQUIRED. The unique name of the column. |
-| dataType | `TableColumnDataType` |REQUIRED. [ColumnType](#table-column-type) . |
+| dataType | `TableColumnDataType` |REQUIRED. [ColumnType](./tables_schemas.md/#table-column-type) . |
 | nullable | `boolean` | OPTIONAL. Whether the column can accept null values, default is `true`. |
 | fieldLength | `number` | OPTIONAL. Number of characters for 'FixedLengthText' dataType, default is `null` (which sets fixedLengthText to MAX). |
 | nullable | `boolean` | OPTIONAL. Whether the column can accept `null` values, default is `true`. |
 | defaultValue | `string`, `number`, `boolean` | OPTIONAL. The default value for the column, based on `dataType`. |
 
 #### Response body
-The successful response contains an instance of [Column](./tables_schemas.md/#column-object).
+The successful response contains an instance of [Column](./tables_schemas.md/#column).
 
 The error response contains an [Error](../response_codes.md).
 
@@ -323,7 +323,7 @@ POST /v1/tables/{tableId}/columns/{columnName}
 The query parameters are not expected.
 
 #### Request body
-The request body must contain an instance of [Column](./tables_schemas.md/#column-object). One or more of the following fields will be used to update the column.
+The request body must contain an instance of [Column](./tables_schemas.md/#column). One or more of the following fields will be used to update the column.
 
 ```javascript
 { 
@@ -345,7 +345,7 @@ The request body must contain an instance of [Column](./tables_schemas.md/#colum
 | defaultValue | `string`, `number`, `boolean` | The default value for the column, based on `dataType`. |
 
 #### Response body
-The successful response contains an instance of [Column](./tables_schemas.md/#column-object).
+The successful response contains an instance of [Column](./tables_schemas.md/#column).
 
 The error response contains an [Error](../response_codes.md).
 
