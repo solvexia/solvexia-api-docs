@@ -5,8 +5,9 @@
 [Process Run Status](#process-run-status)  
 
 # Process Run Types
-[Process Run Request Type](#process-run-request-type)
-[Process Run Status Type](#process-run-status-type)
+[Process Run Request Type](#process-run-request-type)  
+[Process Run Status Type](#process-run-status-type)  
+[Process Step Run Status Type](#process-step-run-status-type) 
 
 ---
 
@@ -44,6 +45,7 @@ type ProcessRunStatus = {
   ; status: ProcessRunStatus
 }
 ```
+
 ---
 
 ## Process Run Request Type
@@ -67,9 +69,9 @@ enum ProcessRunStatusType {
 }
 ```
 
-## Process Step Status Type
+## Process Step Run Status Type
 ```typescript
-enum ProcessStepStatusType {
+enum ProcessStepRunStatusType {
   "NotStarted" = 1,
   "Running" = 2,
   "Success" = 3,
