@@ -1,10 +1,10 @@
 # Log APIs
 
-[Get a log list](#get-a-log-list)  
+[Get list of logs](#get-list-of-logs)  
 
 ---
 
-## Get a log list
+## Get list of logs
 
 Retrieves all logs accessible to the authenticated user. The caller may provide optional filters to refine the results. If no filters are provided, the latest 50 logs will be returned.
 
@@ -52,15 +52,15 @@ Response
 [
     {
         "id": "n_sbzZYBi9W5689HT5uJ",
-        "message": "Scheduled process run \"Test analytics 2 : run #5886\" has completed in 1 s with status \"Finished\" at 02/19/2025 04:44:00 for User \"template.mona.benson\"",
+        "message": "Scheduled process run \"Test analytics 2 : run #5886\" has completed in 1 s with status \"Finished\" at 02/21/2025 04:44:00 for User \"template.mona.benson\"",
         "userName": "template.mona.benson",
-        "timeStamp": "2025-05-14T14:44:00.7283212+10:00"
+        "timeStamp": "2025-05-21T14:44:00.7283212+10:00"
     },
     {
         "id": "nPsbzZYBi9W5689HT5uJ",
-        "message": "Process run \"Test analytics : run #5888\" has completed in 2 s with status \"Finished\" at 02/18/2025 04:44:00 for User \"template.mona.benson\"",
+        "message": "Process run \"Test analytics : run #5888\" has completed in 2 s with status \"Finished\" at 02/20/2025 04:44:00 for User \"template.mona.benson\"",
         "userName": "template.mona.benson",
-        "timeStamp": "2025-02-18T14:44:00.6578787+10:00"
+        "timeStamp": "2025-02-20T14:44:00.6578787+10:00"
     }
 ]
 ```
