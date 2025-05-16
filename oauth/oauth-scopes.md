@@ -17,6 +17,7 @@
 | `file_read` | Readonly access to files, including download. |
 | `mtable` | Read/write access to managed tables. |
 | `mtable_read` | Readonly access to managed tables. |
+| `log_read` | Readonly access to logs. |
 
 ### How to set up scopes for the application
 
