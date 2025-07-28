@@ -1,24 +1,24 @@
-# SolveXia API Docs
+# Solvexia API Docs
 
-This is an official repository for the SolveXia Public API documentation. Please follow this repository to see the changes over time.
+This is an official repository for the Solvexia Public API documentation. Please follow this repository to see the changes over time.
 
 For bug reports or change proposals for APIs please use issues, or create pull requests.
 
 ## Overview
 
-SolveXia APIs allow users to manage and control their data in SolveXia system programmatically and extend SolveXia capabilities in new and powerful ways. SolveXia APIs use the [OAuth 2.0 protocol](https://datatracker.ietf.org/doc/html/rfc6749) for authentication and authorization. SolveXia supports two main flows: Client Credentials flow for the server-to-server communication and Authorization Code flow for client-side integration scenarios.
+Solvexia APIs allow users to manage and control their data in Solvexia system programmatically and extend Solvexia capabilities in new and powerful ways. Solvexia APIs use the [OAuth 2.0 protocol](https://datatracker.ietf.org/doc/html/rfc6749) for authentication and authorization. Solvexia supports two main flows: Client Credentials flow for the server-to-server communication and Authorization Code flow for client-side integration scenarios.
 
 ## Gettings started
 
-In order to get started using SolveXia Public API you need to create an application in SolveXia API portal.
+In order to get started using Solvexia Public API you need to create an application in Solvexia API portal.
 
-### Register SolveXia Application
+### Register Solvexia Application
 
-Any application that is intended to access SolveXia Public API must have authorization credentials that identify the application to SolveXia authorization server.
+Any application that is intended to access Solvexia Public API must have authorization credentials that identify the application to Solvexia authorization server.
 
 Create authorization credentials for your app:
 
-1. Navigate to SolveXia API portal from the user dropdown menu.
+1. Navigate to Solvexia API portal from the user dropdown menu.
 2. Click "Create new application".
 3. Specify the name and callback URL. Click "Create application".
 4. If the creation is successful you will see Client Id and Client Secret credentials generated.
@@ -27,13 +27,13 @@ Create authorization credentials for your app:
 
 ## OAuth
 
-The following pages detail the OAuth API's that govern OAuth authorization flows, in order to be able to generate tokens to use SolveXia APIs.
+The following pages detail the OAuth API's that govern OAuth authorization flows, in order to be able to generate tokens to use Solvexia APIs.
 
 [OAuth APIs](./oauth/authentication-oauth2.0.md)  
 
 ## Solvexia APIs
 
-The following pages detail the Solvexia API's to manage client resources in SolveXia automation system.
+The following pages detail the Solvexia API's to manage client resources in Solvexia automation system.
 
 [Process APIs](./processes/processes.md)  
 [Process Run APIs](./process_runs/process_runs.md)  
