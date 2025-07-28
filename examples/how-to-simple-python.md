@@ -1,7 +1,7 @@
-# Using OAuth2.0 and SolveXia Public API for internal scripts with Python
+# Using OAuth2.0 and Solvexia Public API for internal scripts with Python
 
-This document contains a step by step guide on how to create a simple Python script that works with SolveXia API and authorizes through Client Credentials Flow.
-This documentation does not cover an integration with SolveXia Python SDK. If you would like to learn more how to use SDK please follow this [link](https://github.com/solvexia/solvexia-python-sdk).
+This document contains a step by step guide on how to create a simple Python script that works with Solvexia API and authorizes through Client Credentials Flow.
+This documentation does not cover an integration with Solvexia Python SDK. If you would like to learn more how to use SDK please follow this [link](https://github.com/solvexia/solvexia-python-sdk).
 
 ## Libraries
 
@@ -11,10 +11,10 @@ In order to write a simple script in Python you will need the following librarie
 
 ## Create authorization credentials
 
-Any application that is intended to access SolveXia Public API must have authorization credentials that identify the application to SolveXia authorization server. 
+Any application that is intended to access Solvexia Public API must have authorization credentials that identify the application to Solvexia authorization server. 
 Please follow the next steps to create credentials for your applications:
 
-1. Navigate to SolveXia API portal from the user dropdown menu.
+1. Navigate to Solvexia API portal from the user dropdown menu.
 2. Choose "Create new application". 
 3. Specify the name and callback URL. Click "Create application".
 4. If the creation is successful you will see Client Id and Client Secret credentials generated.
@@ -24,7 +24,7 @@ Please follow the next steps to create credentials for your applications:
 We've created authorization credentials and now we are ready to create a script.
 
 ### Retrieve access token
-First we need to create a function that obtains an access token via Client Credentials Flow that we can use further to call SolveXia APIs.
+First we need to create a function that obtains an access token via Client Credentials Flow that we can use further to call Solvexia APIs.
 
 ```python
 

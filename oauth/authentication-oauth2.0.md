@@ -1,15 +1,15 @@
 # Authorizing OAuth Apps
 
-OAuth2.0 is a protocol that allows SolveXia to communicate with third-party applications, authorize them and grant access via a generated access token.
+OAuth2.0 is a protocol that allows Solvexia to communicate with third-party applications, authorize them and grant access via a generated access token.
 
-OAuth2.0 flow in SolveXia is implemented according to [RFC 6749](https://tools.ietf.org/html/rfc6749) 
-to make the integration with SolveXia API as easy as possible.
+OAuth2.0 flow in Solvexia is implemented according to [RFC 6749](https://tools.ietf.org/html/rfc6749) 
+to make the integration with Solvexia API as easy as possible.
 
-SolveXia API provides two main methods for generating access tokens: **Client Credentials Flow**, **Authorize Code Flow**.
+Solvexia API provides two main methods for generating access tokens: **Client Credentials Flow**, **Authorize Code Flow**.
 
 We strongly recommend using authorize Code Flow for client production applications. 
 The [Client Credentials Flow](#client-credentials-flow) is intended to be used by internal scripts or for testing purposes. 
-Public third party applications that rely on SolveXia for authentication should not ask for or collect SolveXia user credentials.
+Public third party applications that rely on Solvexia for authentication should not ask for or collect Solvexia user credentials.
 Instead, they must use the [Authorization Code Flow](#authorize-code-flow).
 
 
@@ -44,8 +44,8 @@ https://[env].solvexia.com/oauth/token
 
 | Name | Type |Description |
 | ------------- |------------- | -------------|
-|client_id|`string`|REQUIRED. Client id that you received when you created an application in SolveXia.|
-|client_secret|`string`|REQUIRED. Client secret that you received when you created an application in SolveXia.|
+|client_id|`string`|REQUIRED. Client id that you received when you created an application in Solvexia.|
+|client_secret|`string`|REQUIRED. Client secret that you received when you created an application in Solvexia.|
 |grant_type|`string`|REQUIRED. For this flow grant type should always equal to "client_credentials".|
 |scope|`string`|OPTIONAL. A whitespace-separated list of [scopes](./oauth-scopes.md).|
 
@@ -77,13 +77,13 @@ curl -X POST "https://app.solvexia.com/oauth/token" \
 Authorize Code Flow is for the client public applications.
 
 The flow contains the following steps:
-1. Redirect to SolveXia authorization endpoint
-2. SolveXia prompts user to login and consent
+1. Redirect to Solvexia authorization endpoint
+2. Solvexia prompts user to login and consent
 3. Generate access token & refresh token by supplying authorization code and client id
 
 User can refresh the access token with refresh token
 
-#### 1. Redirect to SolveXia authorization endpoint
+#### 1. Redirect to Solvexia authorization endpoint
 
 ```http
 GET
@@ -94,24 +94,24 @@ https://[env].solvexia.com/oauth/authorize?client_id=your_client_id&response_typ
 
 | Name | Type |Description |
 | ------------- |------------- | -------------|
-|client_id|`string`|REQUIRED. Client id that you received when you created an application in SolveXia.|
+|client_id|`string`|REQUIRED. Client id that you received when you created an application in Solvexia.|
 |response_type|`string`|REQUIRED. will always be "code".|
 |redirect_uri|`string`|OPTIONAL. If not supplied it will use configured redirect url of the oauth application, if supplied it must match the oauth application redirect url.|
 |state|`string`|OPTIONAL. Specifies any string value that your application uses to maintain state between your authorization request and the authorization server's response.|
 |scope|`string`|OPTIONAL. A whitespace-separated list of [scopes](./oauth-scopes.md).|
 
-After the SolveXia authorization server successfully verifies your parameters, it will redirect the user to the login page and, as a next step, to the authorization form.
+After the Solvexia authorization server successfully verifies your parameters, it will redirect the user to the login page and, as a next step, to the authorization form.
 
-#### 2. SolveXia prompts user to login and consent
+#### 2. Solvexia prompts user to login and consent
 ![login](login.png)
 
-In this step, the user logs in and considers whether to grant your application the requested access. At this stage, SolveXia displays a consent form that shows the name of your application.
-The user can then authorize access to their SolveXia resources requested by your application or refuse the request.
+In this step, the user logs in and considers whether to grant your application the requested access. At this stage, Solvexia displays a consent form that shows the name of your application.
+The user can then authorize access to their Solvexia resources requested by your application or refuse the request.
 
 ![authorize](authorize.png)
 
 If the user authorizes access, you will be redirected back to the supplied (or configured) redirect uri with the authorization code in the query string.
-If you supplied an optional state parameter in the first step, SolveXia will return that as well.
+If you supplied an optional state parameter in the first step, Solvexia will return that as well.
 
 ```http
 GET
@@ -132,8 +132,8 @@ https://[env].solvexia.com/oauth/token
 
 | Name | Type |Description |
 | ------------- |------------- | -------------|
-|client_id|`string`|REQUIRED. Client id that you received when you created an application in SolveXia.|
-|client_secret|`string`|REQUIRED. Client secret that you received when you created an application in SolveXia.|
+|client_id|`string`|REQUIRED. Client id that you received when you created an application in Solvexia.|
+|client_secret|`string`|REQUIRED. Client secret that you received when you created an application in Solvexia.|
 |redirect_uri|`string`|OPTIONAL. If supplied during Step 1, it must match.|
 |grant_type|`string`|REQUIRED. For this flow grant type should always equal to "authorization_code".|
 |code|`string`|REQUIRED. code that was returned in query string in Step 3.|
@@ -202,7 +202,7 @@ https://[env].solvexia.com/oauth/token
 | Name | Type |Description |
 | ------------- |------------- | -------------|
 |client_id|`string`|REQUIRED. Client id that was submitted during generating of access token.|
-|client_secret|`string`|REQUIRED. Client secret that you received when you created an application in SolveXia.|
+|client_secret|`string`|REQUIRED. Client secret that you received when you created an application in Solvexia.|
 |redirect_uri|`string`|OPTIONAL. If supplied during generating of access token, it must match.|
 |grant_type|`string`|REQUIRED. For this flow grant type should always equal to "refresh_token".|
 
@@ -235,7 +235,7 @@ curl -X POST "https://app.solvexia.com/oauth/token" \
      -d '{"client_id":"DDF-AAFBD447-55432-475B-83DB-B5AD78878821","client_secret":"B5AD78878821","grant_type":"refresh_token","refresh_token":"430rt03erhgehrg349gjh3409hg3rtrt"}'
 ```
 
-## Call SolveXia public API with access token
+## Call Solvexia public API with access token
 
 ```http
 GET https://[env].solvexia.com/api/v1/processes
